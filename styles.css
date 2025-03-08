@@ -1,14 +1,24 @@
-/* Add these new styles */
-.service-header {
-    background: linear-gradient(135deg, var(--primary), var(--dark));
-    color: white;
-    padding: 8rem 2rem 4rem;
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+/* Update your existing CSS with these additions */
+:root {
+    --primary: #2A5C8A;
+    --secondary: #E63946;
+    --light: #F1FAEE;
+    --dark: #1D3557;
+    --transition: all 0.3s ease;
 }
 
-.service-details {
+/* Service Page Specific Styles */
+.service-hero {
+    background: linear-gradient(135deg, var(--primary), var(--dark));
+    color: white;
+    padding: 10rem 2rem 4rem;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    text-align: center;
+}
+
+.service-content {
     max-width: 1200px;
-    margin: 3rem auto;
+    margin: 4rem auto;
     padding: 0 2rem;
 }
 
@@ -20,7 +30,21 @@
 }
 
 .feature-card {
-    background: var(--light);
+    background: white;
     padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-cta {
+    text-align: center;
+    margin: 4rem 0;
+    padding: 3rem;
+    background: var(--light);
     border-radius: 10px;
 }
