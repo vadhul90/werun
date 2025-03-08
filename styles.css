@@ -131,6 +131,86 @@ body {
     margin-right: 0.5rem;
 }
 
+
+/* ======= Why Choose WeRun Section ======= */
+.expertise {
+    background: var(--light);
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.expertise h2 {
+    font-size: 2.5rem;
+    color: var(--dark);
+    margin-bottom: 3rem;
+}
+
+.badge-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.badge {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.badge:hover {
+    transform: translateY(-5px);
+}
+
+.badge i {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+/* ======= Get in Touch Section ======= */
+.contact {
+    background: linear-gradient(135deg, var(--primary), var(--dark));
+    color: white;
+    padding: 5rem 2rem;
+    text-align: center;
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 5px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    transition: var(--transition);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--secondary);
+    background: rgba(255,255,255,0.2);
+}
+
+::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
 /* ======= Buttons & CTAs ======= */
 .button {
     background: var(--secondary);
