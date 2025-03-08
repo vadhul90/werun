@@ -1,0 +1,26 @@
+/* Add these new styles */
+.service-header {
+    background: linear-gradient(135deg, var(--primary), var(--dark));
+    color: white;
+    padding: 8rem 2rem 4rem;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+.service-details {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.feature-card {
+    background: var(--light);
+    padding: 2rem;
+    border-radius: 10px;
+}
