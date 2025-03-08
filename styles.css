@@ -149,12 +149,42 @@ body {
 }
 
 /* ======= Footer ======= */
+/* ======= Footer ======= */
 footer {
     background: var(--dark);
     color: white;
     text-align: center;
-    padding: 2rem;
-    margin-top: 4rem;
+    padding: 3rem 2rem;
+    margin-top: auto; /* Pushes footer to bottom */
+    position: relative;
+}
+
+footer p {
+    margin-bottom: 1rem;
+}
+
+footer a {
+    color: var(--light);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--secondary);
+}
+
+/* Add this to main CSS */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-content {
+    flex: 1 0 auto; /* Pushes footer down */
 }
 
 /* ======= Responsive Design ======= */
