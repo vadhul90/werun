@@ -223,10 +223,20 @@
         // Hamburger Menu Toggle
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
+        const navLinksAnchors = navLinks.querySelectorAll('a');
+
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
         
+         // Collapse menu when a link is clicked on mobile
+        navLinksAnchors.forEach(anchor => {
+            anchor.addEventListener('click', () => {
+                if (window.innerWidth <= 768) { // Only on mobile
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
         
     </script>
 </body>
