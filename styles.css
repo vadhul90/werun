@@ -54,15 +54,15 @@ body {
     display: none; /* Hidden on desktop */
     background: none;
     border: none;
-    font-size: 2rem; /* Larger default size */
-    color: var(--primary); /* Blue theme */
+    font-size: 2rem; /* Default size */
+    color: var(--primary);
     cursor: pointer;
-    padding: 0.5rem; /* Better tap area */
+    padding: 0.5rem;
     transition: var(--transition);
 }
 
 .hamburger:hover {
-    color: var(--secondary); /* Red on hover */
+    color: var(--secondary);
 }
 
 /* ======= Hero Sections ======= */
@@ -72,7 +72,7 @@ body {
     text-align: center;
     padding: 10rem 2rem 6rem;
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-    margin-top: 4rem; /* Offset for fixed navbar on desktop */
+    margin-top: 4rem;
 }
 
 .hero h1 {
@@ -338,7 +338,7 @@ footer {
     
     .hamburger {
         display: block;
-        font-size: 2.5rem; /* Larger cube icon */
+        font-size: 3rem; /* Increased from 2.5rem */
     }
     
     .nav-links {
@@ -408,7 +408,7 @@ footer {
     }
     
     .hamburger {
-        font-size: 2rem; /* Still prominent on small screens */
+        font-size: 2.5rem; /* Increased from 2rem */
         padding: 0.3rem;
     }
     
