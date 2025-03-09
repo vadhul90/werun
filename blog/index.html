@@ -8,8 +8,51 @@
     <link rel="stylesheet" href="../styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        .blog-container { max-width: 1200px; padding: 0 2rem; }
-        @media (max-width: 768px) { .blog-container { max-width: 100%; padding: 0 1rem; } }
+        /* Search Bar Styling */
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+        .search-input {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1rem;
+            border: 2px solid var(--primary);
+            border-radius: 5px;
+            background: var(--light);
+            color: var(--dark);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        .search-input:focus {
+            border-color: var(--secondary);
+            background: white;
+            outline: none;
+        }
+        .search-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        .search-results {
+            display: none; /* Hidden by default, shown via JS */
+            margin-top: 1rem;
+        }
+        .search-results .blog-card {
+            margin-bottom: 1rem;
+        }
+        @media (max-width: 768px) {
+            .search-container {
+                margin: 1rem;
+            }
+            .search-input {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -22,15 +65,19 @@
         <a href="../index.html#contact">Contact</a>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Search -->
     <section class="hero">
         <h1><i class="fas fa-blog"></i> EPM Cloud Blog</h1>
         <p>Expert insights, implementation guides, and industry updates</p>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search blogs..." id="searchInput">
+            <i class="fas fa-search search-icon"></i>
+        </div>
     </section>
 
     <!-- Blog Previews -->
     <section class="blog-container">
-        <div class="blog-preview">
+        <div class="blog-preview" id="blogPreview">
             <div class="blog-card">
                 <div class="post-meta">
                     <span class="category update">Cloud Update</span>
@@ -59,11 +106,81 @@
                 <a href="post1.html" class="read-more">Read More →</a>
             </div>
         </div>
+        <div class="search-results" id="searchResults"></div>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>© 2025 WeRun Consulting. All rights reserved.</p>
     </footer>
+
+    <!-- Search JavaScript -->
+    <script>
+        const blogPosts = [
+            {
+                title: "New Features in EPM Cloud 25.03",
+                category: "update",
+                date: "March 03, 2025",
+                summary: "Explore the March 2025 updates, including enhanced dashboards and analytics integration...",
+                url: "epm-25.03-update.html"
+            },
+            {
+                title: "New Features in EPM Cloud 25.02",
+                category: "update",
+                date: "February 03, 2025",
+                summary: "Overview of the February 2025 updates, featuring security and usability enhancements...",
+                url: "epm-25.02-update.html"
+            },
+            {
+                title: "Automating Data Loads in EPBCS",
+                category: "epm",
+                date: "March 15, 2024",
+                summary: "Learn how to streamline your EPM processes with Groovy scripts...",
+                url: "post1.html"
+            }
+        ];
+
+        const searchInput = document.getElementById('searchInput');
+        const blogPreview = document.getElementById('blogPreview');
+        const searchResults = document.getElementById('searchResults');
+
+        searchInput.addEventListener('input', function() {
+            const query = this.value.trim().toLowerCase();
+            if (query === '') {
+                blogPreview.style.display = 'grid';
+                searchResults.style.display = 'none';
+                return;
+            }
+
+            const results = blogPosts.filter(post =>
+                post.title.toLowerCase().includes(query) ||
+                post.summary.toLowerCase().includes(query) ||
+                post.category.toLowerCase().includes(query)
+            );
+
+            blogPreview.style.display = 'none';
+            searchResults.style.display = 'block';
+            searchResults.innerHTML = '';
+
+            if (results.length === 0) {
+                searchResults.innerHTML = '<p>No results found.</p>';
+            } else {
+                results.forEach(post => {
+                    const card = document.createElement('div');
+                    card.className = 'blog-card';
+                    card.innerHTML = `
+                        <div class="post-meta">
+                            <span class="category ${post.category}">${post.category === 'update' ? 'Cloud Update' : 'EPM Scripting'}</span>
+                            <span class="date">${post.date}</span>
+                        </div>
+                        <h3>${post.title}</h3>
+                        <p>${post.summary}</p>
+                        <a href="${post.url}" class="read-more">Read More →</a>
+                    `;
+                    searchResults.appendChild(card);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
