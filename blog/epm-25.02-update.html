@@ -7,6 +7,53 @@
     <meta name="description" content="Detailed analysis of Oracle EPM Cloud updates for February 2025">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Override blog-container width */
+        .blog-container {
+            max-width: 1200px; /* Increased from 800px to match service pages */
+            padding: 0 2rem;
+        }
+        /* Adjust blog-post padding for wider content */
+        .blog-post {
+            padding: 3rem 4rem; /* More horizontal padding */
+        }
+        /* Enhance table readability */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: #fff; /* White background for contrast */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 1.5rem; /* More padding than code-snippet */
+            text-align: left;
+            border: 1px solid #ddd; /* Clear borders */
+            font-size: 1rem;
+        }
+        .comparison-table th {
+            background: var(--primary); /* #2A5C8A */
+            color: white;
+            font-weight: 600;
+        }
+        .comparison-table td {
+            background: #f8f9fa; /* Light gray for rows */
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .blog-container {
+                max-width: 100%;
+                padding: 0 1rem;
+            }
+            .blog-post {
+                padding: 2rem;
+            }
+            .comparison-table th, .comparison-table td {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -86,7 +133,7 @@
             <p>These updates collectively enhance ePBCS's planning capabilities, focusing on integration, usability, and security, which are pivotal for enterprise-wide financial planning.</p>
 
             <h3>Comparative Analysis and Business Implications</h3>
-            <table class="code-snippet">
+            <table class="comparison-table">
                 <tr>
                     <th>Product</th>
                     <th>Update</th>
@@ -144,7 +191,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>© 2023 WeRun Consulting. All rights reserved.</p>
+        <p>© 2025 WeRun Consulting. All rights reserved.</p>
     </footer>
 </body>
 </html>
