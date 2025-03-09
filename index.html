@@ -19,11 +19,14 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="#services">Services</a>
-        <a href="#expertise">Expertise</a>
-        <a href="blog/">Blog</a>
-        <a href="#contact">Contact</a>
+        <button class="hamburger" aria-label="Toggle menu">☰</button>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#services">Services</a>
+            <a href="#expertise">Expertise</a>
+            <a href="blog/">Blog</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
     <section class="hero" id="home">
@@ -216,6 +219,15 @@
                     alert('Failed to send message: ' + error.text);
                 });
         });
+        
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        
     </script>
 </body>
 </html>

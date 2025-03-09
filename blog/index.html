@@ -56,13 +56,16 @@
     </style>
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- Navbar with Hamburger -->
     <nav class="navbar">
-        <a href="../index.html">Home</a>
-        <a href="../index.html#services">Services</a>
-        <a href="../index.html#expertise">Expertise</a>
-        <a href="../blog/">Blog</a>
-        <a href="../index.html#contact">Contact</a>
+        <button class="hamburger" aria-label="Toggle menu">☰</button>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <a href="../blog/">Blog</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
     </nav>
 
     <!-- Hero Section with Search -->
@@ -114,20 +117,20 @@
         <p>© 2025 WeRun Consulting. All rights reserved.</p>
     </footer>
 
-    <!-- Search JavaScript -->
+    <!-- Search and Hamburger JavaScript -->
     <script>
         const blogPosts = [
             {
                 title: "New Features in EPM Cloud 25.03",
                 category: "update",
-                date: "March 03, 2025",
+                date: "April 09, 2025", // Updated to match HTML
                 summary: "Explore the March 2025 updates, including enhanced dashboards and analytics integration...",
                 url: "epm-25.03-update.html"
             },
             {
                 title: "New Features in EPM Cloud 25.02",
                 category: "update",
-                date: "February 03, 2025",
+                date: "March 09, 2025", // Updated to match HTML
                 summary: "Overview of the February 2025 updates, featuring security and usability enhancements...",
                 url: "epm-25.02-update.html"
             },
@@ -180,6 +183,13 @@
                     searchResults.appendChild(card);
                 });
             }
+        });
+
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
     </script>
 </body>
