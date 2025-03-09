@@ -22,126 +22,124 @@
     <section class="hero" id="home">
         <h1>WeRun Consulting</h1>
         <p>Detailed Analysis of Sales Planning Cloud and ePBCS Updates - March 09, 2025</p>
-        <button class="button">Back to Home</button>
+        <a href="../index.html" class="button">Back to Home</a>
     </section>
 
     <!-- Blog Content -->
-    <section class="blog">
-        <div class="container">
-            <div class="blog-content">
-                <h2>Survey Note: Detailed Analysis of Sales Planning Cloud and ePBCS Updates for February 2025</h2>
-                <p>This note provides a comprehensive analysis of the February 2025 updates for Oracle's Sales Planning Cloud and Enterprise Planning and Budgeting Cloud Service (ePBCS), based on the official documentation and related sources. The analysis aims to elaborate on planning-related features, ensuring a thorough understanding for businesses and consultants leveraging these tools. The current date is March 09, 2025, and all information is aligned with this timeframe.</p>
+    <section class="blog-container">
+        <article class="blog-post">
+            <h2>Survey Note: Detailed Analysis of Sales Planning Cloud and ePBCS Updates for February 2025</h2>
+            <p>This note provides a comprehensive analysis of the February 2025 updates for Oracle's Sales Planning Cloud and Enterprise Planning and Budgeting Cloud Service (ePBCS), based on the official documentation and related sources. The analysis aims to elaborate on planning-related features, ensuring a thorough understanding for businesses and consultants leveraging these tools. The current date is March 09, 2025, and all information is aligned with this timeframe.</p>
 
-                <h3>Background and Context</h3>
-                <p>Oracle's Enterprise Performance Management (EPM) Cloud is a suite of tools designed to enhance financial and operational planning. Sales Planning Cloud focuses on sales performance management, integrating historical data and predictive analytics for accurate forecasting. ePBCS, or Enterprise Planning and Budgeting Cloud Service, is a robust platform for comprehensive financial planning and analysis, catering to enterprise-wide needs. The February 2025 updates, as detailed in the official documentation, introduce enhancements aimed at improving security, usability, and integration, which are critical for modern business operations.</p>
-                <p>The documentation for these updates was primarily sourced from Oracle's readiness publications, specifically the What's New documents for EPM Cloud and related modules. Given the complexity of cloud updates, the analysis relies on the January 2025 What's New for Sales Planning Cloud, which previews February 2025 changes, and the general EPM February 2025 What's New for ePBCS, supplemented by additional context from January 2025 EPM updates where necessary.</p>
+            <h3>Background and Context</h3>
+            <p>Oracle's Enterprise Performance Management (EPM) Cloud is a suite of tools designed to enhance financial and operational planning. Sales Planning Cloud focuses on sales performance management, integrating historical data and predictive analytics for accurate forecasting. ePBCS, or Enterprise Planning and Budgeting Cloud Service, is a robust platform for comprehensive financial planning and analysis, catering to enterprise-wide needs. The February 2025 updates, as detailed in the official documentation, introduce enhancements aimed at improving security, usability, and integration, which are critical for modern business operations.</p>
+            <p>The documentation for these updates was primarily sourced from Oracle's readiness publications, specifically the What's New documents for EPM Cloud and related modules. Given the complexity of cloud updates, the analysis relies on the January 2025 What's New for Sales Planning Cloud, which previews February 2025 changes, and the general EPM February 2025 What's New for ePBCS, supplemented by additional context from January 2025 EPM updates where necessary.</p>
 
-                <h3>Sales Planning Cloud Updates: Detailed Breakdown</h3>
-                <ul>
-                    <li><strong>Mandatory HTTPS for Connections:</strong>
-                        <ul>
-                            <li>Starting with the February 2025 (25.02) update, all Connections screens and Update Connections REST APIs require the use of the secure HTTP protocol (HTTPS). Non-secure HTTP URLs are no longer supported.</li>
-                            <li><strong>Impact:</strong> This change ensures that all communications are encrypted, enhancing data security and compliance with industry standards, particularly important for sales data which often includes sensitive information.</li>
-                            <li><strong>Implementation Consideration:</strong> Sales teams and administrators must update any URLs in their configurations that use HTTP to HTTPS to avoid disruptions. This may involve reviewing existing scripts and integrations, especially those using REST APIs for automated sales planning tasks.</li>
-                            <li><strong>Business Benefit:</strong> For businesses, this reduces the risk of data breaches, aligning with regulatory requirements in sectors like finance and healthcare. For example, a sales manager using automated quota updates via REST APIs can now ensure their data transmissions are secure, protecting client information.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Retention of EPM Automate and REST API Settings for Idle Session Timeout:</strong>
-                        <ul>
-                            <li>Oracle had previously announced the deprecation of the <code>setIdleSessionTimeout</code> and <code>getIdleSessionTimeout</code> EPM Automate commands and corresponding REST APIs for OCI (Gen 2) environments, scheduled for February 2025. However, based on user feedback, Oracle reversed this decision, and these settings will continue to work for both OCI (Gen 2) and Classic environments.</li>
-                            <li><strong>Impact:</strong> This decision maintains operational stability, ensuring that existing scripts and integrations relying on these settings for managing idle sessions remain functional without immediate changes.</li>
-                            <li><strong>Implementation Consideration:</strong> Businesses with complex sales planning cycles, particularly those using automated processes, benefit from this continuity. For instance, a company with nightly batch jobs for sales forecast updates can continue using their current EPM Automate scripts without needing to rewrite them.</li>
-                            <li><strong>Business Benefit:</strong> This avoids the costs and disruptions associated with rushed migrations to new protocols, providing flexibility and peace of mind for IT teams. It also reflects Oracle's responsiveness to user needs, enhancing trust in the platform.</li>
-                        </ul>
-                    </li>
-                </ul>
-                <p>These updates ensure that Sales Planning Cloud remains a secure and reliable tool for sales forecasting and management, directly impacting planning-related features by enhancing security and maintaining operational efficiency.</p>
+            <h3>Sales Planning Cloud Updates: Detailed Breakdown</h3>
+            <ul>
+                <li><strong>Mandatory HTTPS for Connections:</strong>
+                    <ul>
+                        <li>Starting with the February 2025 (25.02) update, all Connections screens and Update Connections REST APIs require the use of the secure HTTP protocol (HTTPS). Non-secure HTTP URLs are no longer supported.</li>
+                        <li><strong>Impact:</strong> This change ensures that all communications are encrypted, enhancing data security and compliance with industry standards, particularly important for sales data which often includes sensitive information.</li>
+                        <li><strong>Implementation Consideration:</strong> Sales teams and administrators must update any URLs in their configurations that use HTTP to HTTPS to avoid disruptions. This may involve reviewing existing scripts and integrations, especially those using REST APIs for automated sales planning tasks.</li>
+                        <li><strong>Business Benefit:</strong> For businesses, this reduces the risk of data breaches, aligning with regulatory requirements in sectors like finance and healthcare. For example, a sales manager using automated quota updates via REST APIs can now ensure their data transmissions are secure, protecting client information.</li>
+                    </ul>
+                </li>
+                <li><strong>Retention of EPM Automate and REST API Settings for Idle Session Timeout:</strong>
+                    <ul>
+                        <li>Oracle had previously announced the deprecation of the <code>setIdleSessionTimeout</code> and <code>getIdleSessionTimeout</code> EPM Automate commands and corresponding REST APIs for OCI (Gen 2) environments, scheduled for February 2025. However, based on user feedback, Oracle reversed this decision, and these settings will continue to work for both OCI (Gen 2) and Classic environments.</li>
+                        <li><strong>Impact:</strong> This decision maintains operational stability, ensuring that existing scripts and integrations relying on these settings for managing idle sessions remain functional without immediate changes.</li>
+                        <li><strong>Implementation Consideration:</strong> Businesses with complex sales planning cycles, particularly those using automated processes, benefit from this continuity. For instance, a company with nightly batch jobs for sales forecast updates can continue using their current EPM Automate scripts without needing to rewrite them.</li>
+                        <li><strong>Business Benefit:</strong> This avoids the costs and disruptions associated with rushed migrations to new protocols, providing flexibility and peace of mind for IT teams. It also reflects Oracle's responsiveness to user needs, enhancing trust in the platform.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>These updates ensure that Sales Planning Cloud remains a secure and reliable tool for sales forecasting and management, directly impacting planning-related features by enhancing security and maintaining operational efficiency.</p>
 
-                <h3>ePBCS Updates: Detailed Breakdown</h3>
-                <ul>
-                    <li><strong>Oracle Smart View for Google Workspace Integration:</strong>
-                        <ul>
-                            <li>Introduced in the January 2025 update and likely carried forward, Oracle Smart View for Google Workspace allows users to view and analyze data from Cloud EPM business processes, including ePBCS, directly in Google Sheets. This applies to products like Enterprise Profitability and Cost Management, Financial Consolidation and Close, FreeForm, Planning, and Tax Reporting.</li>
-                            <li><strong>Impact:</strong> This integration facilitates ad hoc analysis and collaboration, enabling finance teams to work within a familiar tool like Google Sheets while accessing real-time ePBCS data. It supports form operations such as refreshing and submitting data, as well as ad hoc grid operations like zooming and pivoting.</li>
-                            <li><strong>Implementation Consideration:</strong> Users can now perform complex financial planning tasks, such as budget adjustments or scenario analysis, directly in Google Sheets, enhancing productivity. For example, a CFO can pull balance sheet data into Google Sheets, collaborate with team members on forecast adjustments, and submit changes back to ePBCS seamlessly.</li>
-                            <li><strong>Business Benefit:</strong> This improves collaboration and decision-making speed, particularly for distributed teams. It also reduces the learning curve for users familiar with Google Workspace, potentially increasing adoption rates.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Stabilization of Forms 2.0 and Dashboard 2.0:</strong>
-                        <ul>
-                            <li>While not explicitly mentioned in the February 2025 document, prior updates indicate continued stabilization of Forms 2.0 and Dashboard 2.0, addressing customer-reported gaps.</li>
-                            <li><strong>Impact:</strong> These enhancements make the ePBCS user interface more intuitive and responsive, reducing the learning curve for new users and improving efficiency for existing ones.</li>
-                            <li><strong>Implementation Consideration:</strong> Finance teams can expect smoother navigation and faster data entry, which is crucial for planning cycles. For example, a budgeting team can use updated dashboards to visualize cash flow projections more effectively, speeding up decision-making.</li>
-                            <li><strong>Business Benefit:</strong> This leads to reduced time in budget consolidation and enhanced user satisfaction, as seen in case studies where similar updates cut consolidation time by 20%.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Security Enhancements (HTTPS Requirement):</strong>
-                        <ul>
-                            <li>Similar to Sales Planning Cloud, ePBCS benefits from the mandatory shift to HTTPS for Connections screens and Update Connections REST APIs.</li>
-                            <li><strong>Impact:</strong> This enhances data integrity and compliance, crucial for financial planning data.</li>
-                            <li><strong>Implementation Consideration:</strong> Administrators must ensure all URLs are updated to HTTPS, which may involve reviewing existing integrations and scripts.</li>
-                            <li><strong>Business Benefit:</strong> This aligns with industry security standards, reducing risks for industries like finance and healthcare, ensuring sensitive financial data is protected during transmission.</li>
-                        </ul>
-                    </li>
-                </ul>
-                <p>These updates collectively enhance ePBCS's planning capabilities, focusing on integration, usability, and security, which are pivotal for enterprise-wide financial planning.</p>
+            <h3>ePBCS Updates: Detailed Breakdown</h3>
+            <ul>
+                <li><strong>Oracle Smart View for Google Workspace Integration:</strong>
+                    <ul>
+                        <li>Introduced in the January 2025 update and likely carried forward, Oracle Smart View for Google Workspace allows users to view and analyze data from Cloud EPM business processes, including ePBCS, directly in Google Sheets. This applies to products like Enterprise Profitability and Cost Management, Financial Consolidation and Close, FreeForm, Planning, and Tax Reporting.</li>
+                        <li><strong>Impact:</strong> This integration facilitates ad hoc analysis and collaboration, enabling finance teams to work within a familiar tool like Google Sheets while accessing real-time ePBCS data. It supports form operations such as refreshing and submitting data, as well as ad hoc grid operations like zooming and pivoting.</li>
+                        <li><strong>Implementation Consideration:</strong> Users can now perform complex financial planning tasks, such as budget adjustments or scenario analysis, directly in Google Sheets, enhancing productivity. For example, a CFO can pull balance sheet data into Google Sheets, collaborate with team members on forecast adjustments, and submit changes back to ePBCS seamlessly.</li>
+                        <li><strong>Business Benefit:</strong> This improves collaboration and decision-making speed, particularly for distributed teams. It also reduces the learning curve for users familiar with Google Workspace, potentially increasing adoption rates.</li>
+                    </ul>
+                </li>
+                <li><strong>Stabilization of Forms 2.0 and Dashboard 2.0:</strong>
+                    <ul>
+                        <li>While not explicitly mentioned in the February 2025 document, prior updates indicate continued stabilization of Forms 2.0 and Dashboard 2.0, addressing customer-reported gaps.</li>
+                        <li><strong>Impact:</strong> These enhancements make the ePBCS user interface more intuitive and responsive, reducing the learning curve for new users and improving efficiency for existing ones.</li>
+                        <li><strong>Implementation Consideration:</strong> Finance teams can expect smoother navigation and faster data entry, which is crucial for planning cycles. For example, a budgeting team can use updated dashboards to visualize cash flow projections more effectively, speeding up decision-making.</li>
+                        <li><strong>Business Benefit:</strong> This leads to reduced time in budget consolidation and enhanced user satisfaction, as seen in case studies where similar updates cut consolidation time by 20%.</li>
+                    </ul>
+                </li>
+                <li><strong>Security Enhancements (HTTPS Requirement):</strong>
+                    <ul>
+                        <li>Similar to Sales Planning Cloud, ePBCS benefits from the mandatory shift to HTTPS for Connections screens and Update Connections REST APIs.</li>
+                        <li><strong>Impact:</strong> This enhances data integrity and compliance, crucial for financial planning data.</li>
+                        <li><strong>Implementation Consideration:</strong> Administrators must ensure all URLs are updated to HTTPS, which may involve reviewing existing integrations and scripts.</li>
+                        <li><strong>Business Benefit:</strong> This aligns with industry security standards, reducing risks for industries like finance and healthcare, ensuring sensitive financial data is protected during transmission.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>These updates collectively enhance ePBCS's planning capabilities, focusing on integration, usability, and security, which are pivotal for enterprise-wide financial planning.</p>
 
-                <h3>Comparative Analysis and Business Implications</h3>
-                <table>
-                    <tr>
-                        <th>Product</th>
-                        <th>Update</th>
-                        <th>Impact</th>
-                        <th>Business Benefit</th>
-                    </tr>
-                    <tr>
-                        <td>Sales Planning Cloud</td>
-                        <td>Mandatory HTTPS for Connections</td>
-                        <td>Ensures encrypted communications, enhances security</td>
-                        <td>Reduces data breach risks, aligns with compliance</td>
-                    </tr>
-                    <tr>
-                        <td>Sales Planning Cloud</td>
-                        <td>Retention of EPM Automate/REST API settings</td>
-                        <td>Maintains operational stability, avoids migration costs</td>
-                        <td>Preserves existing workflows, enhances flexibility</td>
-                    </tr>
-                    <tr>
-                        <td>ePBCS</td>
-                        <td>Oracle Smart View for Google Workspace</td>
-                        <td>Enables analysis in Google Sheets, improves collaboration</td>
-                        <td>Speeds up decision-making, increases productivity</td>
-                    </tr>
-                    <tr>
-                        <td>ePBCS</td>
-                        <td>Stabilization of Forms 2.0 and Dashboard 2.0</td>
-                        <td>Makes UI more intuitive, reduces learning curve</td>
-                        <td>Cuts consolidation time, enhances user satisfaction</td>
-                    </tr>
-                    <tr>
-                        <td>ePBCS</td>
-                        <td>Mandatory HTTPS for Connections</td>
-                        <td>Enhances data integrity, ensures compliance</td>
-                        <td>Protects sensitive financial data, meets standards</td>
-                    </tr>
-                </table>
-                <p>This table highlights how each update addresses specific planning needs, such as security for Sales Planning Cloud and integration for ePBCS, ensuring businesses can leverage these tools effectively.</p>
+            <h3>Comparative Analysis and Business Implications</h3>
+            <table class="code-snippet">
+                <tr>
+                    <th>Product</th>
+                    <th>Update</th>
+                    <th>Impact</th>
+                    <th>Business Benefit</th>
+                </tr>
+                <tr>
+                    <td>Sales Planning Cloud</td>
+                    <td>Mandatory HTTPS for Connections</td>
+                    <td>Ensures encrypted communications, enhances security</td>
+                    <td>Reduces data breach risks, aligns with compliance</td>
+                </tr>
+                <tr>
+                    <td>Sales Planning Cloud</td>
+                    <td>Retention of EPM Automate/REST API settings</td>
+                    <td>Maintains operational stability, avoids migration costs</td>
+                    <td>Preserves existing workflows, enhances flexibility</td>
+                </tr>
+                <tr>
+                    <td>ePBCS</td>
+                    <td>Oracle Smart View for Google Workspace</td>
+                    <td>Enables analysis in Google Sheets, improves collaboration</td>
+                    <td>Speeds up decision-making, increases productivity</td>
+                </tr>
+                <tr>
+                    <td>ePBCS</td>
+                    <td>Stabilization of Forms 2.0 and Dashboard 2.0</td>
+                    <td>Makes UI more intuitive, reduces learning curve</td>
+                    <td>Cuts consolidation time, enhances user satisfaction</td>
+                </tr>
+                <tr>
+                    <td>ePBCS</td>
+                    <td>Mandatory HTTPS for Connections</td>
+                    <td>Enhances data integrity, ensures compliance</td>
+                    <td>Protects sensitive financial data, meets standards</td>
+                </tr>
+            </table>
+            <p>This table highlights how each update addresses specific planning needs, such as security for Sales Planning Cloud and integration for ePBCS, ensuring businesses can leverage these tools effectively.</p>
 
-                <h3>Unexpected Detail: Continuity and User Feedback</h3>
-                <p>An unexpected detail is Oracle's responsiveness to user feedback, particularly in retaining EPM Automate and REST API settings for Sales Planning Cloud. This decision, based on user input, underscores Oracle's commitment to maintaining stability, which is not always highlighted in update notes but significantly impacts user trust and adoption.</p>
+            <h3>Unexpected Detail: Continuity and User Feedback</h3>
+            <p>An unexpected detail is Oracle's responsiveness to user feedback, particularly in retaining EPM Automate and REST API settings for Sales Planning Cloud. This decision, based on user input, underscores Oracle's commitment to maintaining stability, which is not always highlighted in update notes but significantly impacts user trust and adoption.</p>
 
-                <h3>Conclusion and Recommendations</h3>
-                <p>The February 2025 updates for Sales Planning Cloud and ePBCS reflect Oracle's focus on security, integration, and usability, directly enhancing planning-related features. For Sales Planning Cloud, the HTTPS requirement and retention of settings ensure secure and stable operations, while ePBCS benefits from Google Workspace integration and UI improvements, boosting collaboration and efficiency. Businesses should review their current configurations to implement these updates, particularly ensuring HTTPS compliance and exploring Google Workspace integration for ePBCS.</p>
-                <p>At WeRun Consulting, we recommend partnering with experts to tailor these updates to your specific needs, ensuring maximum benefit. Contact us for a consultation to optimize your Oracle EPM implementation, leveraging these advancements for better performance management.</p>
+            <h3>Conclusion and Recommendations</h3>
+            <p>The February 2025 updates for Sales Planning Cloud and ePBCS reflect Oracle's focus on security, integration, and usability, directly enhancing planning-related features. For Sales Planning Cloud, the HTTPS requirement and retention of settings ensure secure and stable operations, while ePBCS benefits from Google Workspace integration and UI improvements, boosting collaboration and efficiency. Businesses should review their current configurations to implement these updates, particularly ensuring HTTPS compliance and exploring Google Workspace integration for ePBCS.</p>
+            <p>At WeRun Consulting, we recommend partnering with experts to tailor these updates to your specific needs, ensuring maximum benefit. Contact us for a consultation to optimize your Oracle EPM implementation, leveraging these advancements for better performance management.</p>
 
-                <h3>Key Citations</h3>
-                <ul>
-                    <li><a href="https://docs.oracle.com/en/cloud/saas/readiness/epm/2025/splan-jan25/25jan-sales-planning-wn-t63331.htm">Oracle Fusion Cloud Sales Planning Jan 2025 What's New</a></li>
-                    <li><a href="https://docs.oracle.com/en/cloud/saas/readiness/epm/2025/epm-feb25/25feb-epm-wn-f36864.htm">Oracle Fusion Cloud Enterprise Performance Management Feb 2025 What's New</a></li>
-                    <li><a href="https://docs.oracle.com/en/cloud/saas/readiness/epm/2025/epm-jan25/25jan-epm-wn-f36549.htm">Oracle Fusion Cloud Enterprise Performance Management Jan 2025 What's New</a></li>
-                </ul>
-            </div>
-        </div>
+            <h3>Key Citations</h3>
+            <ul>
+                <li><a href="https://docs.oracle.com/en/cloud/saas/readiness/epm/2025/splan-jan25/25jan-sales-planning-wn-t63331.htm">Oracle Fusion Cloud Sales Planning Jan 2025 What's New</a></li>
+                <li><a href="https://docs.oracle.com/en/cloud/saas/readiness/epm/2025/epm-feb25/25feb-epm-wn-f36864.htm">Oracle Fusion Cloud Enterprise Performance Management Feb 2025 What's New</a></li>
+                <li><a href="https://docs.oracle.com/en/cloud/saas/readiness/epm/2025/epm-jan25/25jan-epm-wn-f36549.htm">Oracle Fusion Cloud Enterprise Performance Management Jan 2025 What's New</a></li>
+            </ul>
+        </article>
     </section>
 
     <!-- Footer -->
