@@ -28,6 +28,9 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .navbar a {
@@ -106,7 +109,7 @@ body {
 }
 
 .search-results {
-    display: none; /* Hidden by default, shown via JS */
+    display: none;
     margin: 2rem auto;
     max-width: 1200px;
     padding: 0 2rem;
@@ -138,42 +141,6 @@ body {
     font-size: 2.5rem;
     color: var(--secondary);
     margin-bottom: 1.5rem;
-}
-
-/* ======= Service Pages Content ======= */
-.service-content {
-    max-width: 1200px;
-    margin: 4rem auto;
-    padding: 0 2rem;
-}
-
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 3rem 0;
-}
-
-.feature-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: var(--transition);
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-}
-
-.feature-card h3 {
-    color: var(--primary);
-    margin-bottom: 1rem;
-}
-
-.feature-card i {
-    color: var(--secondary);
-    margin-right: 0.5rem;
 }
 
 /* ======= Why Choose WeRun Section ======= */
@@ -279,71 +246,9 @@ footer {
     text-align: center;
     padding: 3rem 2rem;
     margin-top: auto;
-    position: relative;
 }
 
-footer p {
-    margin-bottom: 1rem;
-}
-
-footer a {
-    color: var(--light);
-    transition: var(--transition);
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: var(--secondary);
-}
-
-/* Add this to main CSS */
-html, body {
-    height: 100%;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-.service-content {
-    flex: 1 0 auto;
-}
-
-/* ======= Responsive Design ======= */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 1rem;
-        text-align: center;
-    }
-    
-    .hero {
-        padding: 8rem 1rem 4rem;
-    }
-    
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero p {
-        font-size: 1.2rem;
-    }
-    
-    .service-card {
-        margin: 0 1rem;
-    }
-
-    .search-container {
-        margin: 1rem;
-        max-width: 100%;
-    }
-
-    .search-input {
-        font-size: 0.9rem;
-    }
-}
-
-/* Blog Section */
+/* ======= Blog Section ======= */
 .blog-highlight {
     padding: 5rem 2rem;
     background: var(--light);
@@ -393,7 +298,7 @@ body {
 
 .category.epm { background: #E1F5FE; color: #01579B; }
 .category.update { background: #F0F4C3; color: #827717; }
-.category.service { background: #D1E8E2; color: #1B5E20; } /* New category for services */
+.category.service { background: #D1E8E2; color: #1B5E20; }
 
 .read-more {
     color: var(--primary);
@@ -403,30 +308,182 @@ body {
     margin-top: 1rem;
 }
 
-/* Full Blog Page Styles */
-.blog-container {
-    max-width: 800px;
-    margin: 4rem auto;
-    padding: 0 2rem;
+/* ======= Responsive Design ======= */
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .navbar a {
+        margin: 0.5rem 0;
+    }
+    
+    .hero {
+        padding: 6rem 1rem 3rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+    
+    .search-container {
+        margin: 1rem auto;
+        max-width: 100%;
+    }
+    
+    .search-input {
+        font-size: 0.9rem;
+    }
+    
+    .services, .badge-container, .blog-preview {
+        grid-template-columns: 1fr; /* Single column for tablets */
+        padding: 3rem 1rem;
+    }
+    
+    .service-card, .badge, .blog-card {
+        margin: 0 1rem;
+    }
+    
+    .contact {
+        padding: 3rem 1rem;
+    }
+    
+    .contact-form {
+        max-width: 100%;
+    }
 }
 
-.blog-post {
-    background: white;
-    padding: 3rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.post-content img {
-    width: 100%;
-    border-radius: 10px;
-    margin: 2rem 0;
-}
-
-.code-snippet {
-    background: #f8f9fa;
-    padding: 1rem;
-    border-radius: 5px;
-    margin: 1.5rem 0;
-    overflow-x: auto;
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.5rem;
+    }
+    
+    .navbar a {
+        margin: 0.3rem 0;
+        font-size: 0.9rem;
+    }
+    
+    .hero {
+        padding: 4rem 1rem 2rem;
+        margin-top: 3rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .search-container {
+        margin: 1rem 0.5rem;
+    }
+    
+    .search-input {
+        padding: 0.8rem 2.5rem 0.8rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .search-icon {
+        font-size: 1rem;
+    }
+    
+    .button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .services {
+        padding: 2rem 0.5rem;
+        gap: 1rem;
+    }
+    
+    .service-card {
+        padding: 1.5rem;
+    }
+    
+    .icon {
+        font-size: 2rem;
+    }
+    
+    .expertise {
+        padding: 2rem 0.5rem;
+    }
+    
+    .expertise h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    
+    .badge-container {
+        padding: 0 0.5rem;
+        gap: 1rem;
+    }
+    
+    .badge {
+        padding: 1.5rem;
+    }
+    
+    .badge i {
+        font-size: 2rem;
+    }
+    
+    .blog-highlight {
+        padding: 2rem 0.5rem;
+    }
+    
+    .section-heading {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .section-heading h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .blog-preview, .search-results {
+        padding: 0 0.5rem;
+        gap: 1rem;
+    }
+    
+    .blog-card {
+        padding: 1.5rem;
+    }
+    
+    .contact {
+        padding: 2rem 0.5rem;
+    }
+    
+    .contact h2 {
+        font-size: 1.8rem;
+    }
+    
+    input, textarea {
+        padding: 0.8rem;
+        margin: 0.5rem 0;
+        font-size: 0.9rem;
+    }
+    
+    .g-recaptcha {
+        transform: scale(0.85); /* Scale down reCAPTCHA for mobile */
+        transform-origin: 0 0;
+        margin: 0.5rem 0;
+    }
+    
+    footer {
+        padding: 2rem 1rem;
+        font-size: 0.9rem;
+    }
 }
