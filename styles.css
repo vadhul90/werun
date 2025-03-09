@@ -67,6 +67,51 @@ body {
     opacity: 0.9;
 }
 
+/* ======= Search Bar ======= */
+.search-container {
+    position: relative;
+    max-width: 600px;
+    margin: 2rem auto 0;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 3rem 1rem 1rem;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 5px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.search-input:focus {
+    border-color: var(--secondary);
+    background: rgba(255,255,255,0.2);
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+.search-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+.search-results {
+    display: none; /* Hidden by default, shown via JS */
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 2rem;
+}
+
 /* ======= Services ======= */
 .services {
     display: grid;
@@ -130,7 +175,6 @@ body {
     color: var(--secondary);
     margin-right: 0.5rem;
 }
-
 
 /* ======= Why Choose WeRun Section ======= */
 .expertise {
@@ -229,13 +273,12 @@ input:focus, textarea:focus {
 }
 
 /* ======= Footer ======= */
-/* ======= Footer ======= */
 footer {
     background: var(--dark);
     color: white;
     text-align: center;
     padding: 3rem 2rem;
-    margin-top: auto; /* Pushes footer to bottom */
+    margin-top: auto;
     position: relative;
 }
 
@@ -264,7 +307,7 @@ body {
 }
 
 .service-content {
-    flex: 1 0 auto; /* Pushes footer down */
+    flex: 1 0 auto;
 }
 
 /* ======= Responsive Design ======= */
@@ -288,6 +331,15 @@ body {
     
     .service-card {
         margin: 0 1rem;
+    }
+
+    .search-container {
+        margin: 1rem;
+        max-width: 100%;
+    }
+
+    .search-input {
+        font-size: 0.9rem;
     }
 }
 
@@ -341,6 +393,7 @@ body {
 
 .category.epm { background: #E1F5FE; color: #01579B; }
 .category.update { background: #F0F4C3; color: #827717; }
+.category.service { background: #D1E8E2; color: #1B5E20; } /* New category for services */
 
 .read-more {
     color: var(--primary);

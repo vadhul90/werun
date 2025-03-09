@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeRun Consulting | Oracle EPM Cloud Experts</title>
     <meta name="description" content="Specialized consulting for Oracle EPBCS and Sales Planning Cloud implementations">
-       <!-- Existing meta tags -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -21,6 +20,10 @@
     <section class="hero" id="home">
         <h1>WeRun Consulting</h1>
         <p>Accelerating Your EPM Cloud Success</p>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search our site..." id="searchInput">
+            <i class="fas fa-search search-icon"></i>
+        </div>
         <button>Book Free Consultation</button>
     </section>
 
@@ -31,21 +34,18 @@
             <p>Complete Enterprise Planning Cloud implementations...</p>
             <a href="services/epbcs.html" class="button">Learn More →</a>
         </div>
-
         <div class="service-card">
             <i class="fas fa-bullseye icon"></i>
             <h2>Sales Planning</h2>
             <p>End-to-end sales performance management...</p>
             <a href="services/sales-planning.html" class="button">Learn More →</a>
         </div>
-
         <div class="service-card">
             <i class="fas fa-cube icon"></i>
             <h2>Oracle Essbase</h2>
             <p>Advanced multidimensional analytics solutions...</p>
             <a href="services/essbase.html" class="button">Learn More →</a>
         </div>
-
         <div class="service-card">
             <i class="fas fa-chart-bar icon"></i>
             <h2>Oracle BI</h2>
@@ -77,28 +77,27 @@
             <h2><i class="fas fa-blog"></i> Latest Insights</h2>
             <a href="blog/" class="button">View All Posts</a>
         </div>  
-
-        <div class="blog-preview">
-            <div class="blog-card">
-                <div class="post-meta">
-                    <span class="category epm">EPM Scripting</span>
-                    <span class="date">Mar 15, 2025</span>
-                </div>
-                <h3>Automating Data Loads in EPBCS</h3>
-                <p>Learn how to create robust Groovy scripts for automated data integration...</p>
-                <a href="blog/post1.html" class="read-more">Read More →</a>
-            </div>
-
+        <div class="blog-preview" id="blogPreview">
             <div class="blog-card">
                 <div class="post-meta">
                     <span class="category update">Cloud Update</span>
-                    <span class="date">Mar 03, 2025</span>
+                    <span class="date">March 03, 2025</span>
                 </div>
                 <h3>New Features in EPM Cloud 25.03</h3>
-                <p>Overview of latest updates in Oracle EPM Cloud March release...</p>
+                <p>Explore the March 2025 updates, including enhanced dashboards and analytics integration...</p>
                 <a href="blog/epm-25.03-update.html" class="read-more">Read More →</a>
             </div>
+            <div class="blog-card">
+                <div class="post-meta">
+                    <span class="category update">Cloud Update</span>
+                    <span class="date">February 03, 2025</span>
+                </div>
+                <h3>New Features in EPM Cloud 25.02</h3>
+                <p>Overview of the February 2025 updates, featuring security and usability enhancements...</p>
+                <a href="blog/epm-25.02-update.html" class="read-more">Read More →</a>
+            </div>
         </div>
+        <div class="search-results" id="searchResults"></div>
     </section>
 
     <section class="contact" id="contact">
@@ -116,5 +115,104 @@
     <footer>
         <p>© 2023 WeRun Consulting. All rights reserved.</p>
     </footer>
+
+    <!-- Search JavaScript -->
+    <script>
+        const siteContent = [
+            // Blog Posts
+            {
+                title: "New Features in EPM Cloud 25.03",
+                category: "update",
+                date: "March 03, 2025",
+                summary: "Explore the March 2025 updates, including enhanced dashboards and analytics integration...",
+                url: "blog/epm-25.03-update.html"
+            },
+            {
+                title: "New Features in EPM Cloud 25.02",
+                category: "update",
+                date: "February 03, 2025",
+                summary: "Overview of the February 2025 updates, featuring security and usability enhancements...",
+                url: "blog/epm-25.02-update.html"
+            },
+            {
+                title: "Automating Data Loads in EPBCS",
+                category: "epm",
+                date: "March 15, 2024",
+                summary: "Learn how to streamline your EPM processes with Groovy scripts...",
+                url: "blog/post1.html"
+            },
+            // Services
+            {
+                title: "EPBCS Solutions",
+                category: "service",
+                date: "Ongoing",
+                summary: "Complete Enterprise Planning Cloud implementations...",
+                url: "services/epbcs.html"
+            },
+            {
+                title: "Sales Planning",
+                category: "service",
+                date: "Ongoing",
+                summary: "End-to-end sales performance management...",
+                url: "services/sales-planning.html"
+            },
+            {
+                title: "Oracle Essbase",
+                category: "service",
+                date: "Ongoing",
+                summary: "Advanced multidimensional analytics solutions...",
+                url: "services/essbase.html"
+            },
+            {
+                title: "Oracle BI",
+                category: "service",
+                date: "Ongoing",
+                summary: "Business intelligence & analytics solutions...",
+                url: "services/oracle-bi.html"
+            }
+        ];
+
+        const searchInput = document.getElementById('searchInput');
+        const blogPreview = document.getElementById('blogPreview');
+        const searchResults = document.getElementById('searchResults');
+
+        searchInput.addEventListener('input', function() {
+            const query = this.value.trim().toLowerCase();
+            if (query === '') {
+                blogPreview.style.display = 'grid';
+                searchResults.style.display = 'none';
+                return;
+            }
+
+            const results = siteContent.filter(item =>
+                item.title.toLowerCase().includes(query) ||
+                item.summary.toLowerCase().includes(query) ||
+                item.category.toLowerCase().includes(query)
+            );
+
+            blogPreview.style.display = 'none';
+            searchResults.style.display = 'block';
+            searchResults.innerHTML = '';
+
+            if (results.length === 0) {
+                searchResults.innerHTML = '<p>No results found.</p>';
+            } else {
+                results.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'blog-card';
+                    card.innerHTML = `
+                        <div class="post-meta">
+                            <span class="category ${item.category}">${item.category === 'update' ? 'Cloud Update' : item.category === 'epm' ? 'EPM Scripting' : 'Service'}</span>
+                            <span class="date">${item.date}</span>
+                        </div>
+                        <h3>${item.title}</h3>
+                        <p>${item.summary}</p>
+                        <a href="${item.url}" class="read-more">Read More →</a>
+                    `;
+                    searchResults.appendChild(card);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
