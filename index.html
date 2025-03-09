@@ -12,9 +12,8 @@
     <!-- Google reCAPTCHA Script -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
-        // Initialize EmailJS with your Public Key
         (function(){
-            emailjs.init("ILBZr43VWmZLzAO6k"); // Replace with your EmailJS Public Key
+            emailjs.init("ILBZr43VWmZLzAO6k"); 
         })();
     </script>
 </head>
@@ -37,7 +36,78 @@
         <button>Book Free Consultation</button>
     </section>
 
-    <!-- [Services, Expertise, Blog sections unchanged for brevity] -->
+    <section class="services" id="services">
+        <div class="service-card">
+            <i class="fas fa-chart-line icon"></i>
+            <h2>EPBCS Solutions</h2>
+            <p>Complete Enterprise Planning Cloud implementations...</p>
+            <a href="services/epbcs.html" class="button">Learn More →</a>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-bullseye icon"></i>
+            <h2>Sales Planning</h2>
+            <p>End-to-end sales performance management...</p>
+            <a href="services/sales-planning.html" class="button">Learn More →</a>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-cube icon"></i>
+            <h2>Oracle Essbase</h2>
+            <p>Advanced multidimensional analytics solutions...</p>
+            <a href="services/essbase.html" class="button">Learn More →</a>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-chart-bar icon"></i>
+            <h2>Oracle BI</h2>
+            <p>Business intelligence & analytics solutions...</p>
+            <a href="services/oracle-bi.html" class="button">Learn More →</a>
+        </div>
+    </section>
+
+    <section class="expertise" id="expertise">
+        <h2>Why Choose WeRun?</h2>
+        <div class="badge-container">
+            <div class="badge">
+                <i class="fas fa-certificate"></i>
+                <span>Oracle Certified</span>
+            </div>
+            <div class="badge">
+                <i class="fas fa-clock"></i>
+                <span>Fast Deployment</span>
+            </div>
+            <div class="badge">
+                <i class="fas fa-headset"></i>
+                <span>24/7 Support</span>
+            </div>
+        </div>
+    </section>
+    
+    <section class="blog-highlight" id="blog">
+        <div class="section-heading">
+            <h2><i class="fas fa-blog"></i> Latest Insights</h2>
+            <a href="blog/" class="button">View All Posts</a>
+        </div>  
+        <div class="blog-preview" id="blogPreview">
+            <div class="blog-card">
+                <div class="post-meta">
+                    <span class="category update">Cloud Update</span>
+                    <span class="date">March 03, 2025</span>
+                </div>
+                <h3>New Features in EPM Cloud 25.03</h3>
+                <p>Explore the March 2025 updates, including enhanced dashboards and analytics integration...</p>
+                <a href="blog/epm-25.03-update.html" class="read-more">Read More →</a>
+            </div>
+            <div class="blog-card">
+                <div class="post-meta">
+                    <span class="category update">Cloud Update</span>
+                    <span class="date">February 03, 2025</span>
+                </div>
+                <h3>New Features in EPM Cloud 25.02</h3>
+                <p>Overview of the February 2025 updates, featuring security and usability enhancements...</p>
+                <a href="blog/epm-25.02-update.html" class="read-more">Read More →</a>
+            </div>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </section>
 
     <section class="contact" id="contact">
         <h2>Get In Touch</h2>
@@ -54,14 +124,16 @@
     </section>
 
     <footer>
-        <p>© 2025 WeRun Consulting. All rights reserved.</p>
+        <p>© 2023 WeRun Consulting. All rights reserved.</p>
     </footer>
 
     <script>
         const siteContent = [
-            { title: "New Features in EPM Cloud 25.03", category: "update", date: "April 09, 2025", summary: "Explore the March 2025 updates...", url: "blog/epm-25.03-update.html" },
-            { title: "New Features in EPM Cloud 25.02", category: "update", date: "March 09, 2025", summary: "Overview of the February 2025 updates...", url: "blog/epm-25.02-update.html" },
-            { title: "Automating Data Loads in EPBCS", category: "epm", date: "March 15, 2024", summary: "Learn how to streamline your EPM processes...", url: "blog/post1.html" },
+            // Blog Posts
+            { title: "New Features in EPM Cloud 25.03", category: "update", date: "April 09, 2025", summary: "Explore the March 2025 updates, including enhanced dashboards and analytics integration...", url: "blog/epm-25.03-update.html" },
+            { title: "New Features in EPM Cloud 25.02", category: "update", date: "March 09, 2025", summary: "Overview of the February 2025 updates, featuring security and usability enhancements...", url: "blog/epm-25.02-update.html" },
+            { title: "Automating Data Loads in EPBCS", category: "epm", date: "March 15, 2024", summary: "Learn how to streamline your EPM processes with Groovy scripts...", url: "blog/post1.html" },
+            // Services
             { title: "EPBCS Solutions", category: "service", date: "Ongoing", summary: "Complete Enterprise Planning Cloud implementations...", url: "services/epbcs.html" },
             { title: "Sales Planning", category: "service", date: "Ongoing", summary: "End-to-end sales performance management...", url: "services/sales-planning.html" },
             { title: "Oracle Essbase", category: "service", date: "Ongoing", summary: "Advanced multidimensional analytics solutions...", url: "services/essbase.html" },
