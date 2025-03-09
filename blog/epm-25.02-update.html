@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPM Cloud 25.02 Update - What's New | WeRun Consulting</title>
+    <meta name="description" content="Official breakdown of Oracle EPM Cloud 25.02 release features including Financial Close, Planning, and Enterprise Data Management updates">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../index.html#expertise">Expertise</a>
+        <a href="../blog/">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+    </nav>
+
+    <section class="hero">
+        <h1><i class="fas fa-cloud-upload-alt"></i> EPM Cloud 25.02 Release Highlights</h1>
+        <div class="post-meta">
+            <span class="date"><i class="fas fa-calendar-alt"></i> February 15, 2024</span>
+            <span class="author"><i class="fas fa-user"></i> Jane Doe</span>
+            <span class="read-time"><i class="fas fa-clock"></i> 5 min read</span>
+        </div>
+    </section>
+
+    <div class="blog-container">
+        <article class="blog-post">
+            <h2>Key Updates in 25.02</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3><i class="fas fa-file-invoice-dollar"></i> Financial Close</h3>
+                    <ul class="feature-list">
+                        <li>New Task Manager bulk operations</li>
+                        <li>Enhanced Data Gateway error handling</li>
+                        <li>Improved Close Checklist reporting</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3><i class="fas fa-project-diagram"></i> Enterprise Planning</h3>
+                    <ul class="feature-list">
+                        <li>Sandbox cloning improvements</li>
+                        <li>Enhanced PDF watermarking</li>
+                        <li>New Groovy API methods</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3><i class="fas fa-database"></i> Data Management</h3>
+                    <ul class="feature-list">
+                        <li>FCCS_Entity dimension support</li>
+                        <li>Improved CSV file validation</li>
+                        <li>New REST APIs for data loads</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Enterprise Performance Reporting</h3>
+            <div class="post-content">
+                <ul>
+                    <li><strong>Dynamic Row Formatting:</strong> Conditional formatting based on cell values</li>
+                    <li><strong>Multi-Book Reporting:</strong> Consolidated reporting across multiple instances</li>
+                    <li><strong>Enhanced PDF Export:</strong> Table of contents generation</li>
+                </ul>
+            </div>
+
+            <h3>Technical Enhancements</h3>
+            <div class="post-content">
+                <ul>
+                    <li>New Calculation Manager REST APIs:
+                        <pre><code class="language-http">
+GET /epm/cloud/planning/apis/v1/jobs/{jobId}
+                        </code></pre>
+                    </li>
+                    <li>Improved Smart View performance</li>
+                    <li>Enhanced EPMAutomate logging</li>
+                </ul>
+            </div>
+
+            <div class="code-snippet">
+                <h4><i class="fas fa-code"></i> New Groovy API Method</h4>
+                <pre><code class="language-groovy">
+// Validate member existence
+if(operation.application.getDimension("Account").hasMember("NetIncome")) {
+    println("NetIncome account exists")
+}
+                </code></pre>
+            </div>
+
+            <h3>Security Updates</h3>
+            <div class="post-content">
+                <ul>
+                    <li>Session timeout configuration enhancements</li>
+                    <li>New audit event: "Data Export" tracking</li>
+                    <li>Improved IP whitelisting management</li>
+                </ul>
+            </div>
+
+            <div class="key-takeaways">
+                <h3><i class="fas fa-lightbulb"></i> Implementation Tips</h3>
+                <ul>
+                    <li>Test new REST APIs in sandbox first</li>
+                    <li>Review updated Groovy documentation</li>
+                    <li>Update EPMAutomate to latest version</li>
+                </ul>
+            </div>
+
+            <a href="../blog/" class="button"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+        </article>
+
+        <div class="comments-section">
+            <h3><i class="fas fa-comments"></i> Discussion</h3>
+            <div id="disqus_thread"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2023 WeRun Consulting. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+    </footer>
+
+    <!-- Disqus Comments Script -->
+    <script>
+        var disqus_config = function () {
+            this.page.url = 'https://werunconsulting.com/blog/epm-25.02-update.html';
+            this.page.identifier = 'epm2502';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://your-disqus-shortname.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</body>
+</html>
