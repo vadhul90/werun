@@ -81,7 +81,7 @@
             <div class="blog-card">
                 <div class="post-meta">
                     <span class="category update">Cloud Update</span>
-                    <span class="date">March 03, 2025</span>
+                    <span class="date">April 09, 2025</span>
                 </div>
                 <h3>New Features in EPM Cloud 25.03</h3>
                 <p>Explore the March 2025 updates, including enhanced dashboards and analytics integration...</p>
@@ -90,7 +90,7 @@
             <div class="blog-card">
                 <div class="post-meta">
                     <span class="category update">Cloud Update</span>
-                    <span class="date">February 03, 2025</span>
+                    <span class="date">March 09, 2025</span>
                 </div>
                 <h3>New Features in EPM Cloud 25.02</h3>
                 <p>Overview of the February 2025 updates, featuring security and usability enhancements...</p>
@@ -113,7 +113,7 @@
     </section>
 
     <footer>
-        <p>© 2023 WeRun Consulting. All rights reserved.</p>
+        <p>© 2025 WeRun Consulting. All rights reserved.</p>
     </footer>
 
     <!-- Search JavaScript -->
@@ -123,14 +123,14 @@
             {
                 title: "New Features in EPM Cloud 25.03",
                 category: "update",
-                date: "March 03, 2025",
+                date: "April 09, 2025",
                 summary: "Explore the March 2025 updates, including enhanced dashboards and analytics integration...",
                 url: "blog/epm-25.03-update.html"
             },
             {
                 title: "New Features in EPM Cloud 25.02",
                 category: "update",
-                date: "February 03, 2025",
+                date: "March 09, 2025",
                 summary: "Overview of the February 2025 updates, featuring security and usability enhancements...",
                 url: "blog/epm-25.02-update.html"
             },
@@ -175,24 +175,32 @@
         const searchInput = document.getElementById('searchInput');
         const blogPreview = document.getElementById('blogPreview');
         const searchResults = document.getElementById('searchResults');
+        const servicesSection = document.getElementById('services');
+        const expertiseSection = document.getElementById('expertise');
 
         searchInput.addEventListener('input', function() {
             const query = this.value.trim().toLowerCase();
             if (query === '') {
+                // Show default content
                 blogPreview.style.display = 'grid';
                 searchResults.style.display = 'none';
+                servicesSection.style.display = 'grid';
+                expertiseSection.style.display = 'block';
                 return;
             }
+
+            // Hide sections and show search results
+            servicesSection.style.display = 'none';
+            expertiseSection.style.display = 'none';
+            blogPreview.style.display = 'none';
+            searchResults.style.display = 'block';
+            searchResults.innerHTML = '';
 
             const results = siteContent.filter(item =>
                 item.title.toLowerCase().includes(query) ||
                 item.summary.toLowerCase().includes(query) ||
                 item.category.toLowerCase().includes(query)
             );
-
-            blogPreview.style.display = 'none';
-            searchResults.style.display = 'block';
-            searchResults.innerHTML = '';
 
             if (results.length === 0) {
                 searchResults.innerHTML = '<p>No results found.</p>';
