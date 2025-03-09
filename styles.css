@@ -52,22 +52,12 @@ body {
     text-align: center;
     padding: 10rem 2rem 6rem;
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-    margin-top: 4rem;
+    margin-top: 4rem; /* Offset for fixed navbar on desktop */
 }
 
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.hero h1 i {
-    margin-right: 1rem;
-}
-
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
+/* Ensure content isn’t hidden under navbar */
+body {
+    padding-top: 0; /* Reset default padding */
 }
 
 /* ======= Search Bar ======= */
@@ -323,6 +313,7 @@ footer {
     
     .hero {
         padding: 6rem 1rem 3rem;
+        margin-top: 6rem; /* Increased offset for navbar */
     }
     
     .hero h1 {
@@ -343,7 +334,7 @@ footer {
     }
     
     .services, .badge-container, .blog-preview {
-        grid-template-columns: 1fr; /* Single column for tablets */
+        grid-template-columns: 1fr;
         padding: 3rem 1rem;
     }
     
@@ -364,16 +355,20 @@ footer {
 @media (max-width: 480px) {
     .navbar {
         padding: 0.5rem;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     
     .navbar a {
         margin: 0.3rem 0;
         font-size: 0.9rem;
+        display: block; /* Ensure full-width tap area */
+        padding: 0.5rem 0; /* Better tap target */
     }
     
     .hero {
-        padding: 4rem 1rem 2rem;
-        margin-top: 3rem;
+        padding: 5rem 1rem 2rem; /* Adjusted padding */
+        margin-top: 5rem; /* Offset for shorter navbar */
     }
     
     .hero h1 {
@@ -477,7 +472,7 @@ footer {
     }
     
     .g-recaptcha {
-        transform: scale(0.85); /* Scale down reCAPTCHA for mobile */
+        transform: scale(0.85);
         transform-origin: 0 0;
         margin: 0.5rem 0;
     }
