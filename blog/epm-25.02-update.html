@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>    
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EPBCS & Sales Planning 25.02 Updates | WeRun Consulting<</title>
+    <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -26,8 +27,13 @@
             background: linear-gradient(to right, #1e3c72, #2a5298);
             color: #fff;
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px;
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        header .branding {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
         }
         header h1 {
             font-size: 48px;
@@ -114,6 +120,8 @@
         }
         /* Responsive */
         @media (max-width: 768px) {
+            header { padding: 80px 20px; }
+            header .branding { font-size: 16px; }
             header h1 { font-size: 36px; }
             header p { font-size: 16px; }
             .blog-content { padding: 20px; }
@@ -124,15 +132,16 @@
 </head>
 <body>
     <!-- Header -->
-        <nav class="navbar">
-        <a href="../index.html">Home</a>
-        <a href="../index.html#services">Services</a>
-        <a href="../index.html#expertise">Expertise</a>
-        <a href="../blog/">Blog</a>
-        <a href="../index.html#contact">Contact</a>
-    </nav>
     <header>
+        <nav class="navbar">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <a href="../blog/">Blog</a>
+            <a href="../index.html#contact">Contact</a>
+        </nav>
         <div class="container">
+            <div class="branding">WeRun Consulting</div>
             <h1>Detailed Analysis of Sales Planning Cloud and ePBCS Updates</h1>
             <p>Insights from WeRun Consulting | March 09, 2025</p>
             <a href="index.html">Back to Home</a>
@@ -261,7 +270,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2023 WeRun Consulting. All rights reserved.</p>
+            <p>© 2025 WeRun Consulting. All rights reserved.</p>
         </div>
     </footer>
 </body>
