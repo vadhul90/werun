@@ -51,10 +51,10 @@ body {
 }
 
 .hamburger {
-    display: none; /* Hidden on desktop */
+    display: none;
     background: none;
     border: none;
-    font-size: 2rem; /* Default size */
+    font-size: 2rem;
     color: var(--primary);
     cursor: pointer;
     padding: 0.5rem;
@@ -332,13 +332,13 @@ footer {
 /* Tablet and Mobile (max-width: 768px) */
 @media (max-width: 768px) {
     .navbar {
-        justify-content: flex-end;
+        justify-content: center; /* Center the hamburger */
         padding: 1rem;
     }
     
     .hamburger {
         display: block;
-        font-size: 3rem; /* Increased from 2.5rem */
+        font-size: 3rem; /* Larger cube icon */
     }
     
     .nav-links {
@@ -408,7 +408,7 @@ footer {
     }
     
     .hamburger {
-        font-size: 2.5rem; /* Increased from 2rem */
+        font-size: 2.5rem;
         padding: 0.3rem;
     }
     
