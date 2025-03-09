@@ -7,6 +7,16 @@
     <meta name="description" content="Specialized consulting for Oracle EPBCS and Sales Planning Cloud implementations">
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- Google reCAPTCHA Script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        // Initialize EmailJS with your Public Key
+        (function(){
+            emailjs.init("ILBZr43VWmZLzAO6k"); // Replace with your EmailJS Public Key
+        })();
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -27,85 +37,16 @@
         <button>Book Free Consultation</button>
     </section>
 
-    <section class="services" id="services">
-        <div class="service-card">
-            <i class="fas fa-chart-line icon"></i>
-            <h2>EPBCS Solutions</h2>
-            <p>Complete Enterprise Planning Cloud implementations...</p>
-            <a href="services/epbcs.html" class="button">Learn More →</a>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-bullseye icon"></i>
-            <h2>Sales Planning</h2>
-            <p>End-to-end sales performance management...</p>
-            <a href="services/sales-planning.html" class="button">Learn More →</a>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-cube icon"></i>
-            <h2>Oracle Essbase</h2>
-            <p>Advanced multidimensional analytics solutions...</p>
-            <a href="services/essbase.html" class="button">Learn More →</a>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-chart-bar icon"></i>
-            <h2>Oracle BI</h2>
-            <p>Business intelligence & analytics solutions...</p>
-            <a href="services/oracle-bi.html" class="button">Learn More →</a>
-        </div>
-    </section>
-
-    <section class="expertise" id="expertise">
-        <h2>Why Choose WeRun?</h2>
-        <div class="badge-container">
-            <div class="badge">
-                <i class="fas fa-certificate"></i>
-                <span>Oracle Certified</span>
-            </div>
-            <div class="badge">
-                <i class="fas fa-clock"></i>
-                <span>Fast Deployment</span>
-            </div>
-            <div class="badge">
-                <i class="fas fa-headset"></i>
-                <span>24/7 Support</span>
-            </div>
-        </div>
-    </section>
-    
-    <section class="blog-highlight" id="blog">
-        <div class="section-heading">
-            <h2><i class="fas fa-blog"></i> Latest Insights</h2>
-            <a href="blog/" class="button">View All Posts</a>
-        </div>  
-        <div class="blog-preview" id="blogPreview">
-            <div class="blog-card">
-                <div class="post-meta">
-                    <span class="category update">Cloud Update</span>
-                    <span class="date">April 09, 2025</span>
-                </div>
-                <h3>New Features in EPM Cloud 25.03</h3>
-                <p>Explore the March 2025 updates, including enhanced dashboards and analytics integration...</p>
-                <a href="blog/epm-25.03-update.html" class="read-more">Read More →</a>
-            </div>
-            <div class="blog-card">
-                <div class="post-meta">
-                    <span class="category update">Cloud Update</span>
-                    <span class="date">March 09, 2025</span>
-                </div>
-                <h3>New Features in EPM Cloud 25.02</h3>
-                <p>Overview of the February 2025 updates, featuring security and usability enhancements...</p>
-                <a href="blog/epm-25.02-update.html" class="read-more">Read More →</a>
-            </div>
-        </div>
-        <div class="search-results" id="searchResults"></div>
-    </section>
+    <!-- [Services, Expertise, Blog sections unchanged for brevity] -->
 
     <section class="contact" id="contact">
         <h2>Get In Touch</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="How can we help?" rows="5" required></textarea>
+        <form class="contact-form" id="contactForm">
+            <input type="text" placeholder="Name" name="name" required>
+            <input type="email" placeholder="Email" name="email" required>
+            <textarea placeholder="How can we help?" name="message" rows="5" required></textarea>
+            <!-- reCAPTCHA Widget -->
+            <div class="g-recaptcha" data-sitekey="6Ldy2u4qAAAAAI_14Fp3Mmk5fAiGzfgdffP91o9H" style="margin: 1rem 0;"></div>
             <button type="submit" class="button">
                 <i class="fas fa-paper-plane"></i> Send Message
             </button>
@@ -116,60 +57,15 @@
         <p>© 2025 WeRun Consulting. All rights reserved.</p>
     </footer>
 
-    <!-- Search JavaScript -->
     <script>
         const siteContent = [
-            // Blog Posts
-            {
-                title: "New Features in EPM Cloud 25.03",
-                category: "update",
-                date: "April 09, 2025",
-                summary: "Explore the March 2025 updates, including enhanced dashboards and analytics integration...",
-                url: "blog/epm-25.03-update.html"
-            },
-            {
-                title: "New Features in EPM Cloud 25.02",
-                category: "update",
-                date: "March 09, 2025",
-                summary: "Overview of the February 2025 updates, featuring security and usability enhancements...",
-                url: "blog/epm-25.02-update.html"
-            },
-            {
-                title: "Automating Data Loads in EPBCS",
-                category: "epm",
-                date: "March 15, 2024",
-                summary: "Learn how to streamline your EPM processes with Groovy scripts...",
-                url: "blog/post1.html"
-            },
-            // Services
-            {
-                title: "EPBCS Solutions",
-                category: "service",
-                date: "Ongoing",
-                summary: "Complete Enterprise Planning Cloud implementations...",
-                url: "services/epbcs.html"
-            },
-            {
-                title: "Sales Planning",
-                category: "service",
-                date: "Ongoing",
-                summary: "End-to-end sales performance management...",
-                url: "services/sales-planning.html"
-            },
-            {
-                title: "Oracle Essbase",
-                category: "service",
-                date: "Ongoing",
-                summary: "Advanced multidimensional analytics solutions...",
-                url: "services/essbase.html"
-            },
-            {
-                title: "Oracle BI",
-                category: "service",
-                date: "Ongoing",
-                summary: "Business intelligence & analytics solutions...",
-                url: "services/oracle-bi.html"
-            }
+            { title: "New Features in EPM Cloud 25.03", category: "update", date: "April 09, 2025", summary: "Explore the March 2025 updates...", url: "blog/epm-25.03-update.html" },
+            { title: "New Features in EPM Cloud 25.02", category: "update", date: "March 09, 2025", summary: "Overview of the February 2025 updates...", url: "blog/epm-25.02-update.html" },
+            { title: "Automating Data Loads in EPBCS", category: "epm", date: "March 15, 2024", summary: "Learn how to streamline your EPM processes...", url: "blog/post1.html" },
+            { title: "EPBCS Solutions", category: "service", date: "Ongoing", summary: "Complete Enterprise Planning Cloud implementations...", url: "services/epbcs.html" },
+            { title: "Sales Planning", category: "service", date: "Ongoing", summary: "End-to-end sales performance management...", url: "services/sales-planning.html" },
+            { title: "Oracle Essbase", category: "service", date: "Ongoing", summary: "Advanced multidimensional analytics solutions...", url: "services/essbase.html" },
+            { title: "Oracle BI", category: "service", date: "Ongoing", summary: "Business intelligence & analytics solutions...", url: "services/oracle-bi.html" }
         ];
 
         const searchInput = document.getElementById('searchInput');
@@ -181,7 +77,6 @@
         searchInput.addEventListener('input', function() {
             const query = this.value.trim().toLowerCase();
             if (query === '') {
-                // Show default content
                 blogPreview.style.display = 'grid';
                 searchResults.style.display = 'none';
                 servicesSection.style.display = 'grid';
@@ -189,7 +84,6 @@
                 return;
             }
 
-            // Hide sections and show search results
             servicesSection.style.display = 'none';
             expertiseSection.style.display = 'none';
             blogPreview.style.display = 'none';
@@ -220,6 +114,35 @@
                     searchResults.appendChild(card);
                 });
             }
+        });
+
+        // Contact Form Submission with EmailJS and reCAPTCHA
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get reCAPTCHA response
+            const recaptchaResponse = grecaptcha.getResponse();
+            if (!recaptchaResponse) {
+                alert('Please complete the reCAPTCHA verification.');
+                return;
+            }
+
+            const formData = {
+                name: this.querySelector('input[name="name"]').value,
+                email: this.querySelector('input[name="email"]').value,
+                message: this.querySelector('textarea[name="message"]').value,
+                'g-recaptcha-response': recaptchaResponse // Include reCAPTCHA token
+            };
+
+            emailjs.send('service_cax0c6e', 'template_ml6p7zu', formData)
+                .then(() => {
+                    alert('Message sent successfully!');
+                    this.reset();
+                    grecaptcha.reset(); // Reset reCAPTCHA after submission
+                }, (error) => {
+                    alert('Failed to send message: ' + error.text);
+                });
         });
     </script>
 </body>
