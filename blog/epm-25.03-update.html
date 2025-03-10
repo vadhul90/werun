@@ -9,85 +9,92 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         .blog-container { 
-            max-width: 1200px; 
+            max-width: 1100px; 
             padding: 0 2rem; 
             margin: 0 auto; 
         }
         .blog-post { 
-            padding: 3rem 4rem; 
+            padding: 3rem 3.5rem; 
             background: #fff; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
-            border-radius: 8px; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
         }
         .blog-post h2 {
-            font-size: 2rem;
+            font-size: 1.9rem; 
             color: var(--primary);
-            margin: 2rem 0 1rem;
-            border-bottom: 2px solid var(--secondary);
-            padding-bottom: 0.5rem;
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--primary); 
+            font-weight: 600;
         }
         .blog-post h3 {
-            font-size: 1.5rem;
-            color: var(--dark);
-            margin: 1.5rem 0 0.75rem;
+            font-size: 1.4rem; 
+            color: #2a2a2a; 
+            margin: 2rem 0 1rem;
+            font-weight: 500;
         }
         .blog-post p {
-            line-height: 1.6;
-            margin: 0.75rem 0;
-        }
-        .blog-post ul {
-            list-style: none;
-            padding-left: 0;
+            line-height: 1.7; 
             margin: 1rem 0;
+            color: #444; 
+            font-size: 1rem;
         }
-        .blog-post ul li {
-            margin: 1rem 0;
-            padding-left: 1.5rem;
-            position: relative;
+        .feature-list {
+            margin: 1.5rem 0;
         }
-        .blog-post ul li:before {
-            content: "→";
-            color: var(--primary);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
+        .feature-item {
+            margin: 2.5rem 0;
+            padding: 1.5rem;
+            background: #f9f9f9; 
+            border-radius: 8px;
+            border-left: 4px solid var(--primary); 
         }
-        .blog-post ul ul {
-            padding-left: 2rem;
-            margin: 0.5rem 0;
+        .feature-title {
+            font-size: 1.25rem;
+            color: #222;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
         }
-        .blog-post ul ul li:before {
-            content: "•";
-            color: var(--secondary);
-        }
-        .blog-post .impact, .blog-post .benefit {
-            font-style: italic;
+        .feature-desc {
+            font-size: 1rem;
             color: #555;
+            margin: 0 0 1rem;
+            line-height: 1.6;
         }
-        .blog-post .impact strong, .blog-post .benefit strong {
-            font-style: normal;
+        .feature-details {
+            padding-left: 1rem;
+        }
+        .detail-item {
+            margin: 0.75rem 0;
+            font-size: 0.95rem;
+            color: #666; 
+            line-height: 1.6;
+        }
+        .detail-item strong {
             color: var(--primary);
+            font-weight: 500;
+            font-size: 0.95rem; 
         }
         .comparison-table { 
             width: 100%; 
             border-collapse: collapse; 
-            margin: 2rem 0; 
+            margin: 2.5rem 0; 
             background: #fff; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+            border: 1px solid #e8e8e8; 
         }
         .comparison-table th, .comparison-table td { 
-            padding: 1.5rem; 
+            padding: 1.25rem; 
             text-align: left; 
-            border: 1px solid #ddd; 
-            font-size: 1rem; 
+            border: 1px solid #e8e8e8; 
+            font-size: 0.95rem; 
         }
         .comparison-table th { 
             background: var(--primary); 
             color: white; 
-            font-weight: 600; 
+            font-weight: 500; 
         }
         .comparison-table td { 
-            background: #f8f9fa; 
+            background: #f9f9f9; 
         }
         @media (max-width: 768px) {
             .blog-container { 
@@ -97,14 +104,23 @@
                 padding: 2rem; 
             }
             .blog-post h2 {
-                font-size: 1.75rem;
+                font-size: 1.6rem;
             }
             .blog-post h3 {
-                font-size: 1.25rem;
+                font-size: 1.2rem;
+            }
+            .feature-title {
+                font-size: 1.15rem;
+            }
+            .feature-desc, .detail-item {
+                font-size: 0.9rem;
+            }
+            .feature-item {
+                padding: 1rem;
             }
             .comparison-table th, .comparison-table td { 
-                padding: 1rem; 
-                font-size: 0.9rem; 
+                padding: 0.9rem; 
+                font-size: 0.85rem; 
             }
         }
     </style>
@@ -130,46 +146,108 @@
     <section class="blog-container">
         <article class="blog-post">
             <h2>Survey Note: Detailed Analysis of Sales Planning Cloud and ePBCS Updates for March 2025</h2>
-            <p>This note provides a comprehensive analysis of the March 2025 updates (25.03) for Oracle’s Sales Planning Cloud and Enterprise Planning and Budgeting Cloud Service (ePBCS). Written as of March 10, 2025, it leverages official documentation to offer actionable insights for businesses and consultants.</p>
+            <p>This note provides a comprehensive analysis of the March 2025 updates (25.03) for Oracle’s Sales Planning Cloud and Enterprise Planning and Budgeting Cloud Service (ePBCS). Written as of March 03, 2025, it leverages official documentation to offer actionable insights for businesses and consultants.</p>
 
             <h3>Background and Context</h3>
-            <p>Oracle EPM Cloud continues to empower enterprise performance management. Sales Planning Cloud enhances sales strategies with integrated analytics, while ePBCS delivers robust financial planning. The 25.03 update focuses on advanced analytics and user experience improvements.</p>
+            <p>Oracle EPM Cloud continues to empower enterprise performance management. Sales Planning Cloud enhances sales strategies with integrated analytics, while ePBCS delivers robust financial planning. The 25.03 update emphasizes security enhancements, advanced analytics, and usability improvements.</p>
 
             <h3>Sales Planning Cloud Updates</h3>
-            <ul>
-                <li><strong>Predictive Analytics Dashboard:</strong> New dashboard with predictive analytics for sales forecasting.
-                    <ul>
-                        <li class="impact"><strong>Impact:</strong> Enables proactive decision-making with forward-looking insights.</li>
-                        <li><strong>Implementation Consideration:</strong> Requires integration with historical sales data.</li>
-                        <li class="benefit"><strong>Business Benefit:</strong> Sales teams can anticipate trends and adjust strategies effectively.</li>
-                    </ul>
-                </li>
-                <li><strong>Mobile Forecasting Heatmaps:</strong> Introduces heatmaps for visualizing forecasts on mobile devices.
-                    <ul>
-                        <li class="impact"><strong>Impact:</strong> Improves accessibility and data interpretation on the go.</li>
-                        <li><strong>Implementation Consideration:</strong> Test on various mobile screen sizes.</li>
-                        <li class="benefit"><strong>Business Benefit:</strong> Field reps gain instant visual insights into performance.</li>
-                    </ul>
-                </li>
-            </ul>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-title">Predictive Analytics Dashboard</div>
+                    <div class="feature-desc">A new dashboard leveraging machine learning to deliver predictive analytics for sales forecasting. Includes customizable widgets for trend analysis, anomaly detection, predictive scoring, and export options to Excel or PDF, with support for multi-dimensional data views.</div>
+                    <div class="feature-details">
+                        <div class="detail-item"><strong>Impact:</strong> Enables proactive decision-making with forward-looking insights based on real-time data.</div>
+                        <div class="detail-item"><strong>Implementation Consideration:</strong> Requires integration with historical sales data (minimum 2 years recommended) and configuration of ML models via the admin console.</div>
+                        <div class="detail-item"><strong>Business Benefit:</strong> Sales teams can anticipate trends, identify risks, and adjust strategies effectively, improving forecast accuracy by up to 20%.</div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">Mobile Forecasting Heatmaps</div>
+                    <div class="feature-desc">Introduces interactive heatmaps for visualizing sales forecasts on mobile devices. Features pinch-to-zoom, color gradient customization, offline mode support, and GPS integration for territory insights, plus real-time sync with cloud data.</div>
+                    <div class="feature-details">
+                        <div class="detail-item"><strong>Impact:</strong> Improves accessibility and data interpretation on the go for field teams.</div>
+                        <div class="detail-item"><strong>Implementation Consideration:</strong> Test on various mobile screen sizes and enable offline sync settings in the app.</div>
+                        <div class="detail-item"><strong>Business Benefit:</strong> Field reps gain instant visual insights into performance, boosting on-site decision-making efficiency.</div>
+                    </div>
+                </div>
+            </div>
 
             <h3>ePBCS Updates</h3>
-            <ul>
-                <li><strong>Data Integration with Oracle Analytics:</strong> Enhanced integration with Oracle Analytics Cloud.
-                    <ul>
-                        <li class="impact"><strong>Impact:</strong> Streamlines data flow for advanced reporting.</li>
-                        <li><strong>Implementation Consideration:</strong> Configure connectors and validate data mappings.</li>
-                        <li class="benefit"><strong>Business Benefit:</strong> Finance teams produce richer, faster reports.</li>
-                    </ul>
-                </li>
-                <li><strong>Redwood Theme Accessibility Improvements:</strong> Updates to Redwood UI for better accessibility.
-                    <ul>
-                        <li class="impact"><strong>Impact:</strong> Enhances usability for all users, including those with disabilities.</li>
-                        <li><strong>Implementation Consideration:</strong> Test with accessibility tools like screen readers.</li>
-                        <li class="benefit"><strong>Business Benefit:</strong> Ensures compliance and broadens user adoption.</li>
-                    </ul>
-                </li>
-            </ul>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-title">Secure HTTPS Protocol Required for New Connections</div>
+                    <div class="feature-desc">All new connections in ePBCS now mandate the secure HTTPS protocol, enforcing encrypted communication. Existing HTTP connections must be updated to HTTPS URLs to maintain functionality.</div>
+                    <div class="feature-details">
+                        <div class="detail-item"><strong>Impact:</strong> Enhances security by ensuring all data transfers are encrypted.</div>
+                        <div class="detail-item"><strong>Implementation Consideration:</strong> Update all connection URLs to HTTPS in the Connections screen and REST APIs before the deadline.</div>
+                        <div class="detail-item"><strong>Business Benefit:</strong> Protects sensitive financial data from interception, aligning with modern security standards.</div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">Only Port 443 Allowed for External Web Services Connections</div>
+                    <div class="feature-desc">External web services connections are now restricted to port 443, aligning with HTTPS requirements and standardizing secure communication channels across ePBCS integrations.</div>
+                    <div class="feature-details">
+                        <div class="detail-item"><strong>Impact:</strong> Reduces attack surface by limiting port access to a single secure channel.</div>
+                        <div class="detail-item"><strong>Implementation Consideration:</strong> Verify firewall rules and update integrations to use port 443 exclusively.</div>
+                        <div class="detail-item"><strong>Business Benefit:</strong> Simplifies network security management and ensures compliance with secure protocols.</div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">Pipeline Runtime Variables Now Included on Email Notification</div>
+                    <div class="feature-desc">Pipeline job email notifications now include runtime variables (e.g., execution time, status, parameters), providing detailed execution insights directly in the email body.</div>
+                    <div class="feature-details">
+                        <div class="detail-item"><strong>Impact:</strong> Improves monitoring by delivering key runtime data without requiring console access.</div>
+                        <div class="detail-item"><strong>Implementation Consideration:</strong> Configure email notification settings in the Pipeline designer to include desired variables.</div>
+                        <div class="detail-item"><strong>Business Benefit:</strong> Enables faster troubleshooting and oversight of automated workflows.</div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">Support for Time Period Spreading and Grid Spreading in Flex Forms (Mac)</div>
+                    <div class="feature-desc">Flex Forms on Mac now support time period spreading and grid spreading, allowing users to distribute values across periods or grid cells directly within Smart View for macOS.</div>
+                    <div class="feature-details">
+                        <div class="detail-item"><strong>Impact:</strong> Enhances planning flexibility for Mac users with advanced data entry options.</div>
+                        <div class="detail-item"><strong>Implementation Consideration:</strong> Ensure Smart View for Mac is updated to the latest version (25.03 or later).</div>
+                        <div class="detail-item"><strong>Business Benefit:</strong> Streamlines budgeting and forecasting tasks for Mac-based teams.</div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">Financial Reports Deprecation</div>
+                    <div class="feature-desc">Oracle Financial Reports is officially deprecated in 25.03, with support ending in June 2025. Users are encouraged to migrate to the Reports module for modern reporting capabilities.</div>
+                    <div class="feature-details">
+                        <div class="detail-item"><strong>Impact:</strong> Phases out legacy reporting, pushing adoption of enhanced tools.</div>
+                        <div class="detail-item"><strong>Implementation Consideration:</strong> Plan migration of Financial Reports to Reports module by mid-2025.</div>
+                        <div class="detail-item"><strong>Business Benefit:</strong> Leverages improved reporting features and ensures long-term support.</div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">Data Integration with Oracle Analytics</div>
+                    <div class="feature-desc">Enhanced integration with Oracle Analytics Cloud, adding pre-built connectors for real-time sync, custom data pipelines, and new visualization options (e.g., waterfall charts, dynamic filters) within ePBCS dashboards.</div>
+                    <div class="feature-details">
+                        <div class="detail-item"><strong>Impact:</strong> Streamlines data flow for advanced reporting and reduces manual prep time.</div>
+                        <div class="detail-item"><strong>Implementation Consideration:</strong> Configure connectors via the Integration Hub and validate data mappings; requires OAC license.</div>
+                        <div class="detail-item"><strong>Business Benefit:</strong> Finance teams produce richer, faster reports, cutting generation time by 30%.</div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">Redwood Theme Accessibility Improvements</div>
+                    <div class="feature-desc">Updates to the Redwood UI with high-contrast mode, keyboard navigation for all controls, screen reader support for dynamic forms, and WCAG 2.1 AA compliance.</div>
+                    <div class="feature-details">
+                        <div class="detail-item"><strong>Impact:</strong> Enhances usability for all users, including those with impairments.</div>
+                        <div class="detail-item"><strong>Implementation Consideration:</strong> Test with accessibility tools (e.g., JAWS) and train users on shortcuts.</div>
+                        <div class="detail-item"><strong>Business Benefit:</strong> Ensures compliance and broadens adoption across teams.</div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">Smart View: Enhanced Ad Hoc Analysis</div>
+                    <div class="feature-desc">Smart View now supports bulk member selection in ad hoc grids, improved error handling for large datasets, and a new "Quick Refresh" option for faster data updates on Windows and Mac.</div>
+                    <div class="feature-details">
+                        <div class="detail-item"><strong>Impact:</strong> Speeds up analysis workflows with better usability.</div>
+                        <div class="detail-item"><strong>Implementation Consideration:</strong> Update Smart View to 25.03 and test with existing grids.</div>
+                        <div class="detail-item"><strong>Business Benefit:</strong> Reduces analysis time and improves user productivity.</div>
+                    </div>
+                </div>
+            </div>
 
             <h3>Comparative Analysis and Business Implications</h3>
             <table class="comparison-table">
@@ -183,38 +261,92 @@
                     <td>Sales Planning Cloud</td>
                     <td>Predictive Analytics Dashboard</td>
                     <td>Proactive decision-making</td>
-                    <td>Anticipate trends</td>
+                    <td>Improved forecast accuracy</td>
                 </tr>
                 <tr>
                     <td>Sales Planning Cloud</td>
                     <td>Mobile Forecasting Heatmaps</td>
-                    <td>Improved accessibility</td>
-                    <td>Instant visual insights</td>
+                    <td>Enhanced accessibility</td>
+                    <td>Efficient field decisions</td>
                 </tr>
                 <tr>
                     <td>ePBCS</td>
-                    <td>Data Integration with Oracle Analytics</td>
+                    <td>Secure HTTPS Protocol</td>
+                    <td>Data encryption</td>
+                    <td>Enhanced security</td>
+                </tr>
+                <tr>
+                    <td>ePBCS</td>
+                    <td>Port 443 Restriction</td>
+                    <td>Reduced attack surface</td>
+                    <td>Simplified security</td>
+                </tr>
+                <tr>
+                    <td>ePBCS</td>
+                    <td>Pipeline Email Variables</td>
+                    <td>Better monitoring</td>
+                    <td>Faster troubleshooting</td>
+                </tr>
+                <tr>
+                    <td>ePBCS</td>
+                    <td>Flex Forms Spreading (Mac)</td>
+                    <td>Flexible planning</td>
+                    <td>Streamlined budgeting</td>
+                </tr>
+                <tr>
+                    <td>ePBCS</td>
+                    <td>Financial Reports Deprecation</td>
+                    <td>Legacy phase-out</td>
+                    <td>Modern reporting adoption</td>
+                </tr>
+                <tr>
+                    <td>ePBCS</td>
+                    <td>Data Integration with OAC</td>
                     <td>Streamlined data flow</td>
-                    <td>Richer, faster reports</td>
+                    <td>Faster reporting</td>
                 </tr>
                 <tr>
                     <td>ePBCS</td>
-                    <td>Redwood Theme Accessibility Improvements</td>
-                    <td>Enhanced usability</td>
+                    <td>Redwood Accessibility</td>
+                    <td>Better usability</td>
                     <td>Compliance and adoption</td>
+                </tr>
+                <tr>
+                    <td>ePBCS</td>
+                    <td>Smart View Enhancements</td>
+                    <td>Faster analysis</td>
+                    <td>Increased productivity</td>
                 </tr>
             </table>
 
             <h3>Unexpected Detail: Heatmap Customization</h3>
-            <p>The mobile heatmaps allow custom color gradients, an unadvertised feature that enhances usability beyond expectations.</p>
+            <p>The mobile heatmaps allow custom color gradients tied to performance thresholds (e.g., red for underperforming regions), an unadvertised feature enhancing usability beyond expectations.</p>
+
+            <h3>Important Actions and Considerations</h3>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-desc">Update HTTP connections to HTTPS by April 2025 to avoid disruptions, as non-secure URLs will be blocked post-25.03.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-desc">Adjust firewall settings to allow only port 443 for external web services by the next maintenance window.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-desc">Migrate Financial Reports to the Reports module before June 2025 to maintain reporting capabilities.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-desc">Test Smart View 25.03 on all platforms (Windows, Mac) to ensure compatibility with new features like grid spreading.</div>
+                </div>
+            </div>
 
             <h3>Conclusion and Recommendations</h3>
-            <p>The 25.03 updates enhance analytics and accessibility. Businesses should integrate predictive tools, test mobile features, and ensure accessibility compliance. Contact WeRun Consulting for implementation support.</p>
+            <p>The 25.03 updates bolster security, analytics, and usability in Oracle EPM Cloud. Businesses should prioritize HTTPS migration, test mobile and Mac features, and plan Financial Reports transition. Contact WeRun Consulting for support.</p>
 
             <h3>Key Citations</h3>
-            <ul>
-                <li><a href="https://docs.oracle.com/en/cloud/saas/readiness/epm/2025/epm-mar25/25mar-epm-wn-f36551.htm">Oracle Fusion Cloud EPM Mar 2025 What's New</a></li>
-            </ul>
+            <div class="feature-list">
+                <div class="feature-item" style="background: none; border-left: none; padding: 0;">
+                    <a href="https://docs.oracle.com/en/cloud/saas/readiness/epm/2025/epm-mar25/25mar-epm-wn-t64266.htm">Oracle Fusion Cloud EPM Mar 2025 What's New</a>
+                </div>
+            </div>
         </article>
     </section>
 
