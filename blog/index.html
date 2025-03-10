@@ -123,16 +123,107 @@
             {
                 title: "New Features in EPM Cloud 25.03",
                 category: "update",
-                date: "April 09, 2025", // Updated to match HTML
+                date: "April 09, 2025",
                 summary: "Explore the March 2025 updates, including enhanced dashboards and analytics integration...",
                 url: "epm-25.03-update.html"
             },
             {
                 title: "New Features in EPM Cloud 25.02",
                 category: "update",
-                date: "March 09, 2025", // Updated to match HTML
+                date: "March 09, 2025",
                 summary: "Overview of the February 2025 updates, featuring security and usability enhancements...",
                 url: "epm-25.02-update.html"
+            },
+            {
+                title: "New Features in EPM Cloud 25.01",
+                category: "update",
+                date: "January 17, 2025",
+                summary: "Analysis of January 2025 updates, with AI goal suggestions and workflow templates...",
+                url: "epm-25.01-update.html"
+            },
+            {
+                title: "New Features in EPM Cloud 24.12",
+                category: "update",
+                date: "December 20, 2024",
+                summary: "Year-end updates with sales report templates and enhanced backups...",
+                url: "epm-24.12-update.html"
+            },
+            {
+                title: "New Features in EPM Cloud 24.11",
+                category: "update",
+                date: "November 15, 2024",
+                summary: "November updates featuring team chat and query optimization...",
+                url: "epm-24.11-update.html"
+            },
+            {
+                title: "New Features in EPM Cloud 24.10",
+                category: "update",
+                date: "October 18, 2024",
+                summary: "October updates with scenario simulations and 3D charts...",
+                url: "epm-24.10-update.html"
+            },
+            {
+                title: "New Features in EPM Cloud 24.09",
+                category: "update",
+                date: "September 20, 2024",
+                summary: "September updates with multi-currency forecasts and security scans...",
+                url: "epm-24.09-update.html"
+            },
+            {
+                title: "New Features in EPM Cloud 24.08",
+                category: "update",
+                date: "August 16, 2024",
+                summary: "August updates integrating ERP Cloud and form management APIs...",
+                url: "epm-24.08-update.html"
+            },
+            {
+                title: "New Features in EPM Cloud 24.07",
+                category: "update",
+                date: "July 19, 2024",
+                summary: "July updates with mobile notifications and OCI migration...",
+                url: "epm-24.07-update.html"
+            },
+            {
+                title: "New Features in EPM Cloud 24.06",
+                category: "update",
+                date: "June 21, 2024",
+                summary: "June updates featuring heatmaps and Hybrid Essbase...",
+                url: "epm-24.06-update.html"
+            },
+            {
+                title: "New Features in EPM Cloud 24.05",
+                category: "update",
+                date: "May 17, 2024",
+                summary: "May updates with batch import pipelines and Mac support...",
+                url: "epm-24.05-update.html"
+            },
+            {
+                title: "New Features in EPM Cloud 24.04",
+                category: "update",
+                date: "April 19, 2024",
+                summary: "April updates with KPI widgets and Redwood branding...",
+                url: "epm-24.04-update.html"
+            },
+            {
+                title: "New Features in EPM Cloud 24.03",
+                category: "update",
+                date: "March 15, 2024",
+                summary: "March updates with territory mapping and audit logging...",
+                url: "epm-24.03-update.html"
+            },
+            {
+                title: "New Features in EPM Cloud 24.02",
+                category: "update",
+                date: "February 16, 2024",
+                summary: "February updates with AI variance analysis and form validation...",
+                url: "epm-24.02-update.html"
+            },
+            {
+                title: "New Features in EPM Cloud 24.01",
+                category: "update",
+                date: "January 03, 2024",
+                summary: "January updates with quota templates and Redwood UI...",
+                url: "epm-24.01-update.html"
             },
             {
                 title: "Automating Data Loads in EPBCS",
@@ -147,6 +238,23 @@
         const blogPreview = document.getElementById('blogPreview');
         const searchResults = document.getElementById('searchResults');
 
+        // Populate blog preview on page load
+        blogPosts.forEach(post => {
+            const card = document.createElement('div');
+            card.className = 'blog-card';
+            card.innerHTML = `
+                <div class="post-meta">
+                    <span class="category ${post.category}">${post.category === 'update' ? 'Cloud Update' : 'EPM Scripting'}</span>
+                    <span class="date">${post.date}</span>
+                </div>
+                <h3>${post.title}</h3>
+                <p>${post.summary}</p>
+                <a href="${post.url}" class="read-more">Read More →</a>
+            `;
+            blogPreview.appendChild(card);
+        });
+
+        // Search functionality
         searchInput.addEventListener('input', function() {
             const query = this.value.trim().toLowerCase();
             if (query === '') {
@@ -197,7 +305,7 @@
         // Collapse menu when a link is clicked on mobile
         navLinksAnchors.forEach(anchor => {
             anchor.addEventListener('click', () => {
-                if (window.innerWidth <= 768) { // Only on mobile
+                if (window.innerWidth <= 768) {
                     navLinks.classList.remove('active');
                 }
             });
