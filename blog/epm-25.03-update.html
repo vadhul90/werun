@@ -8,129 +8,168 @@
     <link rel="stylesheet" href="../styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Override blog-container width */
-        .blog-container {
-            max-width: 1200px; /* Increased from 800px */
-            padding: 0 2rem;
+        .blog-container { 
+            max-width: 1200px; 
+            padding: 0 2rem; 
+            margin: 0 auto; 
         }
-        /* Adjust blog-post padding for wider content */
-        .blog-post {
-            padding: 3rem 4rem;
+        .blog-post { 
+            padding: 3rem 4rem; 
+            background: #fff; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+            border-radius: 8px; 
         }
-        /* Enhance table readability */
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        .blog-post h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
         }
-        .comparison-table th, .comparison-table td {
-            padding: 1.5rem;
-            text-align: left;
-            border: 1px solid #ddd;
-            font-size: 1rem;
+        .blog-post h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin: 1.5rem 0 0.75rem;
         }
-        .comparison-table th {
-            background: var(--primary); /* #2A5C8A */
-            color: white;
-            font-weight: 600;
+        .blog-post p {
+            line-height: 1.6;
+            margin: 0.75rem 0;
         }
-        .comparison-table td {
-            background: #f8f9fa;
+        .blog-post ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1rem 0;
         }
-        /* Responsive adjustments */
+        .blog-post ul li {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .blog-post ul li:before {
+            content: "→";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .blog-post ul ul {
+            padding-left: 2rem;
+            margin: 0.5rem 0;
+        }
+        .blog-post ul ul li:before {
+            content: "•";
+            color: var(--secondary);
+        }
+        .blog-post .impact, .blog-post .benefit {
+            font-style: italic;
+            color: #555;
+        }
+        .blog-post .impact strong, .blog-post .benefit strong {
+            font-style: normal;
+            color: var(--primary);
+        }
+        .comparison-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 2rem 0; 
+            background: #fff; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+        }
+        .comparison-table th, .comparison-table td { 
+            padding: 1.5rem; 
+            text-align: left; 
+            border: 1px solid #ddd; 
+            font-size: 1rem; 
+        }
+        .comparison-table th { 
+            background: var(--primary); 
+            color: white; 
+            font-weight: 600; 
+        }
+        .comparison-table td { 
+            background: #f8f9fa; 
+        }
         @media (max-width: 768px) {
-            .blog-container {
-                max-width: 100%;
-                padding: 0 1rem;
+            .blog-container { 
+                padding: 0 1rem; 
             }
-            .blog-post {
-                padding: 2rem;
+            .blog-post { 
+                padding: 2rem; 
             }
-            .comparison-table th, .comparison-table td {
-                padding: 1rem;
-                font-size: 0.9rem;
+            .blog-post h2 {
+                font-size: 1.75rem;
+            }
+            .blog-post h3 {
+                font-size: 1.25rem;
+            }
+            .comparison-table th, .comparison-table td { 
+                padding: 1rem; 
+                font-size: 0.9rem; 
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar">
-        <a href="../index.html">Home</a>
-        <a href="../index.html#services">Services</a>
-        <a href="../index.html#expertise">Expertise</a>
-        <a href="../blog/">Blog</a>
-        <a href="../index.html#contact">Contact</a>
+        <button class="hamburger" aria-label="Toggle menu"><i class="fas fa-cube"></i></button>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <a href="../blog/">Blog</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <h1>WeRun Consulting</h1>
         <p>Detailed Analysis of Sales Planning Cloud and ePBCS Updates - March 03, 2025</p>
         <a href="../index.html" class="button">Back to Home</a>
     </section>
 
-    <!-- Blog Content -->
     <section class="blog-container">
         <article class="blog-post">
             <h2>Survey Note: Detailed Analysis of Sales Planning Cloud and ePBCS Updates for March 2025</h2>
-            <p>This note offers an in-depth analysis of the March 2025 updates (25.03) for Oracle's Sales Planning Cloud and Enterprise Planning and Budgeting Cloud Service (ePBCS), drawing from official documentation and related sources. Our goal is to provide a clear understanding of planning-related enhancements for businesses and consultants utilizing these tools. The current date is April 09, 2025, and all insights reflect this timeframe.</p>
+            <p>This note provides a comprehensive analysis of the March 2025 updates (25.03) for Oracle’s Sales Planning Cloud and Enterprise Planning and Budgeting Cloud Service (ePBCS). Written as of March 10, 2025, it leverages official documentation to offer actionable insights for businesses and consultants.</p>
 
             <h3>Background and Context</h3>
-            <p>Oracle’s Enterprise Performance Management (EPM) Cloud suite empowers organizations with advanced financial and operational planning capabilities. Sales Planning Cloud enhances sales performance through integrated data and predictive analytics, while ePBCS provides a comprehensive platform for enterprise-wide financial planning. The March 2025 updates introduce refinements in performance, user experience, and data integration, building on the momentum of prior releases like February 2025 (25.02).</p>
-            <p>This analysis is based on Oracle’s readiness publications, including the February 2025 What’s New document (previewing March changes) and the March 2025 What’s New for EPM Cloud, supplemented by insights from earlier updates where applicable.</p>
+            <p>Oracle EPM Cloud continues to empower enterprise performance management. Sales Planning Cloud enhances sales strategies with integrated analytics, while ePBCS delivers robust financial planning. The 25.03 update focuses on advanced analytics and user experience improvements.</p>
 
-            <h3>Sales Planning Cloud Updates: Detailed Breakdown</h3>
+            <h3>Sales Planning Cloud Updates</h3>
             <ul>
-                <li><strong>Enhanced Predictive Analytics Dashboard:</strong>
+                <li><strong>Predictive Analytics Dashboard:</strong> New dashboard with predictive analytics for sales forecasting.
                     <ul>
-                        <li>The 25.03 update introduces a revamped predictive analytics dashboard in Sales Planning Cloud, featuring real-time trend visualization and customizable widgets.</li>
-                        <li><strong>Impact:</strong> This upgrade allows sales teams to monitor forecasts dynamically, improving responsiveness to market shifts.</li>
-                        <li><strong>Implementation Consideration:</strong> Administrators should configure widget preferences and train users on dashboard customization to maximize adoption.</li>
-                        <li><strong>Business Benefit:</strong> Enhanced visibility into sales trends boosts forecasting accuracy, enabling proactive strategy adjustments—e.g., a sales director can pivot quotas based on real-time data.</li>
+                        <li class="impact"><strong>Impact:</strong> Enables proactive decision-making with forward-looking insights.</li>
+                        <li><strong>Implementation Consideration:</strong> Requires integration with historical sales data.</li>
+                        <li class="benefit"><strong>Business Benefit:</strong> Sales teams can anticipate trends and adjust strategies effectively.</li>
                     </ul>
                 </li>
-                <li><strong>Integration with Oracle Analytics Cloud:</strong>
+                <li><strong>Mobile Forecasting Heatmaps:</strong> Introduces heatmaps for visualizing forecasts on mobile devices.
                     <ul>
-                        <li>A new connector links Sales Planning Cloud with Oracle Analytics Cloud, enabling seamless data flow for advanced reporting.</li>
-                        <li><strong>Impact:</strong> This strengthens analytical capabilities, allowing deeper insights without leaving the EPM ecosystem.</li>
-                        <li><strong>Implementation Consideration:</strong> Ensure compatibility by updating connection settings and validating data mappings post-update.</li>
-                        <li><strong>Business Benefit:</strong> Sales teams gain access to sophisticated analytics, streamlining decision-making and reducing reliance on external tools.</li>
+                        <li class="impact"><strong>Impact:</strong> Improves accessibility and data interpretation on the go.</li>
+                        <li><strong>Implementation Consideration:</strong> Test on various mobile screen sizes.</li>
+                        <li class="benefit"><strong>Business Benefit:</strong> Field reps gain instant visual insights into performance.</li>
                     </ul>
                 </li>
             </ul>
-            <p>These updates elevate Sales Planning Cloud’s role as a strategic tool, enhancing planning precision and integration capabilities.</p>
 
-            <h3>ePBCS Updates: Detailed Breakdown</h3>
+            <h3>ePBCS Updates</h3>
             <ul>
-                <li><strong>Smart View Performance Optimization:</strong>
+                <li><strong>Data Integration with Oracle Analytics:</strong> Enhanced integration with Oracle Analytics Cloud.
                     <ul>
-                        <li>The 25.03 update optimizes Smart View for ePBCS, reducing load times for large datasets by up to 30% through improved caching.</li>
-                        <li><strong>Impact:</strong> Faster data retrieval enhances user productivity, especially during ad hoc analysis.</li>
-                        <li><strong>Implementation Consideration:</strong> Update Smart View clients to the latest version and test performance with complex grids.</li>
-                        <li><strong>Business Benefit:</strong> Finance teams can analyze budgets quicker—e.g., a planner can refresh a multi-year forecast in seconds rather than minutes.</li>
+                        <li class="impact"><strong>Impact:</strong> Streamlines data flow for advanced reporting.</li>
+                        <li><strong>Implementation Consideration:</strong> Configure connectors and validate data mappings.</li>
+                        <li class="benefit"><strong>Business Benefit:</strong> Finance teams produce richer, faster reports.</li>
                     </ul>
                 </li>
-                <li><strong>Expanded REST API Functionality:</strong>
+                <li><strong>Redwood Theme Accessibility Improvements:</strong> Updates to Redwood UI for better accessibility.
                     <ul>
-                        <li>New REST API endpoints allow batch processing of planning scenarios, streamlining automation workflows.</li>
-                        <li><strong>Impact:</strong> This enables more efficient integration with external systems, reducing manual effort.</li>
-                        <li><strong>Implementation Consideration:</strong> Developers should update scripts to leverage these endpoints, testing for scalability.</li>
-                        <li><strong>Business Benefit:</strong> Automating scenario comparisons saves time, benefiting enterprises with frequent what-if analyses.</li>
-                    </ul>
-                </li>
-                <li><strong>Dashboard 2.0 Customization:</strong>
-                    <ul>
-                        <li>Dashboard 2.0 now supports drag-and-drop widget resizing and new chart types (e.g., heatmaps).</li>
-                        <li><strong>Impact:</strong> Improved flexibility enhances data presentation, making dashboards more user-friendly.</li>
-                        <li><strong>Implementation Consideration:</strong> Redesign existing dashboards to utilize new features, ensuring user training.</li>
-                        <li><strong>Business Benefit:</strong> Visually rich dashboards improve stakeholder engagement, e.g., presenting cash flow trends in a heatmap format.</li>
+                        <li class="impact"><strong>Impact:</strong> Enhances usability for all users, including those with disabilities.</li>
+                        <li><strong>Implementation Consideration:</strong> Test with accessibility tools like screen readers.</li>
+                        <li class="benefit"><strong>Business Benefit:</strong> Ensures compliance and broadens user adoption.</li>
                     </ul>
                 </li>
             </ul>
-            <p>These ePBCS updates focus on performance and flexibility, reinforcing its enterprise planning capabilities.</p>
 
             <h3>Comparative Analysis and Business Implications</h3>
             <table class="comparison-table">
@@ -142,54 +181,43 @@
                 </tr>
                 <tr>
                     <td>Sales Planning Cloud</td>
-                    <td>Enhanced Predictive Analytics Dashboard</td>
-                    <td>Real-time trend visualization improves forecast responsiveness</td>
-                    <td>Boosts sales strategy agility</td>
+                    <td>Predictive Analytics Dashboard</td>
+                    <td>Proactive decision-making</td>
+                    <td>Anticipate trends</td>
                 </tr>
                 <tr>
                     <td>Sales Planning Cloud</td>
-                    <td>Integration with Oracle Analytics Cloud</td>
-                    <td>Seamless data flow for advanced reporting</td>
-                    <td>Enhances analytical depth, reduces tool sprawl</td>
+                    <td>Mobile Forecasting Heatmaps</td>
+                    <td>Improved accessibility</td>
+                    <td>Instant visual insights</td>
                 </tr>
                 <tr>
                     <td>ePBCS</td>
-                    <td>Smart View Performance Optimization</td>
-                    <td>Faster data retrieval for large datasets</td>
-                    <td>Increases productivity in financial analysis</td>
+                    <td>Data Integration with Oracle Analytics</td>
+                    <td>Streamlined data flow</td>
+                    <td>Richer, faster reports</td>
                 </tr>
                 <tr>
                     <td>ePBCS</td>
-                    <td>Expanded REST API Functionality</td>
-                    <td>Batch processing for planning scenarios</td>
-                    <td>Streamlines automation, saves time</td>
-                </tr>
-                <tr>
-                    <td>ePBCS</td>
-                    <td>Dashboard 2.0 Customization</td>
-                    <td>Flexible, visually enhanced dashboards</td>
-                    <td>Improves data communication to stakeholders</td>
+                    <td>Redwood Theme Accessibility Improvements</td>
+                    <td>Enhanced usability</td>
+                    <td>Compliance and adoption</td>
                 </tr>
             </table>
-            <p>This table underscores how the 25.03 updates enhance planning efficiency and decision-making across both platforms.</p>
 
-            <h3>Unexpected Detail: User-Driven Enhancements</h3>
-            <p>A notable surprise in this update is the emphasis on user-requested features, such as Dashboard 2.0’s heatmap support, reflecting Oracle’s ongoing commitment to community feedback via platforms like Cloud Customer Connect.</p>
+            <h3>Unexpected Detail: Heatmap Customization</h3>
+            <p>The mobile heatmaps allow custom color gradients, an unadvertised feature that enhances usability beyond expectations.</p>
 
             <h3>Conclusion and Recommendations</h3>
-            <p>The March 2025 updates for Sales Planning Cloud and ePBCS prioritize performance, integration, and user experience, strengthening their roles in enterprise planning. Businesses should update Smart View clients, test new REST APIs, and explore dashboard customizations to fully leverage these enhancements. WeRun Consulting advises a thorough review of configurations to ensure seamless adoption.</p>
-            <p>Contact WeRun Consulting for expert guidance on optimizing your Oracle EPM deployment with these updates, ensuring your planning processes remain cutting-edge.</p>
+            <p>The 25.03 updates enhance analytics and accessibility. Businesses should integrate predictive tools, test mobile features, and ensure accessibility compliance. Contact WeRun Consulting for implementation support.</p>
 
             <h3>Key Citations</h3>
             <ul>
-                <li><a href="https://docs.oracle.com/en/cloud/saas/readiness/epm/2025/splan-feb25/25feb-sales-planning-wn-t63421.htm">Oracle Fusion Cloud Sales Planning Feb 2025 What's New</a></li>
-                <li><a href="https://docs.oracle.com/en/cloud/saas/readiness/epm/2025/epm-mar25/25mar-epm-wn-f36912.htm">Oracle Fusion Cloud Enterprise Performance Management Mar 2025 What's New</a></li>
-                <li><a href="https://docs.oracle.com/en/cloud/saas/readiness/epm/2025/epm-jan25/25jan-epm-wn-f36549.htm">Oracle Fusion Cloud Enterprise Performance Management Jan 2025 What's New</a></li>
+                <li><a href="https://docs.oracle.com/en/cloud/saas/readiness/epm/2025/epm-mar25/25mar-epm-wn-f36551.htm">Oracle Fusion Cloud EPM Mar 2025 What's New</a></li>
             </ul>
         </article>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>© 2023 WeRun Consulting. All rights reserved.</p>
     </footer>
