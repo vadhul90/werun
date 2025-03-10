@@ -45,12 +45,34 @@
         .search-results .blog-card {
             margin-bottom: 1rem;
         }
+        /* Show More Button Styling */
+        .show-more-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .show-more-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .show-more-btn:hover {
+            background: var(--secondary);
+        }
         @media (max-width: 768px) {
             .search-container {
                 margin: 1rem;
             }
             .search-input {
                 font-size: 0.9rem;
+            }
+            .show-more-btn {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
             }
         }
     </style>
@@ -80,34 +102,9 @@
 
     <!-- Blog Previews -->
     <section class="blog-container">
-        <div class="blog-preview" id="blogPreview">
-            <div class="blog-card">
-                <div class="post-meta">
-                    <span class="category update">Cloud Update</span>
-                    <span class="date">April 09, 2025</span>
-                </div>
-                <h3>New Features in EPM Cloud 25.03</h3>
-                <p>Explore the March 2025 updates, including enhanced dashboards and analytics integration...</p>
-                <a href="epm-25.03-update.html" class="read-more">Read More →</a>
-            </div>
-            <div class="blog-card">
-                <div class="post-meta">
-                    <span class="category update">Cloud Update</span>
-                    <span class="date">March 09, 2025</span>
-                </div>
-                <h3>New Features in EPM Cloud 25.02</h3>
-                <p>Overview of the February 2025 updates, featuring security and usability enhancements...</p>
-                <a href="epm-25.02-update.html" class="read-more">Read More →</a>
-            </div>
-            <div class="blog-card">
-                <div class="post-meta">
-                    <span class="category epm">EPM Scripting</span>
-                    <span class="date">March 15, 2024</span>
-                </div>
-                <h3>Automating Data Loads in EPBCS</h3>
-                <p>Learn how to streamline your EPM processes with Groovy scripts...</p>
-                <a href="post1.html" class="read-more">Read More →</a>
-            </div>
+        <div class="blog-preview" id="blogPreview"></div>
+        <div class="show-more-container" id="showMoreContainer">
+            <button class="show-more-btn" id="showMoreBtn">Show More</button>
         </div>
         <div class="search-results" id="searchResults"></div>
     </section>
@@ -117,104 +114,104 @@
         <p>© 2025 WeRun Consulting. All rights reserved.</p>
     </footer>
 
-    <!-- Search and Hamburger JavaScript -->
+    <!-- Search, Pagination, and Hamburger JavaScript -->
     <script>
         const blogPosts = [
             {
                 title: "New Features in EPM Cloud 25.03",
                 category: "update",
-                date: "April 09, 2025",
+                date: "March 03, 2025",
                 summary: "Explore the March 2025 updates, including enhanced dashboards and analytics integration...",
                 url: "epm-25.03-update.html"
             },
             {
                 title: "New Features in EPM Cloud 25.02",
                 category: "update",
-                date: "March 09, 2025",
+                date: "February 03, 2025",
                 summary: "Overview of the February 2025 updates, featuring security and usability enhancements...",
                 url: "epm-25.02-update.html"
             },
             {
                 title: "New Features in EPM Cloud 25.01",
                 category: "update",
-                date: "January 17, 2025",
+                date: "January 03, 2025",
                 summary: "Analysis of January 2025 updates, with AI goal suggestions and workflow templates...",
                 url: "epm-25.01-update.html"
             },
             {
                 title: "New Features in EPM Cloud 24.12",
                 category: "update",
-                date: "December 20, 2024",
+                date: "December 03, 2024",
                 summary: "Year-end updates with sales report templates and enhanced backups...",
                 url: "epm-24.12-update.html"
             },
             {
                 title: "New Features in EPM Cloud 24.11",
                 category: "update",
-                date: "November 15, 2024",
+                date: "November 03, 2024",
                 summary: "November updates featuring team chat and query optimization...",
                 url: "epm-24.11-update.html"
             },
             {
                 title: "New Features in EPM Cloud 24.10",
                 category: "update",
-                date: "October 18, 2024",
+                date: "October 03, 2024",
                 summary: "October updates with scenario simulations and 3D charts...",
                 url: "epm-24.10-update.html"
             },
             {
                 title: "New Features in EPM Cloud 24.09",
                 category: "update",
-                date: "September 20, 2024",
+                date: "September 03, 2024",
                 summary: "September updates with multi-currency forecasts and security scans...",
                 url: "epm-24.09-update.html"
             },
             {
                 title: "New Features in EPM Cloud 24.08",
                 category: "update",
-                date: "August 16, 2024",
+                date: "August 03, 2024",
                 summary: "August updates integrating ERP Cloud and form management APIs...",
                 url: "epm-24.08-update.html"
             },
             {
                 title: "New Features in EPM Cloud 24.07",
                 category: "update",
-                date: "July 19, 2024",
+                date: "July 03, 2024",
                 summary: "July updates with mobile notifications and OCI migration...",
                 url: "epm-24.07-update.html"
             },
             {
                 title: "New Features in EPM Cloud 24.06",
                 category: "update",
-                date: "June 21, 2024",
+                date: "June 03, 2024",
                 summary: "June updates featuring heatmaps and Hybrid Essbase...",
                 url: "epm-24.06-update.html"
             },
             {
                 title: "New Features in EPM Cloud 24.05",
                 category: "update",
-                date: "May 17, 2024",
+                date: "May 03, 2024",
                 summary: "May updates with batch import pipelines and Mac support...",
                 url: "epm-24.05-update.html"
             },
             {
                 title: "New Features in EPM Cloud 24.04",
                 category: "update",
-                date: "April 19, 2024",
+                date: "April 03, 2024",
                 summary: "April updates with KPI widgets and Redwood branding...",
                 url: "epm-24.04-update.html"
             },
             {
                 title: "New Features in EPM Cloud 24.03",
                 category: "update",
-                date: "March 15, 2024",
+                date: "March 03, 2024",
                 summary: "March updates with territory mapping and audit logging...",
                 url: "epm-24.03-update.html"
             },
             {
                 title: "New Features in EPM Cloud 24.02",
                 category: "update",
-                date: "February 16, 2024",
+                date: "February 03, 2024",
                 summary: "February updates with AI variance analysis and form validation...",
                 url: "epm-24.02-update.html"
             },
@@ -228,7 +225,7 @@
             {
                 title: "Automating Data Loads in EPBCS",
                 category: "epm",
-                date: "March 15, 2024",
+                date: "March 03, 2024",
                 summary: "Learn how to streamline your EPM processes with Groovy scripts...",
                 url: "post1.html"
             }
@@ -237,21 +234,46 @@
         const searchInput = document.getElementById('searchInput');
         const blogPreview = document.getElementById('blogPreview');
         const searchResults = document.getElementById('searchResults');
+        const showMoreBtn = document.getElementById('showMoreBtn');
+        const showMoreContainer = document.getElementById('showMoreContainer');
 
-        // Populate blog preview on page load
-        blogPosts.forEach(post => {
-            const card = document.createElement('div');
-            card.className = 'blog-card';
-            card.innerHTML = `
-                <div class="post-meta">
-                    <span class="category ${post.category}">${post.category === 'update' ? 'Cloud Update' : 'EPM Scripting'}</span>
-                    <span class="date">${post.date}</span>
-                </div>
-                <h3>${post.title}</h3>
-                <p>${post.summary}</p>
-                <a href="${post.url}" class="read-more">Read More →</a>
-            `;
-            blogPreview.appendChild(card);
+        const postsPerPage = 8;
+        let visiblePosts = postsPerPage;
+
+        // Function to render blog posts
+        function renderPosts(startIndex, endIndex) {
+            const postsToRender = blogPosts.slice(startIndex, endIndex);
+            postsToRender.forEach(post => {
+                const card = document.createElement('div');
+                card.className = 'blog-card';
+                card.innerHTML = `
+                    <div class="post-meta">
+                        <span class="category ${post.category}">${post.category === 'update' ? 'Cloud Update' : 'EPM Scripting'}</span>
+                        <span class="date">${post.date}</span>
+                    </div>
+                    <h3>${post.title}</h3>
+                    <p>${post.summary}</p>
+                    <a href="${post.url}" class="read-more">Read More →</a>
+                `;
+                blogPreview.appendChild(card);
+            });
+        }
+
+        // Initial render of first 8 posts
+        renderPosts(0, visiblePosts);
+
+        // Show More button logic
+        if (visiblePosts >= blogPosts.length) {
+            showMoreContainer.style.display = 'none';
+        }
+        showMoreBtn.addEventListener('click', () => {
+            const nextPosts = visiblePosts + postsPerPage;
+            renderPosts(visiblePosts, nextPosts);
+            visiblePosts = nextPosts;
+
+            if (visiblePosts >= blogPosts.length) {
+                showMoreContainer.style.display = 'none';
+            }
         });
 
         // Search functionality
@@ -260,6 +282,7 @@
             if (query === '') {
                 blogPreview.style.display = 'grid';
                 searchResults.style.display = 'none';
+                showMoreContainer.style.display = visiblePosts < blogPosts.length ? 'block' : 'none';
                 return;
             }
 
@@ -271,6 +294,7 @@
 
             blogPreview.style.display = 'none';
             searchResults.style.display = 'block';
+            showMoreContainer.style.display = 'none'; // Hide Show More during search
             searchResults.innerHTML = '';
 
             if (results.length === 0) {
