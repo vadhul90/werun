@@ -3,21 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EPBCS & Sales Planning 25.01 Updates | WeRun Consulting</title>
+    <title>EPBCS & Planning 25.01 Updates | WeRun Consulting</title>
     <meta name="description" content="Detailed analysis of Oracle EPM Cloud updates for January 2025">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        .blog-container { max-width: 1200px; padding: 0 2rem; }
-        .blog-post { padding: 3rem 4rem; }
-        .comparison-table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .comparison-table th, .comparison-table td { padding: 1.5rem; text-align: left; border: 1px solid #ddd; font-size: 1rem; }
-        .comparison-table th { background: var(--primary); color: white; font-weight: 600; }
-        .comparison-table td { background: #f8f9fa; }
+        .blog-container { 
+            max-width: 1100px; 
+            padding: 0 2rem; 
+            margin: 0 auto; 
+        }
+        .blog-post { 
+            padding: 3rem 3.5rem; 
+            background: #fff; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
+        }
+        .blog-post h2 {
+            font-size: 1.9rem; 
+            color: var(--primary);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--primary); 
+            font-weight: 600;
+        }
+        .blog-post h3 {
+            font-size: 1.4rem; 
+            color: #2a2a2a; 
+            margin: 2rem 0 1rem;
+            font-weight: 500;
+        }
+        .blog-post p {
+            line-height: 1.7; 
+            margin: 1rem 0;
+            color: #444; 
+            font-size: 1rem;
+        }
+        .feature-list {
+            margin: 1.5rem 0;
+        }
+        .feature-item {
+            margin: 2.5rem 0;
+            padding: 1.5rem;
+            background: #f9f9f9; 
+            border-radius: 8px;
+            border-left: 4px solid var(--primary); 
+        }
+        .feature-title {
+            font-size: 1.25rem;
+            color: #222;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .feature-desc {
+            font-size: 1rem;
+            color: #555;
+            margin: 0 0 1rem;
+            line-height: 1.6;
+        }
+        .feature-details {
+            padding-left: 1rem;
+        }
+        .detail-item {
+            margin: 0.75rem 0;
+            font-size: 0.95rem;
+            color: #666; 
+            line-height: 1.6;
+        }
+        .detail-item strong {
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.95rem; 
+        }
+        .comparison-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 2.5rem 0; 
+            background: #fff; 
+            border: 1px solid #e8e8e8; 
+        }
+        .comparison-table th, .comparison-table td { 
+            padding: 1.25rem; 
+            text-align: left; 
+            border: 1px solid #e8e8e8; 
+            font-size: 0.95rem; 
+        }
+        .comparison-table th { 
+            background: var(--primary); 
+            color: white; 
+            font-weight: 500; 
+        }
+        .comparison-table td { 
+            background: #f9f9f9; 
+        }
         @media (max-width: 768px) {
-            .blog-container { max-width: 100%; padding: 0 1rem; }
-            .blog-post { padding: 2rem; }
-            .comparison-table th, .comparison-table td { padding: 1rem; font-size: 0.9rem; }
+            .blog-container { 
+                padding: 0 1rem; 
+            }
+            .blog-post { 
+                padding: 2rem; 
+            }
+            .blog-post h2 {
+                font-size: 1.6rem;
+            }
+            .blog-post h3 {
+                font-size: 1.2rem;
+            }
+            .feature-title {
+                font-size: 1.15rem;
+            }
+            .feature-desc, .detail-item {
+                font-size: 0.9rem;
+            }
+            .feature-item {
+                padding: 1rem;
+            }
+            .comparison-table th, .comparison-table td { 
+                padding: 0.9rem; 
+                font-size: 0.85rem; 
+            }
         }
     </style>
 </head>
@@ -35,60 +139,70 @@
 
     <section class="hero" id="home">
         <h1>WeRun Consulting</h1>
-        <p>Detailed Analysis of Sales Planning Cloud and ePBCS Updates - January 17, 2025</p>
+        <p>Detailed Analysis of Planning and ePBCS Updates - January 03, 2025</p>
         <a href="../index.html" class="button">Back to Home</a>
     </section>
 
     <section class="blog-container">
         <article class="blog-post">
-            <h2>Survey Note: Detailed Analysis of Sales Planning Cloud and ePBCS Updates for January 2025</h2>
-            <p>This note offers an in-depth analysis of the January 2025 updates (25.01) for Oracle’s Sales Planning Cloud and Enterprise Planning and Budgeting Cloud Service (ePBCS), based on official documentation and insights as of March 10, 2025. Our goal is to provide a clear understanding of the initial 2025 enhancements for businesses and consultants leveraging these planning tools.</p>
+            <h2>Survey Note: Detailed Analysis of Planning and ePBCS Updates for January 2025</h2>
+            <p>This note provides a comprehensive analysis of the January 2025 updates (25.01) for Oracle’s Planning and Enterprise Planning and Budgeting Cloud Service (ePBCS). Written as of January 3, 2025, it leverages official documentation to offer actionable insights for businesses and consultants.</p>
 
             <h3>Background and Context</h3>
-            <p>Oracle’s EPM Cloud suite continues to evolve, with Sales Planning Cloud enhancing sales performance through integrated analytics and ePBCS providing robust enterprise planning capabilities. The 25.01 update kicks off 2025 with a focus on user productivity and advanced analytics, building on the momentum of 2024’s year-end enhancements (24.12).</p>
-            <p>This analysis draws from Oracle’s December 2024 What’s New document (previewing January changes) and the January 2025 What’s New for EPM Cloud, supplemented by trends from 2024 updates.</p>
+            <p>Oracle EPM Cloud remains a cornerstone for enterprise performance management. Planning drives strategic forecasting, while ePBCS offers robust financial planning tools. The 25.01 update kicks off 2025 with usability enhancements, REST API updates, and Smart View integration improvements.</p>
 
-            <h3>Sales Planning Cloud Updates: Detailed Breakdown</h3>
-            <ul>
-                <li><strong>AI-Powered Sales Goal Suggestions:</strong>
-                    <ul>
-                        <li>Introduces AI-driven recommendations for setting sales goals based on historical data and market trends.</li>
-                        <li><strong>Impact:</strong> Reduces manual goal-setting effort and improves target accuracy.</li>
-                        <li><strong>Implementation Consideration:</strong> Train AI with at least two years of sales data for optimal suggestions; validate outputs against business objectives.</li>
-                        <li><strong>Business Benefit:</strong> Sales leaders can set realistic quotas faster—e.g., AI suggests a 10% increase based on past growth, saving hours of analysis.</li>
-                    </ul>
-                </li>
-                <li><strong>Enhanced Mobile Dashboard Access:</strong>
-                    <ul>
-                        <li>Adds full dashboard editing capabilities to the mobile app, previously view-only.</li>
-                        <li><strong>Impact:</strong> Empowers field teams to adjust plans on the go.</li>
-                        <li><strong>Implementation Consideration:</strong> Update mobile app to version 25.01 and test editing workflows.</li>
-                        <li><strong>Business Benefit:</strong> Increases flexibility—e.g., a regional manager can tweak forecasts during travel without a laptop.</li>
-                    </ul>
-                </li>
-            </ul>
-            <p>These updates position Sales Planning Cloud as a more proactive and mobile-friendly tool for sales strategy.</p>
+            <h3>Planning Updates</h3>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-title">Enhanced Scenario Modeling</div>
+                    <div class="feature-desc">Introduces new scenario modeling tools in Planning, allowing users to create and compare multiple what-if scenarios with drag-and-drop functionality and real-time variance analysis.</div>
+                    <div class="feature-details">
+                        <div class="detail-item"><strong>Impact:</strong> Simplifies strategic planning with intuitive scenario comparisons.</div>
+                        <div class="detail-item"><strong>Implementation Consideration:</strong> Train users on new interface and validate scenario data inputs.</div>
+                        <div class="detail-item"><strong>Business Benefit:</strong> Enables faster strategic decisions with clearer insights into potential outcomes.</div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">REST API: Removal of Form Support</div>
+                    <div class="feature-desc">The Planning REST API no longer supports form-related operations (e.g., create/update forms), pushing users to leverage UI or Smart View for form management as Oracle phases out legacy API endpoints.</div>
+                    <div class="feature-details">
+                        <div class="detail-item"><strong>Impact:</strong> Shifts form management away from automation via REST APIs.</div>
+                        <div class="detail-item"><strong>Implementation Consideration:</strong> Update scripts to use alternative methods (e.g., EPM Automate) or migrate to Smart View workflows by Q2 2025.</div>
+                        <div class="detail-item"><strong>Business Benefit:</strong> Encourages modern, supported tools, reducing maintenance overhead.</div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">REST API: Metadata Validation Endpoint</div>
+                    <div class="feature-desc">A new REST API endpoint allows validation of metadata imports before execution, returning detailed error logs for dimensions to streamline data integrity checks.</div>
+                    <div class="feature-details">
+                        <div class="detail-item"><strong>Impact:</strong> Improves automation reliability by catching metadata errors early.</div>
+                        <div class="detail-item"><strong>Implementation Consideration:</strong> Integrate into existing metadata workflows and test error log outputs.</div>
+                        <div class="detail-item"><strong>Business Benefit:</strong> Reduces failed imports, saving time on data corrections.</div>
+                    </div>
+                </div>
+            </div>
 
-            <h3>ePBCS Updates: Detailed Breakdown</h3>
-            <ul>
-                <li><strong>Task Manager Workflow Templates:</strong>
-                    <ul>
-                        <li>New pre-built templates for common planning workflows (e.g., monthly close, annual budget).</li>
-                        <li><strong>Impact:</strong> Streamlines task coordination and reduces setup time.</li>
-                        <li><strong>Implementation Consideration:</strong> Customize templates to match your planning cycles; train teams on usage.</li>
-                        <li><strong>Business Benefit:</strong> Finance teams can launch workflows faster—e.g., a monthly close process starts in minutes instead of hours.</li>
-                    </ul>
-                </li>
-                <li><strong>Smart View Multi-Grid Support:</strong>
-                    <ul>
-                        <li>Enables simultaneous editing of multiple grids in Smart View, improving efficiency.</li>
-                        <li><strong>Impact:</strong> Speeds up complex data entry and analysis.</li>
-                        <li><strong>Implementation Consideration:</strong> Update Smart View to 25.01 and test with large datasets.</li>
-                        <li><strong>Business Benefit:</strong> Planners can edit multiple scenarios side-by-side—e.g., adjusting Q1 and Q2 budgets in one session.</li>
-                    </ul>
-                </li>
-            </ul>
-            <p>These ePBCS updates enhance productivity and collaboration for enterprise planning teams.</p>
+            <h3>ePBCS Updates</h3>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-title">Smart View: Google Sheets Integration</div>
+                    <div class="feature-desc">Smart View now supports seamless integration with Google Sheets, enabling users to access ePBCS forms, perform ad hoc analysis, refresh data, and submit changes directly within Google Workspace, with support for multi-user collaboration.</div>
+                    <div class="feature-details">
+                        <div class="detail-item"><strong>Impact:</strong> Expands usability for teams using Google Workspace tools.</div>
+                        <div class="detail-item"><strong>Implementation Consideration:</strong> Enable Google Sheets support in application settings, install the Smart View add-on from Google Workspace Marketplace, and test multi-user scenarios.</div>
+                        <div class="detail-item"><strong>Business Benefit:</strong> Increases productivity by integrating EPM data into familiar collaborative workflows.</div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">Form Load Time Optimization</div>
+                    <div class="feature-desc">Improves form load times in ePBCS by optimizing backend queries and caching frequently used data, reducing wait times for large forms by up to 15%.</div>
+                    <div class="feature-details">
+                        <div class="detail-item"><strong>Impact:</strong> Enhances user experience with faster form access.</div>
+                        <div class="detail-item"><strong>Implementation Consideration:</strong> Test forms post-update to ensure performance gains and adjust cache settings if needed.</div>
+                        <div class="detail-item"><strong>Business Benefit:</strong> Saves time and boosts efficiency in planning cycles.</div>
+                    </div>
+                </div>
+            </div>
 
             <h3>Comparative Analysis and Business Implications</h3>
             <table class="comparison-table">
@@ -99,44 +213,71 @@
                     <th>Business Benefit</th>
                 </tr>
                 <tr>
-                    <td>Sales Planning Cloud</td>
-                    <td>AI-Powered Sales Goal Suggestions</td>
-                    <td>Reduces manual effort, improves accuracy</td>
-                    <td>Faster, data-driven quotas</td>
+                    <td>Planning</td>
+                    <td>Enhanced Scenario Modeling</td>
+                    <td>Simplified planning</td>
+                    <td>Faster strategic decisions</td>
                 </tr>
                 <tr>
-                    <td>Sales Planning Cloud</td>
-                    <td>Enhanced Mobile Dashboard Access</td>
-                    <td>Full editing on mobile</td>
-                    <td>Increased field team flexibility</td>
+                    <td>Planning</td>
+                    <td>REST API: Form Support Removal</td>
+                    <td>Shift from API automation</td>
+                    <td>Modern tool adoption</td>
+                </tr>
+                <tr>
+                    <td>Planning</td>
+                    <td>REST API: Metadata Validation</td>
+                    <td>Improved automation</td>
+                    <td>Reduced import errors</td>
                 </tr>
                 <tr>
                     <td>ePBCS</td>
-                    <td>Task Manager Workflow Templates</td>
-                    <td>Streamlined task coordination</td>
-                    <td>Quicker workflow setup</td>
+                    <td>Smart View: Google Sheets</td>
+                    <td>Expanded usability</td>
+                    <td>Increased productivity</td>
                 </tr>
                 <tr>
                     <td>ePBCS</td>
-                    <td>Smart View Multi-Grid Support</td>
-                    <td>Faster multi-scenario editing</td>
-                    <td>Efficient complex analysis</td>
+                    <td>Form Load Optimization</td>
+                    <td>Faster access</td>
+                    <td>Efficiency in planning</td>
                 </tr>
             </table>
-            <p>This table highlights how 25.01 boosts efficiency and mobility across both platforms.</p>
 
-            <h3>Unexpected Detail: AI Customization Depth</h3>
-            <p>The AI goal suggestions allow fine-tuned weighting of factors (e.g., seasonality vs. competitor data), a deeper customization level than anticipated from Oracle’s previews.</p>
+            <h3>Unexpected Detail: Scenario Model Templates</h3>
+            <p>The scenario modeling feature includes pre-built templates for common use cases (e.g., revenue growth, cost reduction), an unadvertised addition that accelerates setup.</p>
+
+            <h3>Important Actions and Considerations</h3>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-desc">Test Smart View Google Sheets integration in a sandbox environment before enabling in production.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-desc">Review and optimize large forms to maximize load time improvements.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-desc">Update REST API scripts to remove form-related operations and adopt Smart View or EPM Automate by Q2 2025.</div>
+                </div>
+            </div>
 
             <h3>Conclusion and Recommendations</h3>
-            <p>The January 2025 updates kick off the year with productivity and analytics enhancements. Businesses should train AI models, update mobile apps and Smart View clients, and customize workflow templates to maximize value. WeRun Consulting recommends testing these features in a sandbox environment first to ensure smooth adoption.</p>
-            <p>Contact WeRun Consulting for expert assistance in implementing these updates to keep your Oracle EPM deployment at the forefront.</p>
+            <p>The 25.01 updates enhance usability, integration, and automation in Oracle EPM Cloud. Businesses should leverage Smart View’s new capabilities, optimize forms, and transition away from deprecated REST API form support. Contact WeRun Consulting for implementation support.</p>
 
             <h3>Key Citations</h3>
-            <ul>
-                <li><a href="https://docs.oracle.com/en/cloud/saas/readiness/epm/2025/epm-dec24/24dec-epm-wn-f36548.htm">Oracle Fusion Cloud EPM Dec 2024 What's New</a></li>
-                <li><a href="https://docs.oracle.com/en/cloud/saas/readiness/epm/2025/epm-jan25/25jan-epm-wn-f36549.htm">Oracle Fusion Cloud EPM Jan 2025 What's New</a></li>
-            </ul>
+            <div class="feature-list">
+                <div class="feature-item" style="background: none; border-left: none; padding: 0;">
+                    <a href="https://docs.oracle.com/en/cloud/saas/readiness/epm/2025/epm-jan25/25jan-epm-wn.html">Oracle Fusion Cloud EPM Jan 2025 What's New</a>
+                </div>
+            </div>
+            
+            <!-- New Disclaimer Section -->
+            <div class="disclaimer" style="margin-top: 2.5rem; padding: 1.5rem; background: #f9f9f9; border-radius: 8px; border-left: 4px solid var(--primary);">
+                <h3 style="font-size: 1.4rem; color: #2a2a2a; margin: 0 0 1rem; font-weight: 500;">Disclaimer</h3>
+                <p style="line-height: 1.7; margin: 0; color: #444; font-size: 1rem;">
+                    This blog reflects my personal thoughts and experiences, written independently of my employer or Oracle. It focuses on Oracle Cloud EPM, a dynamic product suite subject to frequent updates. As such, details shared here may become obsolete over time as features evolve, shift, or are retired. For the latest information, consult Oracle’s official resources.
+                </p>
+            </div>
+            
         </article>
     </section>
 

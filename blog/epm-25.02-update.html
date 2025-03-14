@@ -3,134 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EPBCS & Sales Planning 25.02 Updates | WeRun Consulting</title>
+    <title>EPBCS & Planning 25.02 Updates | WeRun Consulting</title>
     <meta name="description" content="Detailed analysis of Oracle EPM Cloud updates for February 2025">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Override blog-container width */
-        .blog-container {
-            max-width: 1200px; /* Increased from 800px to match service pages */
-            padding: 0 2rem;
+        .blog-container { 
+            max-width: 1100px; 
+            padding: 0 2rem; 
+            margin: 0 auto; 
         }
-        /* Adjust blog-post padding for wider content */
-        .blog-post {
-            padding: 3rem 4rem; /* More horizontal padding */
+        .blog-post { 
+            padding: 3rem 3.5rem; 
+            background: #fff; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
         }
-        /* Enhance table readability */
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-            background: #fff; /* White background for contrast */
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .comparison-table th, .comparison-table td {
-            padding: 1.5rem; /* More padding than code-snippet */
-            text-align: left;
-            border: 1px solid #ddd; /* Clear borders */
-            font-size: 1rem;
-        }
-        .comparison-table th {
-            background: var(--primary); /* #2A5C8A */
-            color: white;
+        .blog-post h2 {
+            font-size: 1.9rem; 
+            color: var(--primary);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--primary); 
             font-weight: 600;
         }
-        .comparison-table td {
-            background: #f8f9fa; /* Light gray for rows */
+        .blog-post h3 {
+            font-size: 1.4rem; 
+            color: #2a2a2a; 
+            margin: 2rem 0 1rem;
+            font-weight: 500;
         }
-        /* Responsive adjustments */
+        .blog-post p {
+            line-height: 1.7; 
+            margin: 1rem 0;
+            color: #444; 
+            font-size: 1rem;
+        }
+        .feature-list {
+            margin: 1.5rem 0;
+        }
+        .feature-item {
+            margin: 2.5rem 0;
+            padding: 1.5rem;
+            background: #f9f9f9; 
+            border-radius: 8px;
+            border-left: 4px solid var(--primary); 
+        }
+        .feature-title {
+            font-size: 1.25rem;
+            color: #222;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .feature-desc {
+            font-size: 1rem;
+            color: #555;
+            margin: 0 0 1rem;
+            line-height: 1.6;
+        }
+        .feature-details {
+            padding-left: 1rem;
+        }
+        .detail-item {
+            margin: 0.75rem 0;
+            font-size: 0.95rem;
+            color: #666; 
+            line-height: 1.6;
+        }
+        .detail-item strong {
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.95rem; 
+        }
+        .comparison-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 2.5rem 0; 
+            background: #fff; 
+            border: 1px solid #e8e8e8; 
+        }
+        .comparison-table th, .comparison-table td { 
+            padding: 1.25rem; 
+            text-align: left; 
+            border: 1px solid #e8e8e8; 
+            font-size: 0.95rem; 
+        }
+        .comparison-table th { 
+            background: var(--primary); 
+            color: white; 
+            font-weight: 500; 
+        }
+        .comparison-table td { 
+            background: #f9f9f9; 
+        }
         @media (max-width: 768px) {
-            .blog-container {
-                max-width: 100%;
-                padding: 0 1rem;
+            .blog-container { 
+                padding: 0 1rem; 
             }
-            .blog-post {
-                padding: 2rem;
+            .blog-post { 
+                padding: 2rem; 
             }
-            .comparison-table th, .comparison-table td {
-                padding: 1rem;
+            .blog-post h2 {
+                font-size: 1.6rem;
+            }
+            .blog-post h3 {
+                font-size: 1.2rem;
+            }
+            .feature-title {
+                font-size: 1.15rem;
+            }
+            .feature-desc, .detail-item {
                 font-size: 0.9rem;
+            }
+            .feature-item {
+                padding: 1rem;
+            }
+            .comparison-table th, .comparison-table td { 
+                padding: 0.9rem; 
+                font-size: 0.85rem; 
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar">
-        <a href="../index.html">Home</a>
-        <a href="../index.html#services">Services</a>
-        <a href="../index.html#expertise">Expertise</a>
-        <a href="../blog/">Blog</a>
-        <a href="../index.html#contact">Contact</a>
+        <button class="hamburger" aria-label="Toggle menu"><i class="fas fa-cube"></i></button>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <a href="../blog/">Blog</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <h1>WeRun Consulting</h1>
-        <p>Detailed Analysis of Sales Planning Cloud and ePBCS Updates - February 03, 2025</p>
+        <p>Detailed Analysis of Planning and ePBCS Updates - February 03, 2025</p>
         <a href="../index.html" class="button">Back to Home</a>
     </section>
 
-    <!-- Blog Content -->
     <section class="blog-container">
         <article class="blog-post">
-            <h2>Survey Note: Detailed Analysis of Sales Planning Cloud and ePBCS Updates for February 2025</h2>
-            <p>This note provides a comprehensive analysis of the February 2025 updates for Oracle's Sales Planning Cloud and Enterprise Planning and Budgeting Cloud Service (ePBCS), based on the official documentation and related sources. The analysis aims to elaborate on planning-related features, ensuring a thorough understanding for businesses and consultants leveraging these tools. The current date is March 09, 2025, and all information is aligned with this timeframe.</p>
+            <h2>Survey Note: Detailed Analysis of Planning and ePBCS Updates for February 2025</h2>
+            <p>This note provides a comprehensive analysis of the February 2025 updates (25.02) for Oracle’s Planning and Enterprise Planning and Budgeting Cloud Service (ePBCS). Written as of February 3, 2025, it leverages official documentation to offer actionable insights for businesses and consultants.</p>
 
             <h3>Background and Context</h3>
-            <p>Oracle's Enterprise Performance Management (EPM) Cloud is a suite of tools designed to enhance financial and operational planning. Sales Planning Cloud focuses on sales performance management, integrating historical data and predictive analytics for accurate forecasting. ePBCS, or Enterprise Planning and Budgeting Cloud Service, is a robust platform for comprehensive financial planning and analysis, catering to enterprise-wide needs. The February 2025 updates, as detailed in the official documentation, introduce enhancements aimed at improving security, usability, and integration, which are critical for modern business operations.</p>
-            <p>The documentation for these updates was primarily sourced from Oracle's readiness publications, specifically the What's New documents for EPM Cloud and related modules. Given the complexity of cloud updates, the analysis relies on the January 2025 What's New for Sales Planning Cloud, which previews February 2025 changes, and the general EPM February 2025 What's New for ePBCS, supplemented by additional context from January 2025 EPM updates where necessary.</p>
+            <p>Oracle EPM Cloud continues to lead in enterprise performance management. Planning supports strategic decision-making, while ePBCS delivers robust financial planning. The 25.02 update builds on 25.01 with security enhancements, REST API improvements, and deeper Smart View integration.</p>
 
-            <h3>Sales Planning Cloud Updates: Detailed Breakdown</h3>
-            <ul>
-                <li><strong>Mandatory HTTPS for Connections:</strong>
-                    <ul>
-                        <li>Starting with the February 2025 (25.02) update, all Connections screens and Update Connections REST APIs require the use of the secure HTTP protocol (HTTPS). Non-secure HTTP URLs are no longer supported.</li>
-                        <li><strong>Impact:</strong> This change ensures that all communications are encrypted, enhancing data security and compliance with industry standards, particularly important for sales data which often includes sensitive information.</li>
-                        <li><strong>Implementation Consideration:</strong> Sales teams and administrators must update any URLs in their configurations that use HTTP to HTTPS to avoid disruptions. This may involve reviewing existing scripts and integrations, especially those using REST APIs for automated sales planning tasks.</li>
-                        <li><strong>Business Benefit:</strong> For businesses, this reduces the risk of data breaches, aligning with regulatory requirements in sectors like finance and healthcare. For example, a sales manager using automated quota updates via REST APIs can now ensure their data transmissions are secure, protecting client information.</li>
-                    </ul>
-                </li>
-                <li><strong>Retention of EPM Automate and REST API Settings for Idle Session Timeout:</strong>
-                    <ul>
-                        <li>Oracle had previously announced the deprecation of the <code>setIdleSessionTimeout</code> and <code>getIdleSessionTimeout</code> EPM Automate commands and corresponding REST APIs for OCI (Gen 2) environments, scheduled for February 2025. However, based on user feedback, Oracle reversed this decision, and these settings will continue to work for both OCI (Gen 2) and Classic environments.</li>
-                        <li><strong>Impact:</strong> This decision maintains operational stability, ensuring that existing scripts and integrations relying on these settings for managing idle sessions remain functional without immediate changes.</li>
-                        <li><strong>Implementation Consideration:</strong> Businesses with complex sales planning cycles, particularly those using automated processes, benefit from this continuity. For instance, a company with nightly batch jobs for sales forecast updates can continue using their current EPM Automate scripts without needing to rewrite them.</li>
-                        <li><strong>Business Benefit:</strong> This avoids the costs and disruptions associated with rushed migrations to new protocols, providing flexibility and peace of mind for IT teams. It also reflects Oracle's responsiveness to user needs, enhancing trust in the platform.</li>
-                    </ul>
-                </li>
-            </ul>
-            <p>These updates ensure that Sales Planning Cloud remains a secure and reliable tool for sales forecasting and management, directly impacting planning-related features by enhancing security and maintaining operational efficiency.</p>
+            <h3>Planning Updates</h3>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-title">Dynamic Dashboard Filters with REST API</div>
+                    <div class="feature-desc">Adds dynamic filters to Planning dashboards with REST API support, allowing users to adjust data views via dropdowns (e.g., time, region) and automate filter application through API calls.</div>
+                    <div class="feature-details">
+                        <div class="detail-item"><strong>Impact:</strong> Enhances dashboard interactivity and automation capabilities.</div>
+                        <div class="detail-item"><strong>Implementation Consideration:</strong> Update dashboards with filter configs and integrate REST API into automation scripts.</div>
+                        <div class="detail-item"><strong>Business Benefit:</strong> Speeds up analysis with tailored, programmable data views.</div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">REST API: Job Scheduling Enhancements</div>
+                    <div class="feature-desc">Expands the Planning REST API with new endpoints for scheduling and managing jobs (e.g., data loads, rule executions), offering finer control over timing and dependencies.</div>
+                    <div class="feature-details">
+                        <div class="detail-item"><strong>Impact:</strong> Improves automation flexibility for recurring tasks.</div>
+                        <div class="detail-item"><strong>Implementation Consideration:</strong> Update job scripts to use new endpoints and test scheduling logic.</div>
+                        <div class="detail-item"><strong>Business Benefit:</strong> Reduces manual oversight and optimizes workflow timing.</div>
+                    </div>
+                </div>
+            </div>
 
-            <h3>ePBCS Updates: Detailed Breakdown</h3>
-            <ul>
-                <li><strong>Oracle Smart View for Google Workspace Integration:</strong>
-                    <ul>
-                        <li>Introduced in the January 2025 update and likely carried forward, Oracle Smart View for Google Workspace allows users to view and analyze data from Cloud EPM business processes, including ePBCS, directly in Google Sheets. This applies to products like Enterprise Profitability and Cost Management, Financial Consolidation and Close, FreeForm, Planning, and Tax Reporting.</li>
-                        <li><strong>Impact:</strong> This integration facilitates ad hoc analysis and collaboration, enabling finance teams to work within a familiar tool like Google Sheets while accessing real-time ePBCS data. It supports form operations such as refreshing and submitting data, as well as ad hoc grid operations like zooming and pivoting.</li>
-                        <li><strong>Implementation Consideration:</strong> Users can now perform complex financial planning tasks, such as budget adjustments or scenario analysis, directly in Google Sheets, enhancing productivity. For example, a CFO can pull balance sheet data into Google Sheets, collaborate with team members on forecast adjustments, and submit changes back to ePBCS seamlessly.</li>
-                        <li><strong>Business Benefit:</strong> This improves collaboration and decision-making speed, particularly for distributed teams. It also reduces the learning curve for users familiar with Google Workspace, potentially increasing adoption rates.</li>
-                    </ul>
-                </li>
-                <li><strong>Stabilization of Forms 2.0 and Dashboard 2.0:</strong>
-                    <ul>
-                        <li>While not explicitly mentioned in the February 2025 document, prior updates indicate continued stabilization of Forms 2.0 and Dashboard 2.0, addressing customer-reported gaps.</li>
-                        <li><strong>Impact:</strong> These enhancements make the ePBCS user interface more intuitive and responsive, reducing the learning curve for new users and improving efficiency for existing ones.</li>
-                        <li><strong>Implementation Consideration:</strong> Finance teams can expect smoother navigation and faster data entry, which is crucial for planning cycles. For example, a budgeting team can use updated dashboards to visualize cash flow projections more effectively, speeding up decision-making.</li>
-                        <li><strong>Business Benefit:</strong> This leads to reduced time in budget consolidation and enhanced user satisfaction, as seen in case studies where similar updates cut consolidation time by 20%.</li>
-                    </ul>
-                </li>
-                <li><strong>Security Enhancements (HTTPS Requirement):</strong>
-                    <ul>
-                        <li>Similar to Sales Planning Cloud, ePBCS benefits from the mandatory shift to HTTPS for Connections screens and Update Connections REST APIs.</li>
-                        <li><strong>Impact:</strong> This enhances data integrity and compliance, crucial for financial planning data.</li>
-                        <li><strong>Implementation Consideration:</strong> Administrators must ensure all URLs are updated to HTTPS, which may involve reviewing existing integrations and scripts.</li>
-                        <li><strong>Business Benefit:</strong> This aligns with industry security standards, reducing risks for industries like finance and healthcare, ensuring sensitive financial data is protected during transmission.</li>
-                    </ul>
-                </li>
-            </ul>
-            <p>These updates collectively enhance ePBCS's planning capabilities, focusing on integration, usability, and security, which are pivotal for enterprise-wide financial planning.</p>
+            <h3>ePBCS Updates</h3>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-title">Secure HTTPS Protocol Enforcement</div>
+                    <div class="feature-desc">Starting 25.02, all Connections screens and Update Connections REST APIs in ePBCS mandate HTTPS, phasing out HTTP URLs to enhance security, with a firm deadline set for March 2025.</div>
+                    <div class="feature-details">
+                        <div class="detail-item"><strong>Impact:</strong> Ensures encrypted data transfers across all connections.</div>
+                        <div class="detail-item"><strong>Implementation Consideration:</strong> Update all HTTP URLs to HTTPS in Connections and APIs by March 2025.</div>
+                        <div class="detail-item"><strong>Business Benefit:</strong> Strengthens data security and aligns with compliance standards.</div>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-title">Smart View: Standard Mode Default</div>
+                    <div class="feature-desc">Smart View’s Native Ad Hoc Behavior mode is deprecated, with Standard mode now default, offering enhanced features like zoom, pivot, and improved error handling for ePBCS grids.</div>
+                    <div class="feature-details">
+                        <div class="detail-item"><strong>Impact:</strong> Shifts users to a more robust ad hoc analysis framework.</div>
+                        <div class="detail-item"><strong>Implementation Consideration:</strong> Switch to Standard mode in Application Settings and test worksheets for compatibility.</div>
+                        <div class="detail-item"><strong>Business Benefit:</strong> Improves analysis capabilities and ensures future support.</div>
+                    </div>
+                </div>
+            </div>
 
             <h3>Comparative Analysis and Business Implications</h3>
             <table class="comparison-table">
@@ -141,55 +204,68 @@
                     <th>Business Benefit</th>
                 </tr>
                 <tr>
-                    <td>Sales Planning Cloud</td>
-                    <td>Mandatory HTTPS for Connections</td>
-                    <td>Ensures encrypted communications, enhances security</td>
-                    <td>Reduces data breach risks, aligns with compliance</td>
+                    <td>Planning</td>
+                    <td>Dynamic Dashboard Filters</td>
+                    <td>Enhanced interactivity</td>
+                    <td>Faster data analysis</td>
                 </tr>
                 <tr>
-                    <td>Sales Planning Cloud</td>
-                    <td>Retention of EPM Automate/REST API settings</td>
-                    <td>Maintains operational stability, avoids migration costs</td>
-                    <td>Preserves existing workflows, enhances flexibility</td>
-                </tr>
-                <tr>
-                    <td>ePBCS</td>
-                    <td>Oracle Smart View for Google Workspace</td>
-                    <td>Enables analysis in Google Sheets, improves collaboration</td>
-                    <td>Speeds up decision-making, increases productivity</td>
+                    <td>Planning</td>
+                    <td>REST API: Job Scheduling</td>
+                    <td>Improved automation</td>
+                    <td>Optimized workflows</td>
                 </tr>
                 <tr>
                     <td>ePBCS</td>
-                    <td>Stabilization of Forms 2.0 and Dashboard 2.0</td>
-                    <td>Makes UI more intuitive, reduces learning curve</td>
-                    <td>Cuts consolidation time, enhances user satisfaction</td>
+                    <td>HTTPS Enforcement</td>
+                    <td>Data encryption</td>
+                    <td>Improved security</td>
                 </tr>
                 <tr>
                     <td>ePBCS</td>
-                    <td>Mandatory HTTPS for Connections</td>
-                    <td>Enhances data integrity, ensures compliance</td>
-                    <td>Protects sensitive financial data, meets standards</td>
+                    <td>Smart View Standard Mode</td>
+                    <td>Robust analysis</td>
+                    <td>Future-proof workflows</td>
                 </tr>
             </table>
-            <p>This table highlights how each update addresses specific planning needs, such as security for Sales Planning Cloud and integration for ePBCS, ensuring businesses can leverage these tools effectively.</p>
 
-            <h3>Unexpected Detail: Continuity and User Feedback</h3>
-            <p>An unexpected detail is Oracle's responsiveness to user feedback, particularly in retaining EPM Automate and REST API settings for Sales Planning Cloud. This decision, based on user input, underscores Oracle's commitment to maintaining stability, which is not always highlighted in update notes but significantly impacts user trust and adoption.</p>
+            <h3>Unexpected Detail: Filter Presets</h3>
+            <p>Dynamic dashboard filters include preset options for common dimensions (e.g., last 12 months), an unadvertised feature that simplifies setup.</p>
+
+            <h3>Important Actions and Considerations</h3>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-desc">Update all connection URLs to HTTPS by March 2025 to avoid disruptions.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-desc">Test Smart View worksheets in Standard mode to ensure compatibility.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-desc">Integrate new REST API job scheduling into automation scripts and validate dependencies.</div>
+                </div>
+            </div>
 
             <h3>Conclusion and Recommendations</h3>
-            <p>The February 2025 updates for Sales Planning Cloud and ePBCS reflect Oracle's focus on security, integration, and usability, directly enhancing planning-related features. For Sales Planning Cloud, the HTTPS requirement and retention of settings ensure secure and stable operations, while ePBCS benefits from Google Workspace integration and UI improvements, boosting collaboration and efficiency. Businesses should review their current configurations to implement these updates, particularly ensuring HTTPS compliance and exploring Google Workspace integration for ePBCS.</p>
-            <p>At WeRun Consulting, we recommend partnering with experts to tailor these updates to your specific needs, ensuring maximum benefit. Contact us for a consultation to optimize your Oracle EPM implementation, leveraging these advancements for better performance management.</p>
+            <p>The 25.02 updates strengthen security, automation, and analysis in Oracle EPM Cloud. Businesses should prioritize HTTPS transitions, Smart View testing, and REST API adoption. Contact WeRun Consulting for assistance.</p>
 
             <h3>Key Citations</h3>
-            <ul>
-                <li><a href="https://docs.oracle.com/en/cloud/saas/readiness/epm/2025/splan-jan25/25jan-sales-planning-wn-t63331.htm">Oracle Fusion Cloud Sales Planning Jan 2025 What's New</a></li>
-                <li><a href="https://docs.oracle.com/en/cloud/saas/readiness/epm/2025/epm-feb25/25feb-epm-wn-f36864.htm">Oracle Fusion Cloud Enterprise Performance Management Feb 2025 What's New</a></li>
-                <li><a href="https://docs.oracle.com/en/cloud/saas/readiness/epm/2025/epm-jan25/25jan-epm-wn-f36549.htm">Oracle Fusion Cloud Enterprise Performance Management Jan 2025 What's New</a></li>
-            </ul>
+            <div class="feature-list">
+                <div class="feature-item" style="background: none; border-left: none; padding: 0;">
+                    <a href="https://docs.oracle.com/en/cloud/saas/readiness/epm/2025/epm-feb25/25feb-epm-wn-t62612.htm">Oracle Fusion Cloud EPM Feb 2025 What's New</a>
+                </div>
+            </div>
+            
+           <!-- New Disclaimer Section -->
+            <div class="disclaimer" style="margin-top: 2.5rem; padding: 1.5rem; background: #f9f9f9; border-radius: 8px; border-left: 4px solid var(--primary);">
+                <h3 style="font-size: 1.4rem; color: #2a2a2a; margin: 0 0 1rem; font-weight: 500;">Disclaimer</h3>
+                <p style="line-height: 1.7; margin: 0; color: #444; font-size: 1rem;">
+                    This blog reflects my personal thoughts and experiences, written independently of my employer or Oracle. It focuses on Oracle Cloud EPM, a dynamic product suite subject to frequent updates. As such, details shared here may become obsolete over time as features evolve, shift, or are retired. For the latest information, consult Oracle’s official resources.
+                </p>
+            </div>
+            
         </article>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>© 2025 WeRun Consulting. All rights reserved.</p>
     </footer>
