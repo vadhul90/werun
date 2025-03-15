@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getEvaluatedMembers Groovy Cheatsheet | WeRun Consulting</title>
+    <meta name="description" content="Cheatsheet for using getEvaluatedMembers in Groovy scripts for Oracle EPM Cloud">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Prism.js CSS for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        .blog-container { 
+            max-width: 1100px; 
+            padding: 0 2rem; 
+            margin: 0 auto; 
+        }
+        .blog-post { 
+            padding: 3rem 3.5rem; 
+            background: #fff; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
+        }
+        .blog-post h1 {
+            font-size: 2.2rem; 
+            color: var(--primary);
+            margin: 0 0 1.5rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--primary); 
+            font-weight: 600;
+        }
+        .blog-post h2 {
+            font-size: 1.9rem; 
+            color: var(--primary);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--primary); 
+            font-weight: 600;
+        }
+        .blog-post h3 {
+            font-size: 1.4rem; 
+            color: #2a2a2a; 
+            margin: 2rem 0 1rem;
+            font-weight: 500;
+        }
+        .blog-post p {
+            line-height: 1.7; 
+            margin: 1rem 0;
+            color: #444; 
+            font-size: 1rem;
+        }
+        .cheat-sheet-item {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #f9f9f9; 
+            border-radius: 8px;
+            border-left: 4px solid var(--primary); 
+        }
+        .cheat-sheet-title {
+            font-size: 1.25rem;
+            color: #222;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .cheat-sheet-desc {
+            font-size: 1rem;
+            color: #555;
+            margin: 0 0 1rem;
+            line-height: 1.6;
+        }
+        .cheat-sheet-details {
+            padding-left: 1rem;
+        }
+        .comments-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        .comments-section h3 {
+            font-size: 1.6rem;
+            color: #2a2a2a;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        .utterances {
+            max-width: 100%;
+            margin: 0;
+            border: none;
+        }
+        .detail-item {
+            margin: 0.75rem 0;
+            font-size: 0.95rem;
+            color: #666; 
+            line-height: 1.6;
+        }
+        .detail-item strong {
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.95rem; 
+        }
+        /* Prism.js styling */
+        pre[class*="language-"] {
+            margin: 1rem 0;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            overflow-x: auto;
+            position: relative;
+        }
+        code[class*="language-"] {
+            font-family: 'Fira Code', 'Consolas', monospace;
+        }
+        pre.line-numbers {
+            padding-left: 3.5rem;
+        }
+        .line-numbers .line-numbers-rows {
+            border-right: 1px solid #4a4a4a;
+            padding-right: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .blog-container { 
+                padding: 0 1rem; 
+            }
+            .blog-post { 
+                padding: 2rem; 
+            }
+            .blog-post h1 {
+                font-size: 1.8rem;
+            }
+            .blog-post h2 {
+                font-size: 1.6rem;
+            }
+            .blog-post h3 {
+                font-size: 1.2rem;
+            }
+            .cheat-sheet-title {
+                font-size: 1.15rem;
+            }
+            .cheat-sheet-desc, .detail-item {
+                font-size: 0.9rem;
+            }
+            .cheat-sheet-item {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <button class="hamburger" aria-label="Toggle menu"><i class="fas fa-cube"></i></button>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <a href="../blog/">Blog</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1>WeRun Consulting</h1>
+        <p>getEvaluatedMembers Groovy Cheatsheet - March 15, 2025</p>
+        <a href="../index.html" class="button">Back to Home</a>
+    </section>
+
+    <section class="blog-container">
+        <article class="blog-post">
+            <h1>getEvaluatedMembers Groovy Cheatsheet for Oracle EPM Cloud</h1>
+            <p>A concise guide to using `getEvaluatedMembers` in Groovy scripts for Oracle EPM Cloud, including Sales Planning Cloud and ePBCS. Updated as of March 15, 2025.</p>
+
+            <h2>Syntax</h2>
+            <pre class="language-groovy line-numbers"><code>List<String> getEvaluatedMembers(String expression, Dimension dimension)
+</code></pre>
+            <p><strong>Description:</strong> Retrieves a list of member names evaluated from a dimension based on an Essbase-style expression (e.g., "Children", "Descendants").</p>
+            <p><strong>Parameters:</strong></p>
+            <ul>
+                <li><strong>expression:</strong> String defining the member set (e.g., "Descendants(Entity)")</li>
+                <li><strong>dimension:</strong> Dimension object from the cube (e.g., Entity, Period)</li>
+            </ul>
+            <p><strong>Returns:</strong> List of member names as strings.</p>
+
+            <h2>Common Use Cases</h2>
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">1. Retrieve Members from POV</div>
+                <div class="cheat-sheet-desc">Fetch members dynamically based on a user-selected POV in a form.</div>
+                <pre class="language-groovy line-numbers"><code>Cube cube = operation.application.getCube("Plan1")
+Dimension entityDim = operation.application.getDimension("Entity", cube)
+String povMember = operation.grid.pov.find{it.dimName == "Entity"}?.essbaseMbrName ?: "TotalEntity"
+List<String> entities = cube.getEvaluatedMembers("Descendants($povMember)", entityDim)
+entities.each { println "Entity: $it" }
+</code></pre>
+                <div class="cheat-sheet-details">
+                    <div class="detail-item"><strong>Tip:</strong> Use a fallback (e.g., "TotalEntity") for null POVs.</div>
+                    <div class="detail-item"><strong>Use Case:</strong> Push data to all descendants of a selected region.</div>
+                </div>
+            </div>
+
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">2. Filter Members by Level</div>
+                <div class="cheat-sheet-desc">Get level-specific members (e.g., Level 0) from a dimension.</div>
+                <pre class="language-groovy line-numbers"><code>Cube cube = operation.application.getCube("SalesPlan")
+Dimension productDim = operation.application.getDimension("Product", cube)
+List<String> level0Products = cube.getEvaluatedMembers("Lev0,Product", productDim)
+level0Products.each { println "Product: $it" }
+</code></pre>
+                <div class="cheat-sheet-details">
+                    <div class="detail-item"><strong>Tip:</strong> Combine with "Children" or "Descendants" for more granularity.</div>
+                    <div class="detail-item"><strong>Use Case:</strong> Validate data at base-level products in Sales Planning Cloud.</div>
+                </div>
+            </div>
+
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">3. Combine with Runtime Prompts</div>
+                <div class="cheat-sheet-desc">Use runtime prompt values to evaluate members dynamically.</div>
+                <pre class="language-groovy line-numbers"><code>Cube cube = operation.application.getCube("Plan1")
+Dimension scenarioDim = operation.application.getDimension("Scenario", cube)
+String rtpValue = operation.getRuntimePrompt("SelectScenario") ?: "Plan"
+List<String> scenarios = cube.getEvaluatedMembers("Children($rtpValue)", scenarioDim)
+scenarios.each { println "Scenario: $it" }
+</code></pre>
+                <div class="cheat-sheet-details">
+                    <div class="detail-item"><strong>Tip:</strong> Ensure the RTP is defined in the rule.</div>
+                    <div class="detail-item"><strong>Use Case:</strong> Copy data across scenario children based on user input.</div>
+                </div>
+            </div>
+
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">4. Get Members from a Fixed Parent</div>
+                <div class="cheat-sheet-desc">Retrieve children of a hardcoded parent member.</div>
+                <pre class="language-groovy line-numbers"><code>Cube cube = operation.application.getCube("Plan1")
+Dimension accountDim = operation.application.getDimension("Account", cube)
+List<String> revenueAccounts = cube.getEvaluatedMembers("Children(Revenue)", accountDim)
+revenueAccounts.each { println "Account: $it" }
+</code></pre>
+                <div class="cheat-sheet-details">
+                    <div class="detail-item"><strong>Tip:</strong> Useful for static hierarchies that rarely change.</div>
+                    <div class="detail-item"><strong>Use Case:</strong> Aggregate revenue sub-accounts for reporting.</div>
+                </div>
+            </div>
+
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">5. Exclude Specific Members</div>
+                <div class="cheat-sheet-desc">Filter out unwanted members using exclusion operators.</div>
+                <pre class="language-groovy line-numbers"><code>Cube cube = operation.application.getCube("SalesPlan")
+Dimension entityDim = operation.application.getDimension("Entity", cube)
+List<String> activeEntities = cube.getEvaluatedMembers("Descendants(TotalEntity) - ClosedEntities", entityDim)
+activeEntities.each { println "Entity: $it" }
+</code></pre>
+                <div class="cheat-sheet-details">
+                    <div class="detail-item"><strong>Tip:</strong> Ensure excluded members exist in the hierarchy.</div>
+                    <div class="detail-item"><strong>Use Case:</strong> Process only active sales regions in Sales Planning Cloud.</div>
+                </div>
+            </div>
+
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">6. Combine Multiple Dimensions</div>
+                <div class="cheat-sheet-desc">Evaluate members from one dimension and use them in another context.</div>
+                <pre class="language-groovy line-numbers"><code>Cube cube = operation.application.getCube("Plan1")
+Dimension entityDim = operation.application.getDimension("Entity", cube)
+Dimension periodDim = operation.application.getDimension("Period", cube)
+List<String> entities = cube.getEvaluatedMembers("Lev0,Entity", entityDim)
+List<String> months = cube.getEvaluatedMembers("Children(YearTotal)", periodDim)
+println "Entities: $entities"
+println "Months: $months"
+</code></pre>
+                <div class="cheat-sheet-details">
+                    <div class="detail-item"><strong>Tip:</strong> Use in loops to build multi-dimensional grids.</div>
+                    <div class="detail-item"><strong>Use Case:</strong> Populate a grid with base entities and months for forecasting.</div>
+                </div>
+            </div>
+
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">7. Validate Member Existence</div>
+                <div class="cheat-sheet-desc">Check if a member or its relatives exist in the hierarchy.</div>
+                <pre class="language-groovy line-numbers"><code>Cube cube = operation.application.getCube("SalesPlan")
+Dimension productDim = operation.application.getDimension("Product", cube)
+List<String> productCheck = cube.getEvaluatedMembers("Children(NewProduct)", productDim)
+if (productCheck.isEmpty()) {
+    println "No children found for NewProduct"
+} else {
+    productCheck.each { println "Product: $it" }
+}
+</code></pre>
+                <div class="cheat-sheet-details">
+                    <div class="detail-item"><strong>Tip:</strong> Empty list indicates invalid or leaf-level members.</div>
+                    <div class="detail-item"><strong>Use Case:</strong> Verify new product lines before data load in Sales Planning.</div>
+                </div>
+            </div>
+
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">8. Dynamic Substitution Variables</div>
+                <div class="cheat-sheet-desc">Incorporate substitution variables for flexible member selection.</div>
+                <pre class="language-groovy line-numbers"><code>Cube cube = operation.application.getCube("Plan1")
+Dimension yearDim = operation.application.getDimension("Year", cube)
+String currentYear = operation.application.getSubstitutionVariable("CurrYear") ?: "FY25"
+List<String> years = cube.getEvaluatedMembers("Children($currentYear)", yearDim)
+years.each { println "Year: $it" }
+</code></pre>
+                <div class="cheat-sheet-details">
+                    <div class="detail-item"><strong>Tip:</strong> Set variables in Application settings.</div>
+                    <div class="detail-item"><strong>Use Case:</strong> Adjust planning periods based on current year settings.</div>
+                </div>
+            </div>
+
+            <h2>Tips and Tricks</h2>
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">Handling Errors</div>
+                <div class="cheat-sheet-desc">Wrap in try-catch to manage invalid expressions.</div>
+                <pre class="language-groovy line-numbers"><code>try {
+    List<String> members = cube.getEvaluatedMembers("InvalidFunc(Entity)", entityDim)
+} catch (Exception e) {
+    println "Error: ${e.message}"
+}
+</code></pre>
+            </div>
+
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">Performance Optimization</div>
+                <div class="cheat-sheet-desc">Limit scope for large hierarchies.</div>
+                <pre class="language-groovy line-numbers"><code>List<String> entities = cube.getEvaluatedMembers("Children(Entity) AND Lev0,Entity", entityDim)
+</code></pre>
+                <div class="cheat-sheet-details">
+                    <div class="detail-item"><strong>Note:</strong> Use AND to combine filters for faster evaluation.</div>
+                </div>
+            </div>
+
+            <h2>Key Resources</h2>
+            <div class="cheat-sheet-item" style="background: none; border-left: none; padding: 0;">
+                <a href="https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/groov/">Oracle EPM Cloud Groovy API Documentation</a>
+            </div>
+
+            <!-- Disclaimer Section -->
+            <div class="disclaimer" style="margin-top: 2.5rem; padding: 1.5rem; background: #f9f9f9; border-radius: 8px; border-left: 4px solid var(--primary);">
+                <h3 style="font-size: 1.4rem; color: #2a2a2a; margin: 0 0 1rem; font-weight: 500;">Disclaimer</h3>
+                <p style="line-height: 1.7; margin: 0; color: #444; font-size: 1rem;">
+                    This cheatsheet reflects my personal insights, written independently of my employer or Oracle. EPM Cloud features evolve, so verify with Oracle’s official documentation for the latest details.
+                </p>
+            </div>
+
+            <!-- LinkedIn Share Button -->
+            <div class="share-section" style="margin-top: 1.5rem; text-align: center;">
+                <p style="font-size: 1rem; color: #444; margin-bottom: 0.75rem;">Share this cheatsheet:</p>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://your-blog-url.com/blog/getEvaluatedMembers-cheatsheet" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.75rem 1.5rem; background: #0077B5; color: white; text-decoration: none; border-radius: 5px; font-size: 1rem;">
+                    <i class="fab fa-linkedin" style="margin-right: 0.5rem;"></i> Share on LinkedIn
+                </a>
+            </div>
+            
+            <!-- Comments Section with Utterances -->
+            <div class="comments-section">
+                <h3>Comments</h3>
+                <script src="https://utteranc.es/client.js"
+                        repo="vadhul90/werun"
+                        issue-term="pathname"
+                        label="comments"
+                        theme="github-light"
+                        crossorigin="anonymous"
+                        async>
+                </script>
+            </div>
+        </article>
+    </section>
+
+    <footer>
+        <p>© 2023 WeRun Consulting. All rights reserved.</p>
+    </footer>
+
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-groovy.min.js"></script>
+</body>
+</html>
