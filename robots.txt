@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /blog/
+Sitemap: https://www.werunconsulting.com/sitemap.xml
