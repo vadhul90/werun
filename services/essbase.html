@@ -3,71 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeRun Consulting | Oracle Essbase Experts</title>
-    <meta name="description" content="Enterprise-grade OLAP solutions with Oracle Essbase">
+    <title>Oracle Essbase Services | WeRun Consulting</title>
+    <meta name="description" content="Master multidimensional analytics with WeRun Consulting’s Oracle Essbase solutions—powerful insights, fast">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .services, .insights, .transformation, .benefits {
+            padding: 3rem 2rem;
+            background: #fff;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .service-card, .insight-card, .benefit-card {
+            padding: 1.5rem;
+            text-align: center;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .service-card .icon, .insight-card .icon, .benefit-card .icon {
+            font-size: 2rem;
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+        .service-card h3, .insight-card h3, .benefit-card h3 {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .service-card p, .insight-card p, .benefit-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .expertise, .tech-stack {
+            background: #f4f4f4;
+            padding: 3rem 2rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .cta {
+            padding: 2rem;
+            text-align: center;
+            background: #fff;
+        }
+        .cta .button {
+            background: #007bff;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 5px;
+        }
+        .cta .button:hover {
+            background: #0056b3;
+        }
+        @media (max-width: 768px) {
+            .services, .insights, .transformation, .benefits {
+                padding: 2rem 1rem;
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
-        <a href="../index.html">Home</a>
-        <a href="../index.html#services">Services</a>
-        <a href="../index.html#expertise">Expertise</a>
-        <a href="../blog/">Blog</a>
-        <a href="../index.html#contact">Contact</a>
+        <button class="hamburger" aria-label="Toggle menu"><i class="fas fa-cube"></i></button>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <a href="../blog/">Blog</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
     </nav>
 
-    <section class="hero">
-        <h1><i class="fas fa-cube"></i> Oracle Essbase</h1>
-        <p>Enterprise-grade OLAP solutions for advanced financial analytics</p>
+    <section class="hero" id="home">
+        <h1>Oracle Essbase Services</h1>
+        <p>Unleash multidimensional analytics with WeRun Consulting’s Oracle Essbase solutions—fast, flexible, and future-ready.</p>
+        <button class="button">Book Free Consultation</button>
     </section>
 
-    <div class="service-content">
-        <h2 style="text-align: center; margin-bottom: 2rem;">Comprehensive Essbase Solutions</h2>
-        
-        <div class="feature-grid">
-            <div class="feature-card">
-                <h3><i class="fas fa-project-diagram"></i> Multidimensional Analysis</h3>
-                <ul class="feature-list">
-                    <li>Advanced scenario modeling</li>
-                    <li>What-if analysis</li>
-                    <li>Driver-based planning</li>
-                </ul>
-            </div>
-            
-            <div class="feature-card">
-                <h3><i class="fas fa-database"></i> Data Integration</h3>
-                <ul class="feature-list">
-                    <li>ERP system integration</li>
-                    <li>Cloud data migration</li>
-                    <li>Real-time data feeds</li>
-                </ul>
-            </div>
-
-            <div class="feature-card">
-                <h3><i class="fas fa-shield-alt"></i> Managed Services</h3>
-                <ul class="feature-list">
-                    <li>Performance optimization</li>
-                    <li>Security configuration</li>
-                    <li>Upgrade assistance</li>
-                </ul>
-            </div>
+    <section class="services" id="services">
+        <div class="service-card">
+            <i class="fas fa-cogs icon"></i>
+            <h3>Cube Design & Deployment</h3>
+            <p>Build and deploy Essbase cubes optimized for financial modeling, reporting, and complex analytics.</p>
         </div>
-
-        <div class="service-cta">
-            <h2>Ready to Enhance Your Analytics?</h2>
-            <a href="../index.html#contact" class="button">
-                <i class="fas fa-chart-bar"></i> Start Now
-            </a>
+        <div class="service-card">
+            <i class="fas fa-code icon"></i>
+            <h3>Custom Calculations</h3>
+            <p>Develop advanced calculations with over 350 prebuilt functions and custom scripts for tailored insights.</p>
         </div>
-    </div>
+        <div class="service-card">
+            <i class="fas fa-exchange-alt icon"></i>
+            <h3>Data Integration</h3>
+            <p>Integrate Essbase with ERP, EPM, and external sources for a unified analytical platform.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-chart-bar icon"></i>
+            <h3>Smart View Reporting</h3>
+            <p>Enable dynamic Excel-based reporting with Smart View, cutting analysis time by 25%.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-tachometer-alt icon"></i>
+            <h3>Performance Optimization</h3>
+            <p>Tune Essbase cubes for high-speed queries and aggregations, boosting performance by 30%.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-tools icon"></i>
+            <h3>Managed Services</h3>
+            <p>Provide ongoing support, upgrades, and cube management for reliable analytics.</p>
+        </div>
+    </section>
+
+    <section class="insights">
+        <div class="insight-card">
+            <i class="fas fa-lightbulb icon"></i>
+            <h3>Complex Analysis</h3>
+            <p>Multidimensional views simplify complex data, reducing analysis time by 20%.</p>
+        </div>
+        <div class="insight-card">
+            <i class="fas fa-chart-pie icon"></i>
+            <h3>Accurate Modeling</h3>
+            <p>Robust calculation engine ensures precise financial models, improving decision quality.</p>
+        </div>
+        <div class="insight-card">
+            <i class="fas fa-rocket icon"></i>
+            <h3>Scalable Analytics</h3>
+            <p>Handles large datasets effortlessly, supporting growth without performance lag.</p>
+        </div>
+    </section>
+
+    <section class="transformation">
+        <div class="service-card">
+            <i class="fas fa-cloud icon"></i>
+            <h3>Digital Transformation</h3>
+            <p>Essbase modernizes analytics with cloud deployment and real-time collaboration.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-link icon"></i>
+            <h3>Data Connectivity</h3>
+            <p>Unifies disparate data sources, enhancing insights across departments.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-bolt icon"></i>
+            <h3>Rapid Insights</h3>
+            <p>Accelerates what-if analysis, enabling quick strategic pivots.</p>
+        </div>
+    </section>
+
+    <section class="tech-stack">
+        <h2>Where Essbase Fits</h2>
+        <p>Essbase powers the analytical layer, sitting between transactional systems (ERP, CRM) and reporting tools (OBIEE, Smart View), delivering multidimensional insights.</p>
+    </section>
+
+    <section class="benefits">
+        <div class="benefit-card">
+            <i class="fas fa-check-circle icon"></i>
+            <h3>Cost Savings</h3>
+            <p>A financial firm cut reporting costs by 20% with Essbase automation.</p>
+        </div>
+        <div class="benefit-card">
+            <i class="fas fa-clock icon"></i>
+            <h3>Speed Gains</h3>
+            <p>A retailer reduced analysis time by 30% with optimized cubes.</p>
+        </div>
+        <div class="benefit-card">
+            <i class="fas fa-trophy icon"></i>
+            <h3>Strategic Wins</h3>
+            <p>A manufacturer improved profitability by 15% with Essbase modeling.</p>
+        </div>
+    </section>
+
+    <section class="expertise" id="expertise">
+        <h2>Why WeRun for Essbase?</h2>
+        <p>WeRun Consulting masters Oracle Essbase, delivering up to 30% faster analytics and precise modeling. Transform your data into a competitive edge.</p>
+    </section>
+
+    <section class="cta">
+        <h2>Ready for Powerful Analytics?</h2>
+        <p>Contact WeRun Consulting to leverage Essbase for your business.</p>
+        <a href="../index.html#contact" class="button">Get Started Now</a>
+    </section>
 
     <footer>
         <p>© 2023 WeRun Consulting. All rights reserved.</p>
-        <div style="margin-top: 1rem;">
-            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-        </div>
     </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navLinksAnchors = navLinks.querySelectorAll('a');
+        hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+        navLinksAnchors.forEach(anchor => anchor.addEventListener('click', () => { if (window.innerWidth <= 768) navLinks.classList.remove('active'); }));
+    </script>
 </body>
 </html>

@@ -3,76 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeRun Consulting | Sales Planning Cloud Experts</title>
-    <meta name="description" content="Sales Performance Management solutions with Oracle Sales Planning Cloud">
+    <title>Sales Planning Cloud Services | WeRun Consulting</title>
+    <meta name="description" content="Boost sales performance with WeRun Consulting’s Oracle Sales Planning Cloud solutions—precision forecasting and strategic insights">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .services, .insights, .transformation, .benefits {
+            padding: 3rem 2rem;
+            background: #fff;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .service-card, .insight-card, .benefit-card {
+            padding: 1.5rem;
+            text-align: center;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .service-card .icon, .insight-card .icon, .benefit-card .icon {
+            font-size: 2rem;
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+        .service-card h3, .insight-card h3, .benefit-card h3 {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .service-card p, .insight-card p, .benefit-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .expertise, .tech-stack {
+            background: #f4f4f4;
+            padding: 3rem 2rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .cta {
+            padding: 2rem;
+            text-align: center;
+            background: #fff;
+        }
+        .cta .button {
+            background: #007bff;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 5px;
+        }
+        .cta .button:hover {
+            background: #0056b3;
+        }
+        @media (max-width: 768px) {
+            .services, .insights, .transformation, .benefits {
+                padding: 2rem 1rem;
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
-        <a href="../index.html">Home</a>
-        <a href="../index.html#services">Services</a>
-        <a href="../index.html#expertise">Expertise</a>
-        <a href="../blog/">Blog</a>
-        <a href="../index.html#contact">Contact</a>
+        <button class="hamburger" aria-label="Toggle menu"><i class="fas fa-cube"></i></button>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <a href="../blog/">Blog</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1><i class="fas fa-bullseye"></i> Sales Planning Cloud</h1>
-        <p>Optimize sales performance with AI-driven forecasting and incentive management</p>
+    <section class="hero" id="home">
+        <h1>Oracle Sales Planning Cloud Services</h1>
+        <p>Empower your sales team with WeRun Consulting’s Oracle Sales Planning Cloud solutions—driving precision, performance, and profitability.</p>
+        <button class="button">Book Free Consultation</button>
     </section>
 
-    <!-- Main Content -->
-    <div class="service-content">
-        <h2 style="text-align: center; margin-bottom: 2rem;">End-to-End Sales Performance Management</h2>
-        
-        <div class="feature-grid">
-            <div class="feature-card">
-                <h3><i class="fas fa-map-marked-alt"></i> Territory Management</h3>
-                <ul class="feature-list">
-                    <li>Automated territory alignment</li>
-                    <li>Quota distribution</li>
-                    <li>Performance analytics</li>
-                </ul>
-            </div>
-            
-            <div class="feature-card">
-                <h3><i class="fas fa-award"></i> Incentive Compensation</h3>
-                <ul class="feature-list">
-                    <li>Commission tracking</li>
-                    <li>Payout modeling</li>
-                    <li>Dispute resolution</li>
-                </ul>
-            </div>
-
-            <div class="feature-card">
-                <h3><i class="fas fa-robot"></i> AI Forecasting</h3>
-                <ul class="feature-list">
-                    <li>Predictive analytics</li>
-                    <li>Pipeline management</li>
-                    <li>Scenario simulation</li>
-                </ul>
-            </div>
+    <section class="services" id="services">
+        <div class="service-card">
+            <i class="fas fa-cogs icon"></i>
+            <h3>Implementation & Setup</h3>
+            <p>Deploy Sales Planning Cloud with tailored forecasting models, quotas, and territory management, integrated with Oracle Sales Cloud and Salesforce.</p>
         </div>
-
-        <!-- CTA Section -->
-        <div class="service-cta">
-            <h2>Ready to Transform Your Sales Planning?</h2>
-            <a href="../index.html#contact" class="button">
-                <i class="fas fa-comments-dollar"></i> Start Consultation
-            </a>
+        <div class="service-card">
+            <i class="fas fa-chart-bar icon"></i>
+            <h3>Advanced Analytics</h3>
+            <p>Create AI-powered dashboards and reports to track KPIs, sales trends, and pipeline health, delivering real-time insights for sales leadership.</p>
         </div>
-    </div>
+        <div class="service-card">
+            <i class="fas fa-chart-line icon"></i>
+            <h3>Predictive Forecasting</h3>
+            <p>Enhance forecasts with predictive analytics and what-if modeling, improving accuracy by 20% and optimizing resource allocation.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-exchange-alt icon"></i>
+            <h3>Data Integration</h3>
+            <p>Connect Sales Planning Cloud with CRM and ERP systems via REST APIs, unifying sales data for actionable insights.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-tachometer-alt icon"></i>
+            <h3>Process Automation</h3>
+            <p>Automate quota distribution and territory adjustments, reducing manual effort by 30% and boosting sales efficiency.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-tools icon"></i>
+            <h3>Managed Services</h3>
+            <p>Ensure peak performance with upgrades, tuning, and 24/7 support, keeping your sales planning agile and effective.</p>
+        </div>
+    </section>
 
-    <!-- Footer -->
+    <section class="insights">
+        <div class="insight-card">
+            <i class="fas fa-lightbulb icon"></i>
+            <h3>Improved Visibility</h3>
+            <p>Real-time sales data cuts pipeline blind spots by 25%, enabling proactive adjustments and better deal closure rates.</p>
+        </div>
+        <div class="insight-card">
+            <i class="fas fa-chart-pie icon"></i>
+            <h3>Precision Forecasting</h3>
+            <p>Predictive tools improve forecast accuracy by 20%, aligning sales strategies with market demand.</p>
+        </div>
+        <div class="insight-card">
+            <i class="fas fa-rocket icon"></i>
+            <h3>Revenue Growth</h3>
+            <p>Optimized planning boosts cross-sell opportunities, driving a 15% revenue increase.</p>
+        </div>
+    </section>
+
+    <section class="transformation">
+        <div class="service-card">
+            <i class="fas fa-cloud icon"></i>
+            <h3>Digital Transformation</h3>
+            <p>Sales Planning Cloud modernizes sales processes with cloud agility, AI insights, and seamless CRM integration.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-link icon"></i>
+            <h3>Unified Sales Data</h3>
+            <p>Breaks silos between sales, marketing, and finance, reducing planning time by 40%.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-bolt icon"></i>
+            <h3>Agile Adaptation</h3>
+            <p>Rapidly adjust strategies to market shifts with scalable, cloud-based tools.</p>
+        </div>
+    </section>
+
+    <section class="tech-stack">
+        <h2>Where Sales Planning Fits</h2>
+        <p>Oracle Sales Planning Cloud integrates with Oracle CX Cloud and third-party CRMs (e.g., Salesforce) in the sales performance management layer, connecting to ERP and analytics tools for a unified revenue strategy.</p>
+    </section>
+
+    <section class="benefits">
+        <div class="benefit-card">
+            <i class="fas fa-check-circle icon"></i>
+            <h3>Higher Close Rates</h3>
+            <p>A retail client saw a 20% increase in deal closures with predictive insights.</p>
+        </div>
+        <div class="benefit-card">
+            <i class="fas fa-clock icon"></i>
+            <h3>Faster Planning</h3>
+            <p>A tech firm cut sales planning time by 35% with automation.</p>
+        </div>
+        <div class="benefit-card">
+            <i class="fas fa-trophy icon"></i>
+            <h3>Competitive Advantage</h3>
+            <p>A manufacturer gained a 15% market edge with optimized quotas.</p>
+        </div>
+    </section>
+
+    <section class="expertise" id="expertise">
+        <h2>Why WeRun for Sales Planning?</h2>
+        <p>WeRun Consulting delivers Oracle Sales Planning Cloud expertise that drives sales success—up to 30% efficiency gains and 20% forecast improvements. Let us elevate your revenue strategy.</p>
+    </section>
+
+    <section class="cta">
+        <h2>Ready to Boost Sales?</h2>
+        <p>Contact WeRun Consulting to harness Sales Planning Cloud for your team.</p>
+        <a href="../index.html#contact" class="button">Get Started Now</a>
+    </section>
+
     <footer>
         <p>© 2023 WeRun Consulting. All rights reserved.</p>
-        <div style="margin-top: 1rem;">
-            <a href="#" style="color: white; margin: 0 1rem;"><i class="fab fa-linkedin"></i></a>
-            <a href="#" style="color: white; margin: 0 1rem;"><i class="fas fa-envelope"></i></a>
-        </div>
     </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navLinksAnchors = navLinks.querySelectorAll('a');
+        hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+        navLinksAnchors.forEach(anchor => anchor.addEventListener('click', () => { if (window.innerWidth <= 768) navLinks.classList.remove('active'); }));
+    </script>
 </body>
 </html>

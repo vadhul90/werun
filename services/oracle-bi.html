@@ -3,71 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeRun Consulting | Oracle BI Specialists</title>
-    <meta name="description" content="Business Intelligence solutions with Oracle Analytics Cloud">
+    <title>Oracle BI & Integration Services | WeRun Consulting</title>
+    <meta name="description" content="Maximize insights and connectivity with WeRun Consulting’s Oracle BI and Integration solutions—OBIEE, OCI, ODI, and more">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .services, .insights, .transformation, .benefits {
+            padding: 3rem 2rem;
+            background: #fff;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .service-card, .insight-card, .benefit-card {
+            padding: 1.5rem;
+            text-align: center;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .service-card .icon, .insight-card .icon, .benefit-card .icon {
+            font-size: 2rem;
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+        .service-card h3, .insight-card h3, .benefit-card h3 {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .service-card p, .insight-card p, .benefit-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .expertise, .tech-stack {
+            background: #f4f4f4;
+            padding: 3rem 2rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .cta {
+            padding: 2rem;
+            text-align: center;
+            background: #fff;
+        }
+        .cta .button {
+            background: #007bff;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 5px;
+        }
+        .cta .button:hover {
+            background: #0056b3;
+        }
+        @media (max-width: 768px) {
+            .services, .insights, .transformation, .benefits {
+                padding: 2rem 1rem;
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
-        <a href="../index.html">Home</a>
-        <a href="../index.html#services">Services</a>
-        <a href="../index.html#expertise">Expertise</a>
-        <a href="../blog/">Blog</a>
-        <a href="../index.html#contact">Contact</a>
+        <button class="hamburger" aria-label="Toggle menu"><i class="fas fa-cube"></i></button>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <a href="../blog/">Blog</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
     </nav>
 
-    <section class="hero">
-        <h1><i class="fas fa-chart-line"></i> Oracle BI</h1>
-        <p>Transform raw data into actionable business insights</p>
+    <section class="hero" id="home">
+        <h1>Oracle BI & Integration Services</h1>
+        <p>Transform data into actionable intelligence with WeRun Consulting’s Oracle BI and Integration solutions—unifying OBIEE, OCI, and ODI for seamless insights.</p>
+        <button class="button">Book Free Consultation</button>
     </section>
 
-    <div class="service-content">
-        <h2 style="text-align: center; margin-bottom: 2rem;">BI & Analytics Solutions</h2>
-        
-        <div class="feature-grid">
-            <div class="feature-card">
-                <h3><i class="fas fa-tachometer-alt"></i> Interactive Dashboards</h3>
-                <ul class="feature-list">
-                    <li>Real-time KPI monitoring</li>
-                    <li>Custom visualization</li>
-                    <li>Mobile-responsive design</li>
-                </ul>
-            </div>
-            
-            <div class="feature-card">
-                <h3><i class="fas fa-brain"></i> Advanced Analytics</h3>
-                <ul class="feature-list">
-                    <li>Predictive modeling</li>
-                    <li>Machine learning integration</li>
-                    <li>Natural language queries</li>
-                </ul>
-            </div>
-
-            <div class="feature-card">
-                <h3><i class="fas fa-cloud-upload-alt"></i> Cloud Analytics</h3>
-                <ul class="feature-list">
-                    <li>OCI integration</li>
-                    <li>Automated reporting</li>
-                    <li>Data governance</li>
-                </ul>
-            </div>
+    <section class="services" id="services">
+        <div class="service-card">
+            <i class="fas fa-cogs icon"></i>
+            <h3>OBIEE Implementation</h3>
+            <p>Deploy Oracle BI Enterprise Edition (OBIEE) for enterprise-grade dashboards, reports, and ad hoc analytics tailored to your needs.</p>
         </div>
-
-        <div class="service-cta">
-            <h2>Start Your Analytics Journey Today</h2>
-            <a href="../index.html#contact" class="button">
-                <i class="fas fa-rocket"></i> Launch Project
-            </a>
+        <div class="service-card">
+            <i class="fas fa-cloud icon"></i>
+            <h3>OCI Integration</h3>
+            <p>Leverage Oracle Cloud Infrastructure (OCI) to host BI workloads, ensuring scalability and 99.9% uptime with seamless cloud connectivity.</p>
         </div>
-    </div>
+        <div class="service-card">
+            <i class="fas fa-exchange-alt icon"></i>
+            <h3>ODI Data Integration</h3>
+            <p>Use Oracle Data Integrator (ODI) to ETL data from Oracle EBS, Essbase, and third-party systems into OBIEE for unified reporting.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-chart-bar icon"></i>
+            <h3>Self-Service Analytics</h3>
+            <p>Empower users with OBIEE’s intuitive tools to create custom visualizations, reducing IT reliance by 30%.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-tachometer-alt icon"></i>
+            <h3>Performance Optimization</h3>
+            <p>Tune OBIEE and ODI workflows for 25% faster queries and real-time insights, leveraging OCI’s compute power.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-tools icon"></i>
+            <h3>Managed Services</h3>
+            <p>Provide 24/7 support, upgrades, and maintenance for OBIEE, OCI, and ODI, ensuring a robust BI ecosystem.</p>
+        </div>
+    </section>
+
+    <section class="insights">
+        <div class="insight-card">
+            <i class="fas fa-lightbulb icon"></i>
+            <h3>Unified Insights</h3>
+            <p>Integrated BI and data flows reduce insight latency by 20%, enabling faster decisions.</p>
+        </div>
+        <div class="insight-card">
+            <i class="fas fa-chart-pie icon"></i>
+            <h3>Data Accuracy</h3>
+            <p>ODI’s ETL ensures consistent, reliable data, improving report trust by 25%.</p>
+        </div>
+        <div class="insight-card">
+            <i class="fas fa-rocket icon"></i>
+            <h3>Scalable BI</h3>
+            <p>OCI’s elasticity supports growing data volumes, cutting infrastructure costs by 15%.</p>
+        </div>
+    </section>
+
+    <section class="transformation">
+        <div class="service-card">
+            <i class="fas fa-cloud icon"></i>
+            <h3>Digital Transformation</h3>
+            <p>Combine OBIEE, OCI, and ODI to modernize analytics with cloud agility, AI insights, and end-to-end integration.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-link icon"></i>
+            <h3>Connected Ecosystem</h3>
+            <p>Unify disparate systems—ERP, CRM, and more—reducing data silos by 40%.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-bolt icon"></i>
+            <h3>Rapid Deployment</h3>
+            <p>OCI accelerates BI rollouts by 30%, driving quicker value from analytics.</p>
+        </div>
+    </section>
+
+    <section class="tech-stack">
+        <h2>Where BI & Integration Fit</h2>
+        <p>Oracle BI (OBIEE) powers the analytics layer, while ODI manages data integration and OCI provides the cloud foundation. Together, they bridge operational systems (ERP, CRM) and reporting tools, creating a cohesive intelligence stack.</p>
+    </section>
+
+    <section class="benefits">
+        <div class="benefit-card">
+            <i class="fas fa-check-circle icon"></i>
+            <h3>Cost Efficiency</h3>
+            <p>A logistics firm cut BI costs by 20% with OCI’s scalable infrastructure.</p>
+        </div>
+        <div class="benefit-card">
+            <i class="fas fa-clock icon"></i>
+            <h3>Time Savings</h3>
+            <p>A healthcare provider reduced ETL cycles by 35% with ODI.</p>
+        </div>
+        <div class="benefit-card">
+            <i class="fas fa-trophy icon"></i>
+            <h3>Strategic Advantage</h3>
+            <p>A financial client gained a 15% edge with integrated OBIEE insights.</p>
+        </div>
+    </section>
+
+    <section class="expertise" id="expertise">
+        <h2>Why WeRun for BI & Integration?</h2>
+        <p>WeRun Consulting excels in Oracle BI and Integration—delivering 30% faster insights, 25% more reliable data, and seamless OCI/ODI connectivity. Transform your business intelligence today.</p>
+    </section>
+
+    <section class="cta">
+        <h2>Ready to Connect Your Data?</h2>
+        <p>Contact WeRun Consulting to integrate Oracle BI with OCI and ODI for unparalleled insights.</p>
+        <a href="../index.html#contact" class="button">Get Started Now</a>
+    </section>
 
     <footer>
         <p>© 2023 WeRun Consulting. All rights reserved.</p>
-        <div style="margin-top: 1rem;">
-            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-        </div>
     </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navLinksAnchors = navLinks.querySelectorAll('a');
+        hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+        navLinksAnchors.forEach(anchor => anchor.addEventListener('click', () => { if (window.innerWidth <= 768) navLinks.classList.remove('active'); }));
+    </script>
 </body>
 </html>
