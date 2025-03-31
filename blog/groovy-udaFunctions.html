@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Managing UDAs in EPM Cloud with Groovy: Add, Remove, Replace, Edit | WeRun Consulting Blog</title>
+    <meta name="description" content="Learn how to add, remove, replace, and edit UDAs for members in EPM Cloud using Groovy scripting with this WeRun Consulting tutorial. Detailed examples included!">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        .blog-container { 
+            max-width: 1100px; 
+            padding: 0 2rem; 
+            margin: 0 auto; 
+        }
+        .blog-post { 
+            padding: 3rem 3.5rem; 
+            background: #fff; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
+        }
+        .blog-post h1 {
+            font-size: 2.2rem; 
+            color: var(--primary);
+            margin: 0 0 1.5rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--primary); 
+            font-weight: 600;
+        }
+        .blog-post h2 {
+            font-size: 1.9rem; 
+            color: var(--primary);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--primary); 
+            font-weight: 600;
+        }
+        .blog-post h3 {
+            font-size: 1.4rem; 
+            color: #2a2a2a; 
+            margin: 2rem 0 1rem;
+            font-weight: 500;
+        }
+        .blog-post p {
+            line-height: 1.7; 
+            margin: 1rem 0;
+            color: #444; 
+            font-size: 1rem;
+        }
+        .cheat-sheet-item {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #f9f9f9; 
+            border-radius: 8px;
+            border-left: 4px solid var(--primary); 
+        }
+        .cheat-sheet-title {
+            font-size: 1.25rem;
+            color: #222;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .cheat-sheet-desc {
+            font-size: 1rem;
+            color: #555;
+            margin: 0 0 1rem;
+            line-height: 1.6;
+        }
+        .cheat-sheet-details {
+            padding-left: 1rem;
+        }
+        .comments-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        .comments-section h3 {
+            font-size: 1.6rem;
+            color: #2a2a2a;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        .utterances {
+            max-width: 100%;
+            margin: 0;
+            border: none;
+        }
+        .detail-item {
+            margin: 0.75rem 0;
+            font-size: 0.95rem;
+            color: #666; 
+            line-height: 1.6;
+        }
+        .detail-item strong {
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.95rem; 
+        }
+        pre[class*="language-"] {
+            margin: 1rem 0;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            overflow-x: auto;
+            position: relative;
+        }
+        code[class*="language-"] {
+            font-family: 'Fira Code', 'Consolas', monospace;
+        }
+        pre.line-numbers {
+            padding-left: 3.5rem;
+        }
+        .line-numbers .line-numbers-rows {
+            border-right: 1px solid #4a4a4a;
+            padding-right: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .blog-container { padding: 0 1rem; }
+            .blog-post { padding: 2rem; }
+            .blog-post h1 { font-size: 1.8rem; }
+            .blog-post h2 { font-size: 1.6rem; }
+            .blog-post h3 { font-size: 1.2rem; }
+            .cheat-sheet-title { font-size: 1.15rem; }
+            .cheat-sheet-desc, .detail-item { font-size: 0.9rem; }
+            .cheat-sheet-item { padding: 1rem; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Managing UDAs in EPM Cloud with Groovy: Add, Remove, Replace, Edit",
+      "description": "Learn how to add, remove, replace, and edit UDAs for members in EPM Cloud using Groovy scripting with this WeRun Consulting tutorial.",
+      "author": {
+        "@type": "Organization",
+        "name": "WeRun Consulting"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "WeRun Consulting",
+        "url": "https://www.werunconsulting.com"
+      },
+      "datePublished": "2025-03-17",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.werunconsulting.com/blog/groovy-uda-management.html"
+      }
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <button class="hamburger" aria-label="Toggle menu"><i class="fas fa-cube"></i></button>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <a href="../blog/">Blog</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </nav>
+    <section class="hero" id="home">
+        <h1>WeRun Consulting</h1>
+        <p>In this <strong>Groovy scripting tutorial</strong>, we’ll explore how to manage <code>UDAs</code> in <strong>EPM Cloud</strong> for dynamic member updates.</p>
+        <a href="../index.html" class="button">Back to Home</a>
+    </section>
+
+    <section class="blog-container">
+        <article class="blog-post">
+            <h1>Managing UDAs in EPM Cloud with Groovy: A Cheatsheet</h1>
+            <p>Published: January 12, 2025 | By WeRun Consulting</p>
+            <p>User-Defined Attributes (UDAs) in EPM Cloud are custom tags assigned to members for reporting, calculations, or business logic. Groovy scripting lets you programmatically manage UDAs—adding, removing, replacing, or editing them—via the <code>Dimension</code> and <code>Member</code> classes. This cheatsheet provides detailed examples, building on our <a href="/blog/groovy-datagrid-builders.html">DataGrid Builders guide</a>.</p>
+
+            <h2>Adding UDAs to Members</h2>
+            <p><strong>Purpose:</strong> Assign a new UDA to a member to tag it for specific processes (e.g., marking regions as "HighPriority"). UDAs are managed through the member’s properties in a Map.</p>
+            <p><strong>Key Methods:</strong></p>
+            <ul>
+                <li><code>application.getDimension(dimName, cube)</code>: Retrieves the <code>Dimension</code> object.</li>
+                <li><code>dimension.getMember(memberName)</code>: Gets the <code>Member</code> object.</li>
+                <li><code>member.toMap()</code>: Converts member properties to a Map for editing.</li>
+                <li><code>dimension.saveMember(map)</code>: Commits changes to EPM Cloud.</li>
+            </ul>
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">Add "HighPriority" to Active Regions</div>
+                <div class="cheat-sheet-desc">Tag active regions with a "HighPriority" UDA for urgent forecasting.</div>
+                <pre class="language-groovy line-numbers"><code>Cube cube = operation.application.getCube("Plan1")
+Dimension regionDim = operation.application.getDimension("Region", cube)
+List<String> activeRegions = ["East", "West"]
+activeRegions.each { String regionName ->
+    Member member = regionDim.getMember(regionName)
+    if (member) {
+        Map<String, Object> memberMap = member.toMap()
+        String currentUda = memberMap.get("UDA") ?: ""
+        List<String> udaList = new ArrayList<String>()
+        if (currentUda) {
+            udaList.addAll(currentUda.split(","))
+        }
+        if (!udaList.contains("HighPriority")) {
+            udaList.add("HighPriority")
+            memberMap.put("UDA", udaList.join(","))
+            regionDim.saveMember(memberMap as Map<String, Object>)
+            println "Added HighPriority to $regionName"
+        } else {
+            println "$regionName already has HighPriority UDA"
+        }
+    } else {
+        println "Member $regionName not found"
+    }
+}
+                </code></pre>
+                <div class="cheat-sheet-details">
+                    <div class="detail-item"><strong>Logic:</strong> Iterates over regions, retrieves each <code>Member</code>, appends "HighPriority" to its UDA list if not present, and saves.</div>
+                    <div class="detail-item"><strong>Tip:</strong> Check member existence to avoid null errors.</div>
+                    <div class="detail-item"><strong>Use Case:</strong> Flag regions for priority reporting in dashboards.</div>
+                </div>
+            </div>
+
+            <h2>Removing UDAs from Members</h2>
+            <p><strong>Purpose:</strong> Delete a UDA from a member when it’s no longer applicable (e.g., removing "Obsolete" from updated products).</p>
+            <p><strong>Key Methods:</strong></p>
+            <ul>
+                <li><code>member.toMap()</code>: Accesses UDA properties.</li>
+                <li><code>dimension.saveMember(map)</code>: Updates the member.</li>
+            </ul>
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">Remove "Obsolete" from Updated Products</div>
+                <div class="cheat-sheet-desc">Clear the "Obsolete" UDA from products after a refresh.</div>
+                <pre class="language-groovy line-numbers"><code>Cube cube = operation.application.getCube("Sales")
+Dimension productDim = operation.application.getDimension("Product", cube)
+List<String> updatedProducts = ["ProdA", "ProdB"]
+updatedProducts.each { String prodName ->
+    Member member = productDim.getMember(prodName)
+    if (member) {
+        Map<String, Object> memberMap = member.toMap()
+        String currentUda = memberMap.get("UDA") ?: ""
+        List<String> udaList = new ArrayList<String>()
+        if (currentUda) {
+            udaList.addAll(currentUda.split(","))
+        }
+        if (udaList.contains("Obsolete")) {
+            udaList.remove("Obsolete")
+            memberMap.put("UDA", udaList.isEmpty() ? "" : udaList.join(","))
+            productDim.saveMember(memberMap as Map<String, Object>)
+            println "Removed Obsolete from $prodName"
+        } else {
+            println "$prodName does not have Obsolete UDA"
+        }
+    } else {
+        println "Member $prodName not found"
+    }
+}
+                </code></pre>
+                <div class="cheat-sheet-details">
+                    <div class="detail-item"><strong>Logic:</strong> Checks if "Obsolete" exists in the member’s UDAs, removes it if present, and saves.</div>
+                    <div class="detail-item"><strong>Tip:</strong> Handle empty UDA list with a conditional to avoid saving empty strings unnecessarily.</div>
+                    <div class="detail-item"><strong>Use Case:</strong> Update product metadata post-revision.</div>
+                </div>
+            </div>
+
+            <h2>Replacing UDAs on Members</h2>
+            <p><strong>Purpose:</strong> Swap all existing UDAs with a new set or replace specific UDAs conditionally.</p>
+            <p><strong>Key Methods:</strong></p>
+            <ul>
+                <li><code>member.toMap()</code>: Converts member properties to a Map for editing.</li>
+                <li><code>dimension.saveMember(map)</code>: Saves updated properties.</li>
+            </ul>
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">Replace UDAs with "Approved" Status</div>
+                <div class="cheat-sheet-desc">Update a scenario’s UDAs to reflect final approval, overwriting all existing UDAs.</div>
+                <pre class="language-groovy line-numbers"><code>Cube cube = operation.application.getCube("Plan1")
+Dimension scenarioDim = operation.application.getDimension("Scenario", cube)
+String scenarioName = "Q1Plan"
+Member member = scenarioDim.getMember(scenarioName)
+if (member) {
+    Map<String, Object> memberMap = member.toMap()
+    String currentUda = memberMap.get("UDA") ?: ""
+    List<String> udaList = new ArrayList<String>()
+    if (currentUda) {
+        udaList.addAll(currentUda.split(","))
+    }
+    println "Old UDAs: $udaList"
+    udaList.clear()
+    udaList.add("Approved")
+    memberMap.put("UDA", udaList.join(","))
+    scenarioDim.saveMember(memberMap as Map<String, Object>)
+    println "New UDAs: $udaList"
+} else {
+    println "Member $scenarioName not found"
+}
+                </code></pre>
+                <div class="cheat-sheet-details">
+                    <div class="detail-item"><strong>Logic:</strong> Logs current UDAs, clears them, adds "Approved", and saves, overwriting all previous UDAs.</div>
+                    <div class="detail-item"><strong>Tip:</strong> Use logging to verify changes before and after.</div>
+                    <div class="detail-item"><strong>Use Case:</strong> Finalize a planning scenario’s status.</div>
+                </div>
+            </div>
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">Replace "Temporary" with "Permanent" UDA</div>
+                <div class="cheat-sheet-desc">Swap "Temporary" for "Permanent" in a member’s UDAs while preserving others, using a Map approach.</div>
+                <pre class="language-groovy line-numbers"><code>Cube cube = operation.application.getCube("Plan1")
+Dimension entityDim = operation.application.getDimension("Entity", cube)
+String entityName = "Branch101"
+Member member = entityDim.getMember(entityName)
+def memberUDA = "Temporary"
+def memberMap = member.toMap()
+String currUDA = memberMap["UDA"]
+if (currUDA?.contains(memberUDA)) {
+    List<String> UDAs = ((String)memberMap["UDA"])?.split(",")*.trim() as List<String>
+    UDAs -= ["Temporary"]
+    UDAs += ["Permanent"]
+    memberMap["UDA"] = UDAs.join(", ")
+    Member updatedMember = entityDim.saveMember(memberMap, DynamicChildStrategy.DYNAMIC_IF_AVAILABLE)
+    println "Updated UDAs for $entityName: ${updatedMember.getUdas()}"
+}
+                </code></pre>
+                <div class="cheat-sheet-details">
+                    <div class="detail-item"><strong>Logic:</strong> Converts the member to a Map, checks for "Temporary" in the UDA string, splits it into a List, removes "Temporary," adds "Permanent," joins back to a string, and saves with <code>DYNAMIC_IF_AVAILABLE</code>.</div>
+                    <div class="detail-item"><strong>Tip:</strong> Use <code>?.</code> to safely handle null UDAs.</div>
+                    <div class="detail-item"><strong>Use Case:</strong> Update branch status from temporary to permanent.</div>
+                </div>
+            </div>
+
+            <h2>Editing UDAs (Conditional Add/Remove)</h2>
+            <p><strong>Purpose:</strong> Modify UDAs based on conditions (e.g., toggle "Active" to "Inactive" for customers).</p>
+            <p><strong>Key Methods:</strong></p>
+            <ul>
+                <li><code>member.toMap()</code>: Accesses UDA properties.</li>
+                <li><code>dimension.saveMember(map)</code>: Updates the member.</li>
+            </ul>
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">Toggle Customer Activity Status</div>
+                <div class="cheat-sheet-desc">Switch customer UDAs between "Active" and "Inactive" based on sales data.</div>
+                <pre class="language-groovy line-numbers"><code>Cube cube = operation.application.getCube("Revenue")
+Dimension customerDim = operation.application.getDimension("Customer", cube)
+String customerName = "Cust123"
+Member member = customerDim.getMember(customerName)
+if (member) {
+    Map<String, Object> memberMap = member.toMap()
+    String currentUda = memberMap.get("UDA") ?: ""
+    List<String> udaList = new ArrayList<String>()
+    if (currentUda) {
+        udaList.addAll(currentUda.split(","))
+    }
+    boolean hasSales = true // Replace with actual sales check logic
+    if (hasSales && udaList.contains("Inactive")) {
+        udaList.remove("Inactive")
+        udaList.add("Active")
+        memberMap.put("UDA", udaList.join(","))
+        customerDim.saveMember(memberMap as Map<String, Object>)
+        println "$customerName set to Active"
+    } else if (!hasSales && udaList.contains("Active")) {
+        udaList.remove("Active")
+        udaList.add("Inactive")
+        memberMap.put("UDA", udaList.join(","))
+        customerDim.saveMember(memberMap as Map<String, Object>)
+        println "$customerName set to Inactive"
+    }
+} else {
+    println "Member $customerName not found"
+}
+                </code></pre>
+                <div class="cheat-sheet-details">
+                    <div class="detail-item"><strong>Logic:</strong> Checks current UDAs and a condition (e.g., sales). Swaps "Inactive" to "Active" or vice versa as needed.</div>
+                    <div class="detail-item"><strong>Tip:</strong> Integrate with <code>DataGridBuilder</code> for dynamic sales checks.</div>
+                    <div class="detail-item"><strong>Use Case:</strong> Maintain customer status based on activity.</div>
+                </div>
+            </div>
+
+            <h2>Key Considerations</h2>
+            <p>- <strong>Permissions:</strong> Ensure your Groovy rule has metadata update rights in EPM Cloud.<br>
+               - <strong>Validation:</strong> UDAs must be alphanumeric, no spaces.<br>
+               - <strong>Performance:</strong> Batch saves with <code>dimension.saveMembers(members)</code> for multiple updates.</p>
+
+            <h2>Tips and Tricks</h2>
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">Check Before Save</div>
+                <div class="cheat-sheet-desc">Verify changes to avoid unnecessary commits.</div>
+                <pre class="language-groovy line-numbers"><code>Member member = dimension.getMember("Test")
+Map<String, Object> memberMap = member.toMap()
+String currentUda = memberMap.get("UDA") ?: ""
+List<String> udaList = new ArrayList<String>()
+if (currentUda) {
+    udaList.addAll(currentUda.split(","))
+}
+if (!udaList.contains("NewUDA")) {
+    udaList.add("NewUDA")
+    memberMap.put("UDA", udaList.join(","))
+    dimension.saveMember(memberMap as Map<String, Object>)
+}
+                </code></pre>
+            </div>
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">Log Changes</div>
+                <div class="cheat-sheet-desc">Track UDA updates for debugging.</div>
+                <pre class="language-groovy line-numbers"><code>Member member = dimension.getMember("Test")
+Map<String, Object> memberMap = member.toMap()
+String currentUda = memberMap.get("UDA") ?: ""
+List<String> udaList = new ArrayList<String>()
+if (currentUda) {
+    udaList.addAll(currentUda.split(","))
+}
+println "Before: $udaList"
+udaList.add("Test")
+memberMap.put("UDA", udaList.join(","))
+dimension.saveMember(memberMap as Map<String, Object>)
+println "After: $udaList"
+                </code></pre>
+            </div>
+
+            <div class="disclaimer" style="margin-top: 2.5rem; padding: 1.5rem; background: #f9f9f9; border-radius: 8px; border-left: 4px solid var(--primary);">
+                <h3 style="font-size: 1.4rem; color: #2a2a2a; margin: 0 0 1rem; font-weight: 500;">Disclaimer</h3>
+                <p style="line-height: 1.7; margin: 0; color: #444; font-size: 1rem;">
+                    This blog reflects my personal insights, written independently of my employer or Oracle. EPM Cloud features evolve, so verify with Oracle’s official documentation for the latest details.
+                </p>
+            </div>
+
+            <div class="share-section" style="margin-top: 1.5rem; text-align: center;">
+                <p style="font-size: 1rem; color: #444; margin-bottom: 0.75rem;">Share this blog:</p>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://your-blog-url.com/blog/groovy-uda-management" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.75rem 1.5rem; background: #0077B5; color: white; text-decoration: none; border-radius: 5px; font-size: 1rem;">
+                    <i class="fab fa-linkedin" style="margin-right: 0.5rem;"></i> Share on LinkedIn
+                </a>
+            </div>
+
+            <div class="comments-section">
+                <h3>Comments</h3>
+                <script src="https://utteranc.es/client.js"
+                        repo="vadhul90/werun"
+                        issue-term="pathname"
+                        label="comments"
+                        theme="github-light"
+                        crossorigin="anonymous"
+                        async>
+                </script>
+            </div>
+        </article>
+    </section>
+
+    <footer>
+        <p>© 2023 WeRun Consulting. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-groovy.min.js"></script>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navLinksAnchors = navLinks.querySelectorAll('a');
+        hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+        navLinksAnchors.forEach(anchor => anchor.addEventListener('click', () => { if (window.innerWidth <= 768) navLinks.classList.remove('active'); }));
+    </script>
+</body>
+</html>

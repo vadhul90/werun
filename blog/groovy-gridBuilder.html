@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groovy DataGrid Builders in Oracle EPM: Definition, Builder, Flexible | WeRun Consulting Blog</title>
+    <meta name="description" content="Master Groovy DataGridDefinitionBuilder, DataGridBuilder, and FlexibleDataGridDefinitionBuilder in Oracle EPM Cloud with this WeRun Consulting tutorial. Unique sample code included!">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Prism.js CSS for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <style>
+        .blog-container { 
+            max-width: 1100px; 
+            padding: 0 2rem; 
+            margin: 0 auto; 
+        }
+        .blog-post { 
+            padding: 3rem 3.5rem; 
+            background: #fff; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
+        }
+        .blog-post h1 {
+            font-size: 2.2rem; 
+            color: var(--primary);
+            margin: 0 0 1.5rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--primary); 
+            font-weight: 600;
+        }
+        .blog-post h2 {
+            font-size: 1.9rem; 
+            color: var(--primary);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--primary); 
+            font-weight: 600;
+        }
+        .blog-post h3 {
+            font-size: 1.4rem; 
+            color: #2a2a2a; 
+            margin: 2rem 0 1rem;
+            font-weight: 500;
+        }
+        .blog-post p {
+            line-height: 1.7; 
+            margin: 1rem 0;
+            color: #444; 
+            font-size: 1rem;
+        }
+        .cheat-sheet-item {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #f9f9f9; 
+            border-radius: 8px;
+            border-left: 4px solid var(--primary); 
+        }
+        .cheat-sheet-title {
+            font-size: 1.25rem;
+            color: #222;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .cheat-sheet-desc {
+            font-size: 1rem;
+            color: #555;
+            margin: 0 0 1rem;
+            line-height: 1.6;
+        }
+        .cheat-sheet-details {
+            padding-left: 1rem;
+        }
+        .comments-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        .comments-section h3 {
+            font-size: 1.6rem;
+            color: #2a2a2a;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        .utterances {
+            max-width: 100%;
+            margin: 0;
+            border: none;
+        }
+        .detail-item {
+            margin: 0.75rem 0;
+            font-size: 0.95rem;
+            color: #666; 
+            line-height: 1.6;
+        }
+        .detail-item strong {
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.95rem; 
+        }
+        /* Prism.js styling */
+        pre[class*="language-"] {
+            margin: 1rem 0;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            overflow-x: auto;
+            position: relative;
+        }
+        code[class*="language-"] {
+            font-family: 'Fira Code', 'Consolas', monospace;
+        }
+        pre.line-numbers {
+            padding-left: 3.5rem;
+        }
+        .line-numbers .line-numbers-rows {
+            border-right: 1px solid #4a4a4a;
+            padding-right: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .blog-container { 
+                padding: 0 1rem; 
+            }
+            .blog-post { 
+                padding: 2rem; 
+            }
+            .blog-post h1 {
+                font-size: 1.8rem;
+            }
+            .blog-post h2 {
+                font-size: 1.6rem;
+            }
+            .blog-post h3 {
+                font-size: 1.2rem;
+            }
+            .cheat-sheet-title {
+                font-size: 1.15rem;
+            }
+            .cheat-sheet-desc, .detail-item {
+                font-size: 0.9rem;
+            }
+            .cheat-sheet-item {
+                padding: 1rem;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Groovy DataGrid Builders in Oracle EPM: Definition, Builder, Flexible",
+      "description": "Master Groovy DataGridDefinitionBuilder, DataGridBuilder, and FlexibleDataGridDefinitionBuilder in Oracle EPM Cloud with this WeRun Consulting tutorial.",
+      "author": {
+        "@type": "Organization",
+        "name": "WeRun Consulting"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "WeRun Consulting",
+        "url": "https://www.werunconsulting.com"
+      },
+      "datePublished": "2024-11-10",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.werunconsulting.com/blog/groovy-datagrid-builders.html"
+      }
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <button class="hamburger" aria-label="Toggle menu"><i class="fas fa-cube"></i></button>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <a href="../blog/">Blog</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </nav>
+    <section class="hero" id="home">
+        <h1>WeRun Consulting</h1>
+        <p>In this <strong>Groovy scripting tutorial</strong>, we’ll explore how to use <code>gridBuilder</code> functions in <strong>Oracle EPM Cloud</strong></p>
+        <a href="../index.html" class="button">Back to Home</a>
+    </section>
+
+    <section class="blog-container">
+        <article class="blog-post">
+            <h1>Groovy DataGrid Builders Cheatsheet for Oracle EPM Cloud</h1>
+            <p>Published: November 10, 2024 | By WeRun Consulting</p>
+            <p>In Oracle EPM Cloud, Groovy scripting offers robust tools to interact with data grids—virtual representations of cube data. This cheatsheet dives into <strong>DataGridDefinitionBuilder</strong>, <strong>DataGridBuilder</strong>, and <strong>FlexibleDataGridDefinitionBuilder</strong>, providing detailed explanations and unique examples. Building on our <a href="/blog/groovy-getEval.html">getEval tutorial</a>, these builders let you read, write, and filter data with precision.</p>
+
+            <h2>DataGridDefinitionBuilder: Fetching Forecast Data</h2>
+            <p>The <strong>DataGridDefinitionBuilder</strong> constructs a read-only grid definition for retrieving data from an Essbase cube. Per Oracle’s Groovy API, it’s a programmatic equivalent to a Smart View retrieve, requiring a Point of View (POV), rows, and columns. Key methods include:</p>
+            <ul>
+                <li><code>addPov(dimensions, members)</code>: Sets fixed dimensions (e.g., Year) and their member combinations as Lists of Lists.</li>
+                <li><code>addRow(dimension, members)</code>: Defines row headers with a dimension and specific or evaluated members.</li>
+                <li><code>addColumn(dimension, members)</code>: Sets column headers similarly.</li>
+                <li><code>build()</code>: Returns a <code>DataGridDefinition</code> object, which <code>cube.loadGrid(definition, expand)</code> then populates with data (expand=true for dynamic members).</li>
+            </ul>
+            <p>The resulting <code>DataGrid</code> object provides iterators like <code>dataCellIterator()</code> to access cell data and metadata.</p>
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">Fetch Regional Forecast Variances</div>
+                <div class="cheat-sheet-desc">Retrieve forecast vs. actual variances for specific regions to analyze prediction accuracy.</div>
+                <pre class="language-groovy line-numbers"><code>Cube cube = operation.application.getCube("Forecast")
+DataGridDefinitionBuilder builder = cube.dataGridDefinitionBuilder()
+builder.addPov(['Year', 'Scenario', 'Version'], [['FY24'], ['Forecast', 'Actual'], ['Final']])
+builder.addColumn(['Measure'], [['Variance']])
+builder.addRow(['Region'], [['North', 'South']])
+DataGrid grid = cube.loadGrid(builder.build(), false)
+grid.dataCellIterator().each { cell ->
+    println "Region: ${cell.getMemberName('Region')}, Variance: ${cell.data}"
+}
+grid.close()
+                </code></pre>
+                <div class="cheat-sheet-details">
+                    <div class="detail-item"><strong>Logic:</strong> The POV locks Year to FY24, Scenario to Forecast and Actual, and Version to Final, creating a 2x1 grid (2 rows: North, South; 1 column: Variance). <code>false</code> in <code>loadGrid</code> skips member expansion for speed.</div>
+                    <div class="detail-item"><strong>Tip:</strong> Use <code>getMemberName(dim)</code> to extract specific dimension members from a cell.</div>
+                    <div class="detail-item"><strong>Use Case:</strong> Compare forecast accuracy across regions for reporting.</div>
+                </div>
+            </div>
+
+            <h2>DataGridBuilder: Distributing Expenses</h2>
+            <p>The <strong>DataGridBuilder</strong> creates a writable grid to push data into a cube, akin to a Smart View submit. It’s instantiated with a date format (e.g., "MM/DD/YYYY") for timestamped operations. Key methods include:</p>
+            <ul>
+                <li><code>addPov(member1, member2, ...)</code>: Sets POV as individual member strings, not Lists.</li>
+                <li><code>addColumn(member1, member2, ...)</code>: Defines column headers as strings (typically Periods).</li>
+                <li><code>addRow(headerMembers, data)</code>: Adds a row with header members (List) and data values (List of Numbers).</li>
+                <li><code>build(status)</code>: Constructs a <code>DataGrid</code>, with a <code>Status</code> object tracking accepted/rejected cells.</li>
+                <li><code>cube.saveGrid(grid)</code>: Commits the grid to the cube.</li>
+            </ul>
+            <p>It’s designed for precision updates, with <code>Status</code> providing feedback on save success.</p>
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">Distribute Quarterly Expenses</div>
+                <div class="cheat-sheet-desc">Allocate a quarterly expense budget across months using custom weights.</div>
+                <pre class="language-groovy line-numbers"><code>Cube cube = operation.application.getCube("Expenses")
+DataGridBuilder builder = cube.dataGridBuilder("MM/DD/YYYY")
+builder.addPov('FY24', 'Plan', 'USD', 'Working')
+builder.addColumn('Apr', 'May', 'Jun')
+def weights = [0.3, 0.3, 0.4] // 30%, 30%, 40%
+def totalExpense = 15000
+def expenseData = weights.collect { it * totalExpense }
+builder.addRow(['Travel'], expenseData)
+DataGridBuilder.Status status = new DataGridBuilder.Status()
+builder.build(status).withCloseable { grid ->
+    println "Cells saved: ${status.numAcceptedCells}"
+    cube.saveGrid(grid)
+}
+                </code></pre>
+                <div class="cheat-sheet-details">
+                    <div class="detail-item"><strong>Logic:</strong> POV fixes the intersection (FY24, Plan, USD, Working). Columns are Q2 months, and <code>expenseData</code> calculates 4500, 4500, 6000 based on weights. <code>Status</code> confirms 3 cells saved.</div>
+                    <div class="detail-item"><strong>Tip:</strong> Use <code>weights.collect</code> to dynamically compute values; check <code>status.numRejectedCells</code> if saves fail.</div>
+                    <div class="detail-item"><strong>Use Case:</strong> Allocate travel expenses across Q2 for budgeting.</div>
+                </div>
+            </div>
+
+            <h2>FlexibleDataGridDefinitionBuilder: Targeted Revenue Analysis</h2>
+            <p>The <strong>FlexibleDataGridDefinitionBuilder</strong> extends <code>DataGridDefinitionBuilder</code> with dynamic dimension handling and exclusion capabilities. It simplifies complex queries by inferring dimensions from members. Key methods include:</p>
+            <ul>
+                <li><code>setPov(member1, member2, ...)</code>: Sets POV as strings, order matching cube dimensions.</li>
+                <li><code>setRowDimensions(dim)</code> and <code>setColumnDimensions(dim)</code>: Assigns dimensions to axes dynamically.</li>
+                <li><code>addRow(members)</code> and <code>addColumn(members)</code>: Adds members or Essbase expressions (e.g., "ILvl0Descendants").</li>
+                <li><code>setExclude(memberSpec)</code>: Excludes specific members from the grid.</li>
+                <li><code>build()</code>: Creates a flexible <code>DataGridDefinition</code>.</li>
+            </ul>
+            <p>It’s ideal for grids with variable or filtered data needs.</p>
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">Analyze Active Customer Revenue</div>
+                <div class="cheat-sheet-desc">Fetch revenue data for active customers, excluding dormant GENERATION ones.</div>
+                <pre class="language-groovy line-numbers"><code>Cube cube = operation.application.getCube("Revenue")
+def builder = cube.flexibleDataGridDefinitionBuilder()
+builder.setPov('FY24', 'Actual', 'USD', 'Final')
+builder.setColumnDimensions('Customer')
+builder.addColumn('ILvl0Descendants("AllCustomers")')
+builder.setRowDimensions('Account')
+builder.addRow('NetRevenue').setExclude('[Customer].[DormantCustomers]')
+cube.loadGrid(builder.build(), false).withCloseable { grid ->
+    grid.dataCellIterator().each { cell ->
+        println "Customer: ${cell.getMemberName('Customer')}, Revenue: ${cell.data}"
+    }
+}
+                </code></pre>
+                <div class="cheat-sheet-details">
+                    <div class="detail-item"><strong>Logic:</strong> POV sets a static intersection. Columns use <code>ILvl0Descendants</code> to fetch all base-level customers, while <code>setExclude</code> skips "DormantCustomers". Row is fixed to NetRevenue.</div>
+                    <div class="detail-item"><strong>Tip:</strong> Use Essbase functions like <code>ILvl0Descendants</code> for dynamic member sets; verify exclusions exist in the hierarchy.</div>
+                    <div class="detail-item"><strong>Use Case:</strong> Report revenue for active customers only.</div>
+                </div>
+            </div>
+
+            <h2>Key Differences</h2>
+            <p>- <strong>DataGridDefinitionBuilder:</strong> Structured reads with explicit dimension-member pairs, best for static grids.<br>
+               - <strong>DataGridBuilder:</strong> Write operations with direct member inputs, suited for data submission.<br>
+               - <strong>FlexibleDataGridDefinitionBuilder:</strong> Dynamic reads with inferred dimensions and exclusions, ideal for complex queries.</p>
+
+            <h2>Tips and Tricks</h2>
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">Resource Management</div>
+                <div class="cheat-sheet-desc">Always close grids to prevent memory leaks, per Oracle’s best practices.</div>
+                <pre class="language-groovy line-numbers"><code>cube.loadGrid(builder.build(), false).withCloseable { grid ->
+    // Process grid here
+}
+                </code></pre>
+                <div class="cheat-sheet-details">
+                    <div class="detail-item"><strong>Logic:</strong> <code>withCloseable</code> auto-closes the grid after use, avoiding resource exhaustion.</div>
+                </div>
+            </div>
+            <div class="cheat-sheet-item">
+                <div class="cheat-sheet-title">Debugging Saves</div>
+                <div class="cheat-sheet-desc">Use <code>Status</code> to diagnose write issues, as recommended by Oracle.</div>
+                <pre class="language-groovy line-numbers"><code>if (status.numRejectedCells > 0) {
+    println "Rejected: ${status.numRejectedCells}, Reason: ${status.rejectedCells}"
+}
+                </code></pre>
+                <div class="cheat-sheet-details">
+                    <div class="detail-item"><strong>Logic:</strong> <code>numRejectedCells</code> counts failed saves; <code>rejectedCells</code> (if logged) details why (e.g., locked intersections).</div>
+                </div>
+            </div>
+            
+            <!-- Disclaimer Section -->
+            <div class="disclaimer" style="margin-top: 2.5rem; padding: 1.5rem; background: #f9f9f9; border-radius: 8px; border-left: 4px solid var(--primary);">
+                <h3 style="font-size: 1.4rem; color: #2a2a2a; margin: 0 0 1rem; font-weight: 500;">Disclaimer</h3>
+                <p style="line-height: 1.7; margin: 0; color: #444; font-size: 1rem;">
+                    This blog reflects my personal insights, written independently of my employer or Oracle. EPM Cloud features evolve, so verify with Oracle’s official documentation for the latest details.
+                </p>
+            </div>
+
+            <!-- LinkedIn Share Button -->
+            <div class="share-section" style="margin-top: 1.5rem; text-align: center;">
+                <p style="font-size: 1rem; color: #444; margin-bottom: 0.75rem;">Share this blog:</p>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://your-blog-url.com/blog/getEvaluatedMembers-cheatsheet" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.75rem 1.5rem; background: #0077B5; color: white; text-decoration: none; border-radius: 5px; font-size: 1rem;">
+                    <i class="fab fa-linkedin" style="margin-right: 0.5rem;"></i> Share on LinkedIn
+                </a>
+            </div>
+            
+
+            <!-- Comments Section -->
+            <div class="comments-section">
+                <h3>Comments</h3>
+                <script src="https://utteranc.es/client.js"
+                        repo="vadhul90/werun"
+                        issue-term="pathname"
+                        label="comments"
+                        theme="github-light"
+                        crossorigin="anonymous"
+                        async>
+                </script>
+            </div>
+        </article>
+    </section>
+
+    <footer>
+        <p>© 2023 WeRun Consulting. All rights reserved.</p>
+    </footer>
+
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-groovy.min.js"></script>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navLinksAnchors = navLinks.querySelectorAll('a');
+        hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+        navLinksAnchors.forEach(anchor => anchor.addEventListener('click', () => { if (window.innerWidth <= 768) navLinks.classList.remove('active'); }));
+    </script>
+</body>
+</html>
