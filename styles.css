@@ -193,18 +193,6 @@ body {
     }
 }
 
-/* Footer Link Styling (Add at the end of styles.css) */
-footer a {
-    color: white;
-    text-decoration: none;
-    margin-left: 1rem;
-    font-weight: 600;
-    transition: var(--transition);
-}
-
-footer a:hover {
-    color: var(--secondary);
-}
 
 /* ======= Hero Sections ======= */
 .hero {
@@ -677,4 +665,22 @@ footer {
         padding: 2rem 1rem;
         font-size: 0.9rem;
     }
+}
+
+
+/* Footer Link Styling */
+footer a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+footer a:visited {
+    color: white; /* Ensure visited links remain white */
+}
+
+footer a:hover {
+    color: var(--secondary); /* #E63946, as per your hover preference */
 }
