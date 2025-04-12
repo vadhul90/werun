@@ -69,7 +69,11 @@ body {
 .privacy-policy {
     padding: 5rem 2rem;
     background: var(--light);
-    min-height: calc(100vh - 4rem); 
+    min-height: calc(100vh - 4rem);
+}
+
+.top-margin {
+    padding-top: 5rem; /* Extra padding to clear fixed navbar */
 }
 
 .policy-container {
@@ -131,6 +135,10 @@ body {
         padding: 3rem 1rem;
     }
 
+    .top-margin {
+        padding-top: 4rem; /* Adjusted for smaller navbar height */
+    }
+
     .policy-container {
         padding: 2rem;
         margin: 0 1rem;
@@ -152,6 +160,10 @@ body {
 @media (max-width: 480px) {
     .privacy-policy {
         padding: 2rem 0.5rem;
+    }
+
+    .top-margin {
+        padding-top: 3.5rem; /* Further adjusted for mobile */
     }
 
     .policy-container {
@@ -179,6 +191,19 @@ body {
     .last-updated {
         font-size: 0.85rem;
     }
+}
+
+/* Footer Link Styling (Add at the end of styles.css) */
+footer a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+footer a:hover {
+    color: var(--secondary);
 }
 
 /* ======= Hero Sections ======= */
