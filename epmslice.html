@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPM Slice Support | WeRun Consulting</title>
+    <meta name="description" content="Support for EPM Slice (Powered by WeRun), your iOS app for EPM blogs, consulting, games, books, and industry updates.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- Google reCAPTCHA Script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        (function(){
+            emailjs.init("ILBZr43VWmZLzAO6k"); // Replace with your EmailJS user ID
+        })();
+    </script>
+    <style>
+        :root {
+            --primary: #2A5C8A;
+            --secondary: #E63946;
+            --light: #F1FAEE;
+            --dark: #1D3557;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.7;
+            color: var(--dark);
+        }
+
+        /* ======= Navbar ======= */
+        .navbar {
+            background: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .navbar a {
+            color: var(--dark);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .navbar a:hover {
+            color: var(--secondary);
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--primary);
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .hamburger:hover {
+            color: var(--secondary);
+        }
+
+        /* ======= Hero Sections ======= */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            text-align: center;
+            padding: 10rem 2rem 6rem;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-top: 4rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* ======= Search Bar ======= */
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin: 2rem auto 0;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1rem;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 5px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .search-input:focus {
+            border-color: var(--secondary);
+            background: rgba(255,255,255,0.2);
+            outline: none;
+        }
+
+        .search-input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+
+        .search-results {
+            display: none;
+            margin: 2rem auto;
+            max-width: 1200px;
+            padding: 0 2rem;
+        }
+
+        /* ======= Support Section ======= */
+        .support {
+            padding: 5rem 2rem;
+            background: var(--light);
+        }
+
+        .support h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .faq-item h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .faq-item p {
+            font-size: 1rem;
+            color: var(--dark);
+        }
+
+        /* ======= Contact Section ======= */
+        .contact {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 1rem;
+            margin: 1rem 0;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 5px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            transition: var(--transition);
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            background: rgba(255,255,255,0.2);
+        }
+
+        ::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* ======= Buttons & CTAs ======= */
+        .button {
+            background: var(--secondary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .button:hover {
+            background: #C53030;
+            transform: translateY(-2px);
+        }
+
+        /* ======= Footer ======= */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        footer a:visited {
+            color: white;
+        }
+
+        footer a:hover {
+            color: var(--secondary);
+        }
+
+        /* ======= Responsive Design ======= */
+        /* Tablet and Mobile (max-width: 768px) */
+        @media (max-width: 768px) {
+            .navbar {
+                justify-content: center;
+                padding: 1rem;
+            }
+
+            .hamburger {
+                display: block;
+                font-size: 3rem;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .navbar a {
+                margin: 0.5rem 0;
+                padding: 0.5rem 2rem;
+            }
+
+            .hero {
+                padding: 6rem 1rem 3rem;
+                margin-top: 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .search-container {
+                margin: 1rem auto;
+                max-width: 100%;
+            }
+
+            .search-input {
+                font-size: 0.9rem;
+            }
+
+            .support, .contact {
+                padding: 3rem 1rem;
+            }
+
+            .support h2, .contact h2 {
+                font-size: 1.8rem;
+            }
+
+            .faq-container {
+                margin: 0 1rem;
+            }
+
+            .faq-item {
+                padding: 1rem;
+            }
+
+            .faq-item h3 {
+                font-size: 1.3rem;
+            }
+
+            .contact-form {
+                max-width: 100%;
+            }
+        }
+
+        /* Mobile (max-width: 480px) */
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 0.5rem 1rem;
+            }
+
+            .hamburger {
+                font-size: 2.5rem;
+                padding: 0.3rem;
+            }
+
+            .navbar a {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                padding: 5rem 1rem 2rem;
+                margin-top: 2.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .search-container {
+                margin: 1rem 0.5rem;
+            }
+
+            .search-input {
+                padding: 0.8rem 2.5rem 0.8rem 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            .search-icon {
+                font-size: 1rem;
+            }
+
+            .button {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .support {
+                padding: 2rem 0.5rem;
+            }
+
+            .faq-item {
+                padding: 1rem;
+                margin: 0 0.5rem;
+            }
+
+            .faq-item h3 {
+                font-size: 1.2rem;
+            }
+
+            .faq-item p {
+                font-size: 0.9rem;
+            }
+
+            .contact {
+                padding: 2rem 0.5rem;
+            }
+
+            .contact h2 {
+                font-size: 1.8rem;
+            }
+
+            .contact-form {
+                max-width: 100%;
+            }
+
+            input, textarea {
+                padding: 0.8rem;
+                margin: 0.5rem 0;
+                font-size: 0.9rem;
+            }
+
+            .g-recaptcha {
+                transform: scale(0.85);
+                transform-origin: 0 0;
+                margin: 0.5rem 0;
+            }
+
+            footer {
+                padding: 2rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <button class="hamburger" aria-label="Toggle menu"><i class="fas fa-cube"></i></button>
+        <div class="nav-links">
+            <a href="https://www.werunconsulting.com">Home</a>
+            <a href="https://www.werunconsulting.com/#services">Services</a>
+            <a href="https://www.werunconsulting.com/#expertise">Expertise</a>
+            <a href="https://www.werunconsulting.com/blog">Blog</a>
+            <a href="#contact">Contact</a>
+            <a href="https://www.werunconsulting.com/privacy-policy">Privacy Policy</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1>EPM Slice Support</h1>
+        <p>Get Help with Your EPM Cloud Companion</p>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search support topics..." id="searchInput">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+        <a href="#contact" class="button">Contact Us</a>
+    </section>
+
+    <section class="support" id="support">
+        <h2>Support for EPM Slice</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <h3>How do I share eBooks in EPM Slice?</h3>
+                <p>In the “Books” section, tap “Open in Books” to share EPUB files to Apple Books. If you see an error on the first attempt, try again—it resolves automatically.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Why can’t I find EPM games?</h3>
+                <p>Ensure you’re in the “Games” section. Update to the latest app version via the App Store and check your internet connection for game content to load.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I request consulting services?</h3>
+                <p>Visit the “Consulting Hub” in the app to request a free consultation for EPM implementation, optimization, or training. You can also contact us below.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Where are the blogs and industry news?</h3>
+                <p>Access blogs and news in the “Insights” and “News” sections. Enable notifications in the app settings to stay updated on new content.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What should I do if the app crashes?</h3>
+                <p>Restart the app and ensure you’re on the latest iOS version. If issues persist, contact us with details of the crash (e.g., feature used, error message).</p>
+            </div>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Get In Touch</h2>
+        <form class="contact-form" id="contactForm">
+            <input type="text" placeholder="Name" name="name" required>
+            <input type="email" placeholder="Email" name="email" required>
+            <textarea placeholder="How can we help with EPM Slice?" name="message" rows="5" required></textarea>
+            <div class="g-recaptcha" data-sitekey="6Ldy2u4qAAAAAI_14Fp3Mmk5fAiGzfgdffP91o9H" style="margin: 1rem 0;"></div>
+            <button type="submit" class="button">
+                <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 WeRun Consulting. All rights reserved.</p>
+        <a href="https://www.werunconsulting.com/privacy-policy">Privacy Policy</a>
+    </footer>
+
+    <script>
+        const supportContent = [
+            { title: "Share eBooks in EPM Slice", category: "faq", summary: "Tap 'Open in Books' to share EPUBs to Apple Books. Retry if first attempt fails.", url: "#faq-ebooks" },
+            { title: "Find EPM Games", category: "faq", summary: "Check the 'Games' section and ensure the latest app version.", url: "#faq-games" },
+            { title: "Request Consulting Services", category: "faq", summary: "Use the 'Consulting Hub' or contact us for EPM consulting.", url: "#faq-consulting" },
+            { title: "Access Blogs and News", category: "faq", summary: "Find blogs in 'Insights' and news in 'News' sections.", url: "#faq-blogs" },
+            { title: "App Crashes", category: "faq", summary: "Restart the app or contact us with crash details.", url: "#faq-crashes" },
+            { title: "EPM Slice Overview", category: "guide", summary: "Learn about EPM Slice features: blogs, consulting, games, books, and news.", url: "#support" }
+        ];
+
+        const searchInput = document.getElementById('searchInput');
+        const faqContainer = document.querySelector('.faq-container');
+        const searchResults = document.getElementById('searchResults');
+
+        searchInput.addEventListener('input', function() {
+            const query = this.value.trim().toLowerCase();
+            if (query === '') {
+                faqContainer.style.display = 'block';
+                searchResults.style.display = 'none';
+                return;
+            }
+
+            faqContainer.style.display = 'none';
+            searchResults.style.display = 'block';
+            searchResults.innerHTML = '';
+
+            const results = supportContent.filter(item =>
+                item.title.toLowerCase().includes(query) ||
+                item.summary.toLowerCase().includes(query) ||
+                item.category.toLowerCase().includes(query)
+            );
+
+            if (results.length === 0) {
+                searchResults.innerHTML = '<p>No results found.</p>';
+            } else {
+                results.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'faq-item';
+                    card.innerHTML = `
+                        <h3>${item.title}</h3>
+                        <p>${item.summary}</p>
+                        <a href="${item.url}" class="read-more">Learn More →</a>
+                    `;
+                    searchResults.appendChild(card);
+                });
+            }
+        });
+
+        // Contact Form Submission with EmailJS and reCAPTCHA
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const recaptchaResponse = grecaptcha.getResponse();
+            if (!recaptchaResponse) {
+                alert('Please complete the reCAPTCHA verification.');
+                return;
+            }
+
+            const formData = {
+                name: this.querySelector('input[name="name"]').value,
+                email: this.querySelector('input[name="email"]').value,
+                message: this.querySelector('textarea[name="message"]').value,
+                'g-recaptcha-response': recaptchaResponse
+            };
+
+            emailjs.send('service_cax0c6e', 'template_ml6p7zu', formData)
+                .then(() => {
+                    alert('Message sent successfully!');
+                    this.reset();
+                    grecaptcha.reset();
+                }, (error) => {
+                    alert('Failed to send message: ' + error.text);
+                });
+        });
+
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navLinksAnchors = navLinks.querySelectorAll('a');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        navLinksAnchors.forEach(anchor => {
+            anchor.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
