@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EPM Slice Support | WeRun Consulting</title>
-    <meta name="description" content="Support for EPM Slice (Powered by WeRun), your iOS app for EPM blogs, consulting, games, books, and industry updates.">
+    <meta name="description" content="Support for EPM Slice (Powered by WeRun), your iOS app for EPM consulting, offline games, blogs, community Q&A, and insights.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
     <!-- EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <!-- Google reCAPTCHA Script -->
@@ -15,438 +16,6 @@
             emailjs.init("ILBZr43VWmZLzAO6k"); // Replace with your EmailJS user ID
         })();
     </script>
-    <style>
-        :root {
-            --primary: #2A5C8A;
-            --secondary: #E63946;
-            --light: #F1FAEE;
-            --dark: #1D3557;
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            line-height: 1.7;
-            color: var(--dark);
-        }
-
-        /* ======= Navbar ======= */
-        .navbar {
-            background: white;
-            padding: 1.5rem 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .navbar a {
-            color: var(--dark);
-            text-decoration: none;
-            margin: 0 1.5rem;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .navbar a:hover {
-            color: var(--secondary);
-        }
-
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 2rem;
-            color: var(--primary);
-            cursor: pointer;
-            padding: 0.5rem;
-            transition: var(--transition);
-        }
-
-        .hamburger:hover {
-            color: var(--secondary);
-        }
-
-        /* ======= Hero Sections ======= */
-        .hero {
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: white;
-            text-align: center;
-            padding: 10rem 2rem 6rem;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-            margin-top: 4rem;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        /* ======= Search Bar ======= */
-        .search-container {
-            position: relative;
-            max-width: 600px;
-            margin: 2rem auto 0;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 1rem 3rem 1rem 1rem;
-            border: 2px solid rgba(255,255,255,0.2);
-            border-radius: 5px;
-            background: rgba(255,255,255,0.1);
-            color: white;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .search-input:focus {
-            border-color: var(--secondary);
-            background: rgba(255,255,255,0.2);
-            outline: none;
-        }
-
-        .search-input::placeholder {
-            color: rgba(255,255,255,0.7);
-        }
-
-        .search-icon {
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: white;
-            font-size: 1.2rem;
-            opacity: 0.7;
-        }
-
-        .search-results {
-            display: none;
-            margin: 2rem auto;
-            max-width: 1200px;
-            padding: 0 2rem;
-        }
-
-        /* ======= Support Section ======= */
-        .support {
-            padding: 5rem 2rem;
-            background: var(--light);
-        }
-
-        .support h2 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: white;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: var(--transition);
-        }
-
-        .faq-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .faq-item h3 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .faq-item p {
-            font-size: 1rem;
-            color: var(--dark);
-        }
-
-        /* ======= Contact Section ======= */
-        .contact {
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: white;
-            padding: 5rem 2rem;
-            text-align: center;
-            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
-        }
-
-        .contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 1rem;
-            margin: 1rem 0;
-            border: 2px solid rgba(255,255,255,0.2);
-            border-radius: 5px;
-            background: rgba(255,255,255,0.1);
-            color: white;
-            transition: var(--transition);
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--secondary);
-            background: rgba(255,255,255,0.2);
-        }
-
-        ::placeholder {
-            color: rgba(255,255,255,0.7);
-        }
-
-        /* ======= Buttons & CTAs ======= */
-        .button {
-            background: var(--secondary);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            transition: var(--transition);
-            font-weight: 600;
-        }
-
-        .button:hover {
-            background: #C53030;
-            transform: translateY(-2px);
-        }
-
-        /* ======= Footer ======= */
-        footer {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 3rem 2rem;
-            margin-top: auto;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: none;
-            margin-left: 1rem;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        footer a:visited {
-            color: white;
-        }
-
-        footer a:hover {
-            color: var(--secondary);
-        }
-
-        /* ======= Responsive Design ======= */
-        /* Tablet and Mobile (max-width: 768px) */
-        @media (max-width: 768px) {
-            .navbar {
-                justify-content: center;
-                padding: 1rem;
-            }
-
-            .hamburger {
-                display: block;
-                font-size: 3rem;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                background: white;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .navbar a {
-                margin: 0.5rem 0;
-                padding: 0.5rem 2rem;
-            }
-
-            .hero {
-                padding: 6rem 1rem 3rem;
-                margin-top: 3rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            .search-container {
-                margin: 1rem auto;
-                max-width: 100%;
-            }
-
-            .search-input {
-                font-size: 0.9rem;
-            }
-
-            .support, .contact {
-                padding: 3rem 1rem;
-            }
-
-            .support h2, .contact h2 {
-                font-size: 1.8rem;
-            }
-
-            .faq-container {
-                margin: 0 1rem;
-            }
-
-            .faq-item {
-                padding: 1rem;
-            }
-
-            .faq-item h3 {
-                font-size: 1.3rem;
-            }
-
-            .contact-form {
-                max-width: 100%;
-            }
-        }
-
-        /* Mobile (max-width: 480px) */
-        @media (max-width: 480px) {
-            .navbar {
-                padding: 0.5rem 1rem;
-            }
-
-            .hamburger {
-                font-size: 2.5rem;
-                padding: 0.3rem;
-            }
-
-            .navbar a {
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
-            }
-
-            .hero {
-                padding: 5rem 1rem 2rem;
-                margin-top: 2.5rem;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .search-container {
-                margin: 1rem 0.5rem;
-            }
-
-            .search-input {
-                padding: 0.8rem 2.5rem 0.8rem 0.8rem;
-                font-size: 0.85rem;
-            }
-
-            .search-icon {
-                font-size: 1rem;
-            }
-
-            .button {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
-            }
-
-            .support {
-                padding: 2rem 0.5rem;
-            }
-
-            .faq-item {
-                padding: 1rem;
-                margin: 0 0.5rem;
-            }
-
-            .faq-item h3 {
-                font-size: 1.2rem;
-            }
-
-            .faq-item p {
-                font-size: 0.9rem;
-            }
-
-            .contact {
-                padding: 2rem 0.5rem;
-            }
-
-            .contact h2 {
-                font-size: 1.8rem;
-            }
-
-            .contact-form {
-                max-width: 100%;
-            }
-
-            input, textarea {
-                padding: 0.8rem;
-                margin: 0.5rem 0;
-                font-size: 0.9rem;
-            }
-
-            .g-recaptcha {
-                transform: scale(0.85);
-                transform-origin: 0 0;
-                margin: 0.5rem 0;
-            }
-
-            footer {
-                padding: 2rem 1rem;
-                font-size: 0.9rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -461,83 +30,177 @@
         </div>
     </nav>
 
-    <section class="hero" id="home">
-        <h1>EPM Slice Support</h1>
-        <p>Get Help with Your EPM Cloud Companion</p>
-        <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search support topics..." id="searchInput">
-            <i class="fas fa-search search-icon"></i>
+    <section class="hero" id="home" style="text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h1 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;">
+                <i class="fas fa-cube"></i> EPM Slice Support
+            </h1>
+            <p style="font-size: 1.3rem; font-weight: 400; margin-bottom: 2rem; opacity: 0.9;">
+                Your iOS Companion for EPM Cloud Expertise
+            </p>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search support topics..." id="searchInput">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            <a href="#contact" class="button">Book a Free Consultation</a>
         </div>
-        <a href="#contact" class="button">Contact Us</a>
     </section>
 
-    <section class="support" id="support">
-        <h2>Support for EPM Slice</h2>
-        <div class="faq-container">
-            <div class="faq-item">
-                <h3>How do I share eBooks in EPM Slice?</h3>
-                <p>In the “Books” section, tap “Open in Books” to share EPUB files to Apple Books. If you see an error on the first attempt, try again—it resolves automatically.</p>
+    <section class="support" id="support" style="padding: 5rem 2rem; background: #F1FAEE;">
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 2.2rem; font-weight: 700; color: #1D3557; margin-bottom: 2.5rem; text-align: center;">
+                About EPM Slice
+            </h2>
+            <div class="feature-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+                <div class="service-card" style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <i class="fas fa-briefcase icon"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: #2A5C8A; margin-bottom: 1rem;">Consulting Services</h3>
+                    <p style="font-size: 1rem; color: #1D3557; line-height: 1.8;">
+                        Get expert guidance on Oracle EPM Cloud solutions, including Enterprise Planning and Budgeting (EPBCS), Oracle BI and Integration, Essbase for multidimensional analytics, and Sales Planning. Our consultants help streamline your financial planning, forecasting, and reporting processes, tailoring solutions to your business needs.
+                    </p>
+                    <a href="#contact" class="button">Book a Free Consultation</a>
+                </div>
+                <div class="service-card" style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <i class="fas fa-gamepad icon"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: #2A5C8A; margin-bottom: 1rem;">Offline Interactive Games</h3>
+                    <p style="font-size: 1rem; color: #1D3557; line-height: 1.8;">
+                        Enjoy EPM-themed games available offline, no internet required. Play Trivia to test your EPM knowledge, Scramble for word puzzles, Scenario Challenge for strategic planning simulations, Process Builder Challenge for drag-and-drop process design, or Crisis Command for points-based crisis management scenarios.
+                    </p>
+                </div>
+                <div class="service-card" style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <i class="fas fa-users icon"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: #2A5C8A; margin-bottom: 1rem;">Community Q&A</h3>
+                    <p style="font-size: 1rem; color: #1D3557; line-height: 1.8;">
+                        Connect with EPM professionals and enthusiasts in the Community Q&A hub. Ask or answer questions on topics like EPM General, Financial Consolidation, Groovy Scripting, Oracle BI, and more. Share insights, solve problems, and build your network within the EPM community.
+                    </p>
+                </div>
+                <div class="service-card" style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <i class="fas fa-user-circle icon"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: #2A5C8A; margin-bottom: 1rem;">Login & Subscriptions</h3>
+                    <p style="font-size: 1rem; color: #1D3557; line-height: 1.8;">
+                        Create an account or log in to unlock personalized features in EPM Slice. Subscribe to receive push notifications for updates on EPM consulting services, new blog posts, community Q&A highlights, and exclusive content tailored to your interests.
+                    </p>
+                </div>
+                <div class="service-card" style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <i class="fas fa-lightbulb icon"></i>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: #2A5C8A; margin-bottom: 1rem;">Insights Hub</h3>
+                    <p style="font-size: 1rem; color: #1D3557; line-height: 1.8;">
+                        Dive into the Insights Hub for monthly EPM updates, in-depth Groovy scripting tutorials, and best practices for financial planning and analytics. Access eBooks, interactive flip cards, and practical guides to enhance your Oracle EPM Cloud expertise.
+                    </p>
+                </div>
             </div>
-            <div class="faq-item">
-                <h3>Why can’t I find EPM games?</h3>
-                <p>Ensure you’re in the “Games” section. Update to the latest app version via the App Store and check your internet connection for game content to load.</p>
+
+            <h2 style="font-size: 2.2rem; font-weight: 700; color: #1D3557; margin-bottom: 2.5rem; text-align: center;">
+                Frequently Asked Questions
+            </h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item" style="background: white; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); text-align: left; border-left: 4px solid #2A5C8A;">
+                    <h3 style="font-size: 1.2rem; font-weight: 600; color: #2A5C8A; margin-bottom: 0.8rem;">How do I share eBooks in EPM Slice?</h3>
+                    <p style="font-size: 1rem; color: #1D3557; line-height: 1.8;">
+                        Open the “Insights Hub” section in the EPM Slice app. Locate the eBook you want to share and tap “Open in Books” to export the EPUB file to Apple Books. If you encounter an error on the first attempt, tap again—this typically resolves the issue automatically.
+                    </p>
+                </div>
+                <div class="faq-item" style="background: white; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); text-align: left; border-left: 4px solid #2A5C8A;">
+                    <h3 style="font-size: 1.2rem; font-weight: 600; color: #2A5C8A; margin-bottom: 0.8rem;">Why can’t I find EPM games?</h3>
+                    <p style="font-size: 1rem; color: #1D3557; line-height: 1.8;">
+                        Go to the “Games” section in the EPM Slice app. All games (Trivia, Scramble, Scenario Challenge, Process Builder Challenge, Crisis Command) are available offline, so no internet connection is needed. Ensure you have the latest app version installed from the App Store to access all game content.
+                    </p>
+                </div>
+                <div class="faq-item" style="background: white; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); text-align: left; border-left: 4px solid #2A5C8A;">
+                    <h3 style="font-size: 1.2rem; font-weight: 600; color: #2A5C8A; margin-bottom: 0.8rem;">How do I book a consultation?</h3>
+                    <p style="font-size: 1rem; color: #1D3557; line-height: 1.8;">
+                        Click the “Book a Free Consultation” button on the homepage or in the Consulting Services section. This will take you to the contact form below, where you can submit your details to schedule a free session with our EPM experts for EPBCS, Oracle BI, Essbase, or Sales Planning.
+                    </p>
+                </div>
+                <div class="faq-item" style="background: white; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); text-align: left; border-left: 4px solid #2A5C8A;">
+                    <h3 style="font-size: 1.2rem; font-weight: 600; color: #2A5C8A; margin-bottom: 0.8rem;">How do I access blogs?</h3>
+                    <p style="font-size: 1rem; color: #1D3557; line-height: 1.8;">
+                        Visit the “Insights Hub” section in the app to browse blogs on EPM updates, Groovy scripting tutorials, and best practices. To stay updated, enable push notifications in the app settings to receive alerts when new blog posts are published.
+                    </p>
+                </div>
+                <div class="faq-item" style="background: white; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); text-align: left; border-left: 4px solid #2A5C8A;">
+                    <h3 style="font-size: 1.2rem; font-weight: 600; color: #2A5C8A; margin-bottom: 0.8rem;">How do I participate in Community Q&A?</h3>
+                    <p style="font-size: 1rem; color: #1D3557; line-height: 1.8;">
+                        Log in or sign up for an EPM Slice account, then navigate to the “Community Q&A” section. You can post questions or answer others’ queries on topics like EPM General, Consolidation, Groovy Scripting, or Oracle BI. Engage with the community to share and gain knowledge.
+                    </p>
+                </div>
+                <div class="faq-item" style="background: white; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); text-align: left; border-left: 4px solid #2A5C8A;">
+                    <h3 style="font-size: 1.2rem; font-weight: 600; color: #2A5C8A; margin-bottom: 0.8rem;">What should I do if the app crashes?</h3>
+                    <p style="font-size: 1rem; color: #1D3557; line-height: 1.8;">
+                        First, try restarting the EPM Slice app. Ensure your device is running the latest iOS version. If the issue persists, note the feature you were using and any error messages, then contact us via the form below. Our support team will assist you promptly.
+                    </p>
+                </div>
             </div>
-            <div class="faq-item">
-                <h3>How do I request consulting services?</h3>
-                <p>Visit the “Consulting Hub” in the app to request a free consultation for EPM implementation, optimization, or training. You can also contact us below.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Where are the blogs and industry news?</h3>
-                <p>Access blogs and news in the “Insights” and “News” sections. Enable notifications in the app settings to stay updated on new content.</p>
-            </div>
-            <div class="faq-item">
-                <h3>What should I do if the app crashes?</h3>
-                <p>Restart the app and ensure you’re on the latest iOS version. If issues persist, contact us with details of the crash (e.g., feature used, error message).</p>
-            </div>
+            <div class="search-results" id="searchResults" style="margin: 2rem auto; max-width: 1200px; padding: 0 2rem;"></div>
         </div>
-        <div class="search-results" id="searchResults"></div>
+        <style>
+            @media (max-width: 480px) {
+                .hero h1 { font-size: 1.8rem; }
+                .hero p { font-size: 1rem; }
+                .support h2 { font-size: 1.6rem; }
+                .feature-container { grid-template-columns: 1fr; gap: 1.5rem; }
+                .service-card h3 { font-size: 1rem; }
+                .service-card p { font-size: 0.9rem; }
+                .faq-item h3 { font-size: 1rem; }
+                .faq-item p { font-size: 0.9rem; }
+                .contact h2 { font-size: 1.6rem; }
+                .contact-form input, .contact-form textarea { font-size: 0.85rem; }
+                .search-results .faq-item h3 { font-size: 1rem; }
+                .search-results .faq-item p { font-size: 0.9rem; }
+            }
+        </style>
     </section>
 
-    <section class="contact" id="contact">
-        <h2>Get In Touch</h2>
-        <form class="contact-form" id="contactForm">
-            <input type="text" placeholder="Name" name="name" required>
-            <input type="email" placeholder="Email" name="email" required>
-            <textarea placeholder="How can we help with EPM Slice?" name="message" rows="5" required></textarea>
-            <div class="g-recaptcha" data-sitekey="6Ldy2u4qAAAAAI_14Fp3Mmk5fAiGzfgdffP91o9H" style="margin: 1rem 0;"></div>
-            <button type="submit" class="button">
-                <i class="fas fa-paper-plane"></i> Send Message
-            </button>
-        </form>
+    <section class="contact" id="contact" style="text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 2rem;">Get In Touch</h2>
+            <form class="contact-form" id="contactForm">
+                <input type="text" placeholder="Name" name="name" required style="font-size: 0.9rem;">
+                <input type="email" placeholder="Email" name="email" required style="font-size: 0.9rem;">
+                <textarea placeholder="How can we help with EPM Slice?" name="message" rows="5" required style="font-size: 0.9rem;"></textarea>
+                <div class="g-recaptcha" data-sitekey="6Ldy2u4qAAAAAI_14Fp3Mmk5fAiGzfgdffP91o9H"></div>
+                <button type="submit" class="button">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+        </div>
     </section>
 
     <footer>
-        <p>© 2025 WeRun Consulting. All rights reserved.</p>
+        <p>© 2023 WeRun Consulting. All rights reserved.</p>
         <a href="https://www.werunconsulting.com/privacy-policy">Privacy Policy</a>
     </footer>
 
     <script>
         const supportContent = [
-            { title: "Share eBooks in EPM Slice", category: "faq", summary: "Tap 'Open in Books' to share EPUBs to Apple Books. Retry if first attempt fails.", url: "#faq-ebooks" },
-            { title: "Find EPM Games", category: "faq", summary: "Check the 'Games' section and ensure the latest app version.", url: "#faq-games" },
-            { title: "Request Consulting Services", category: "faq", summary: "Use the 'Consulting Hub' or contact us for EPM consulting.", url: "#faq-consulting" },
-            { title: "Access Blogs and News", category: "faq", summary: "Find blogs in 'Insights' and news in 'News' sections.", url: "#faq-blogs" },
-            { title: "App Crashes", category: "faq", summary: "Restart the app or contact us with crash details.", url: "#faq-crashes" },
-            { title: "EPM Slice Overview", category: "guide", summary: "Learn about EPM Slice features: blogs, consulting, games, books, and news.", url: "#support" }
+            { title: "Share eBooks in EPM Slice", category: "faq", summary: "Tap 'Open in Books' in the 'Insights Hub' to share EPUBs to Apple Books. Retry if first attempt fails." },
+            { title: "Find EPM Games", category: "faq", summary: "Check the 'Games' section; available offline, no internet required." },
+            { title: "Book a Consultation", category: "faq", summary: "Use the 'Book a Free Consultation' button on the homepage or services page." },
+            { title: "Access Blogs", category: "faq", summary: "Find blogs in the 'Insights Hub' section with tutorials and best practices." },
+            { title: "Participate in Community Q&A", category: "faq", summary: "Log in to ask or answer questions on EPM topics." },
+            { title: "App Crashes", category: "faq", summary: "Restart the app or contact us with crash details." },
+            { title: "Consulting Services", category: "feature", summary: "Expert EPM consulting for EPBCS, Oracle BI, Essbase, and Sales Planning." },
+            { title: "Offline Interactive Games", category: "feature", summary: "Play Trivia, Scramble, Scenario Challenge, Process Builder, and Crisis Command offline." },
+            { title: "Community Q&A", category: "feature", summary: "Ask and answer questions on EPM General, Consolidation, Groovy Scripting, and Oracle BI." },
+            { title: "Login & Subscriptions", category: "feature", summary: "Sign up for notifications and updates on EPM content." },
+            { title: "Insights Hub", category: "feature", summary: "Explore blogs, Groovy tutorials, and best practices for financial planning." }
         ];
 
         const searchInput = document.getElementById('searchInput');
+        const featureContainer = document.querySelector('.feature-container');
         const faqContainer = document.querySelector('.faq-container');
         const searchResults = document.getElementById('searchResults');
 
         searchInput.addEventListener('input', function() {
             const query = this.value.trim().toLowerCase();
             if (query === '') {
+                featureContainer.style.display = 'grid';
                 faqContainer.style.display = 'block';
                 searchResults.style.display = 'none';
                 return;
             }
 
+            featureContainer.style.display = 'none';
             faqContainer.style.display = 'none';
             searchResults.style.display = 'block';
             searchResults.innerHTML = '';
@@ -554,10 +217,16 @@
                 results.forEach(item => {
                     const card = document.createElement('div');
                     card.className = 'faq-item';
+                    card.style.background = 'white';
+                    card.style.padding = '1.5rem';
+                    card.style.marginBottom = '1.5rem';
+                    card.style.borderRadius = '8px';
+                    card.style.boxShadow = '0 3px 10px rgba(0,0,0,0.1)';
+                    card.style.textAlign = 'left';
+                    card.style.borderLeft = '4px solid #2A5C8A';
                     card.innerHTML = `
-                        <h3>${item.title}</h3>
-                        <p>${item.summary}</p>
-                        <a href="${item.url}" class="read-more">Learn More →</a>
+                        <h3 style="font-size: 1.2rem; font-weight: 600; color: #2A5C8A; margin-bottom: 0.8rem;">${item.title}</h3>
+                        <p style="font-size: 1rem; color: #1D3557; line-height: 1.8;">${item.summary}</p>
                     `;
                     searchResults.appendChild(card);
                 });
