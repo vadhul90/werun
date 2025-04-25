@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Terms of Service | WeRun Consulting</title>
+ <meta name="description" content="Terms of Service for EPM Slice App by WeRun Consulting">
+ <link rel="stylesheet" href="../styles.css">
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+ <nav class="navbar">
+ <button class="hamburger" aria-label="Toggle menu"><i class="fas fa-cube"></i></button>
+ <div class="nav-links">
+ <a href="index.html">Home</a>
+ <a href="index.html#services">Services</a>
+ <a href="index.html#expertise">Expertise</a>
+ <a href="blog/">Blog</a>
+ <a href="index.html#contact">Contact</a>
+ <a href="privacy-policy.html">Privacy Policy</a>
+ <a href="eula.html">EULA</a>
+ </div>
+ </nav>
+
+ <section class="terms top-margin">
+ <div class="policy-container">
+ <h1>Terms of Service</h1>
+ <p class="last-updated"><em>Last Updated: January 08, 2025</em></p>
+
+ <h2>1. Acceptance of Terms</h2>
+ <p>By using the EPM Slice App ("App"), you agree to these Terms of Service ("Terms") and our <a href="eula.html">End User License Agreement (EULA)</a>.</p>
+
+ <h2>2. Use of the App</h2>
+ <p>You may use the App for personal, non-commercial purposes only. You are responsible for all activities under your account.</p>
+
+ <h2>3. Account Responsibility</h2>
+ <p>You must maintain the confidentiality of your account credentials and notify us immediately of any unauthorized use.</p>
+
+ <h2>4. Prohibited Conduct</h2>
+ <p>You may not use the App to engage in illegal activities or violate the rights of others.</p>
+
+ <h2>5. Termination</h2>
+ <p>We reserve the right to suspend or terminate your account for misuse or violation of these Terms.</p>
+
+ <h2>6. Contact Us</h2>
+ <p>For support, contact us at: <a href="mailto:info@werunconsulting.com">info@werunconsulting.com</a>.</p>
+ </div>
+ </section>
+
+ <footer>
+ <p>© 2023 WeRun Consulting. All rights reserved.</p>
+ <a href="privacy-policy.html">Privacy Policy</a>
+ <a href="eula.html">EULA</a>
+ </footer>
+
+ <script>
+ const hamburger = document.querySelector('.hamburger');
+ const navLinks = document.querySelector('.nav-links');
+ const navLinksAnchors = navLinks.querySelectorAll('a');
+
+ hamburger.addEventListener('click', () => {
+ navLinks.classList.toggle('active');
+ });
+
+ navLinksAnchors.forEach(anchor => {
+ anchor.addEventListener('click', () => {
+ if (window.innerWidth <= 768) {
+ navLinks.classList.remove('active');
+ }
+ });
+ });
+ </script>
+</body>
+</html>

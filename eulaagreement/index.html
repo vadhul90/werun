@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>End User License Agreement | WeRun Consulting</title>
+ <meta name="description" content="End User License Agreement for EPM Slice App by WeRun Consulting">
+<link rel="stylesheet" href="../styles.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+ <nav class="navbar">
+ <button class="hamburger" aria-label="Toggle menu"><i class="fas fa-cube"></i></button>
+ <div class="nav-links">
+ <a href="index.html">Home</a>
+ <a href="index.html#services">Services</a>
+ <a href="index.html#expertise">Expertise</a>
+ <a href="blog/">Blog</a>
+ <a href="index.html#contact">Contact</a>
+ <a href="privacy-policy.html">Privacy Policy</a>
+ <a href="eula.html">EULA</a>
+ </div>
+ </nav>
+
+ <section class="eula top-margin">
+ <div class="policy-container">
+ <h1>End User License Agreement</h1>
+ <p class="last-updated"><em>Last Updated: January 08, 2025</em></p>
+
+ <h2>1. Introduction</h2>
+ <p>This End User License Agreement ("EULA") is a legal agreement between you ("User" or "you") and WeRun Consulting ("WeRun," "we," "us," or "our") governing your use of the EPM Slice mobile application ("App"). By downloading, installing, or using the App, you agree to be bound by the terms of this EULA.</p>
+
+ <h2>2. License Grant</h2>
+ <p>WeRun grants you a non-exclusive, non-transferable, revocable license to use the App for personal, non-commercial purposes, subject to compliance with this EULA.</p>
+
+ <h2>3. Usage Restrictions</h2>
+ <p>You agree not to:
+ <ul>
+ <li>Modify, reverse engineer, decompile, or disassemble the App.</li>
+ <li>Distribute, sublicense, or transfer the App to any third party.</li>
+ <li>Use the App for any illegal or unauthorized purpose.</li>
+ </ul>
+ </p>
+
+ <h2>4. User-Generated Content</h2>
+ <p>The App may allow you to submit content such as questions, answers, or comments. You agree not to post objectionable content, including but not limited to:
+ <ul>
+ <li>Hate speech or discriminatory content.</li>
+ <li>Harassment, bullying, or abusive behavior toward other users.</li>
+ <li>Explicit, pornographic, or obscene material.</li>
+ <li>Spam, advertisements, or promotional content.</li>
+ </ul>
+ WeRun has a zero-tolerance policy for such content and behavior. We reserve the right to remove any violating content and terminate or suspend accounts of users who breach these terms, at our sole discretion.</p>
+
+ <h2>5. Intellectual Property</h2>
+ <p>All content, trademarks, and intellectual property within the App are owned by WeRun Consulting or its licensors. You may not reproduce or distribute any part of the App without prior written consent.</p>
+
+ <h2>6. Disclaimers</h2>
+ <p>The App is provided "as is" without warranties of any kind, express or implied, including but not limited to merchantability, fitness for a particular purpose, or non-infringement.</p>
+
+ <h2>7. Limitation of Liability</h2>
+ <p>To the fullest extent permitted by law, WeRun shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the App.</p>
+
+ <h2>8. Termination</h2>
+ <p>We may terminate your access to the App at any time, without notice, if you violate this EULA or engage in conduct deemed harmful to other users or WeRun.</p>
+
+ <h2>9. Governing Law</h2>
+ <p>This EULA is governed by the laws of the State of [Your Jurisdiction], without regard to conflict of law principles.</p>
+
+ <h2>10. Changes to This EULA</h2>
+ <p>WeRun may update this EULA periodically. Changes will be posted on this page with an updated "Last Updated" date. Your continued use of the App constitutes acceptance of the revised terms.</p>
+
+ <h2>11. Contact Us</h2>
+ <p>For questions about this EULA, contact us at: <a href="mailto:info@werunconsulting.com">info@werunconsulting.com</a>.</p>
+ </div>
+ </section>
+
+ <footer>
+ <p>© 2023 WeRun Consulting. All rights reserved.</p>
+ <a href="privacy-policy.html">Privacy Policy</a>
+ <a href="eula.html">EULA</a>
+ </footer>
+
+ <script>
+ const hamburger = document.querySelector('.hamburger');
+ const navLinks = document.querySelector('.nav-links');
+ const navLinksAnchors = navLinks.querySelectorAll('a');
+
+ hamburger.addEventListener('click', () => {
+ navLinks.classList.toggle('active');
+ });
+
+ navLinksAnchors.forEach(anchor => {
+ anchor.addEventListener('click', () => {
+ if (window.innerWidth <= 768) {
+ navLinks.classList.remove('active');
+ }
+ });
+ });
+ </script>
+</body>
+</html>
