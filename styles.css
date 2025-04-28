@@ -393,8 +393,92 @@ footer {
     background: var(--dark);
     color: white;
     text-align: center;
-    padding: 3rem 2rem;
+    padding: 2rem 2rem;
     margin-top: auto;
+    font-size: 0.9rem; /* Base font size for footer text */
+}
+
+footer p {
+    margin-bottom: 0.75rem; /* Space below copyright text */
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on very small screens */
+    gap: 1rem; /* Space between links */
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem; /* Smaller font size for links */
+    font-weight: 500; /* Slightly lighter than 600 for better readability */
+    transition: var(--transition);
+    position: relative; /* For hover underline effect */
+}
+
+footer a:visited {
+    color: white; /* Ensure visited links remain white */
+}
+
+footer a:hover {
+    color: var(--secondary); /* #E63946 */
+    text-decoration: underline; /* Subtle underline on hover */
+}
+
+footer a:focus {
+    outline: 2px solid var(--secondary);
+    outline-offset: 2px; /* Accessibility for keyboard navigation */
+}
+
+/* Optional: Add separators between links */
+.footer-links a:not(:last-child)::after {
+    content: "|"; /* Pipe separator */
+    color: white;
+    margin-left: 1rem;
+    font-weight: 300; /* Lighter separator */
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 1.5rem 1rem; /* Reduced padding for tablets */
+        font-size: 0.85rem; /* Slightly smaller base font */
+    }
+
+    footer a {
+        font-size: 0.8rem; /* Even smaller links for tablets */
+    }
+
+    .footer-links {
+        gap: 0.75rem; /* Reduced gap for tablets */
+    }
+
+    .footer-links a:not(:last-child)::after {
+        margin-left: 0.75rem; /* Adjust separator spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 1rem 0.5rem; /* Minimal padding for mobile */
+        font-size: 0.8rem; /* Smallest base font */
+    }
+
+    footer a {
+        font-size: 0.75rem; /* Smallest link size for mobile */
+    }
+
+    .footer-links {
+        gap: 0.5rem; /* Tighten spacing for mobile */
+        flex-direction: column; /* Stack links vertically on very small screens */
+    }
+
+    .footer-links a:not(:last-child)::after {
+        display: none; /* Remove separators for vertical layout */
+    }
 }
 
 /* ======= Blog Section ======= */
@@ -665,22 +749,4 @@ footer {
         padding: 2rem 1rem;
         font-size: 0.9rem;
     }
-}
-
-
-/* Footer Link Styling */
-footer a {
-    color: white;
-    text-decoration: none;
-    margin-left: 1rem;
-    font-weight: 600;
-    transition: var(--transition);
-}
-
-footer a:visited {
-    color: white; /* Ensure visited links remain white */
-}
-
-footer a:hover {
-    color: var(--secondary); /* #E63946, as per your hover preference */
 }
