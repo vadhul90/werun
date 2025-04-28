@@ -390,94 +390,105 @@ input:focus, textarea:focus {
 
 /* ======= Footer ======= */
 footer {
-    background: var(--dark);
+    background: var(--dark); /* #1D3557 */
     color: white;
     text-align: center;
-    padding: 2rem 2rem;
+    padding: 2rem;
     margin-top: auto;
-    font-size: 0.9rem; /* Base font size for footer text */
+    font-size: 0.9rem;
 }
 
 footer p {
-    margin-bottom: 0.75rem; /* Space below copyright text */
+    margin-bottom: 0.75rem;
 }
 
 .footer-links {
+    display: -webkit-box; /* Fallback for older browsers */
+    display: -webkit-flex; /* Safari */
     display: flex;
+    -webkit-justify-content: center;
     justify-content: center;
+    -webkit-align-items: center;
     align-items: center;
-    flex-wrap: wrap; /* Allow wrapping on very small screens */
-    gap: 1rem; /* Space between links */
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1.25rem; /* Consistent spacing */
 }
 
-footer a {
+.footer-links a {
     color: white;
     text-decoration: none;
-    font-size: 0.85rem; /* Smaller font size for links */
-    font-weight: 500; /* Slightly lighter than 600 for better readability */
+    font-size: 0.85rem; /* ~14px */
+    font-weight: 400; /* Normal weight for readability */
     transition: var(--transition);
-    position: relative; /* For hover underline effect */
+    position: relative;
 }
 
-footer a:visited {
-    color: white; /* Ensure visited links remain white */
-}
-
-footer a:hover {
-    color: var(--secondary); /* #E63946 */
-    text-decoration: underline; /* Subtle underline on hover */
-}
-
-footer a:focus {
-    outline: 2px solid var(--secondary);
-    outline-offset: 2px; /* Accessibility for keyboard navigation */
-}
-
-/* Optional: Add separators between links */
-.footer-links a:not(:last-child)::after {
-    content: "|"; /* Pipe separator */
+.footer-links a:visited {
     color: white;
-    margin-left: 1rem;
-    font-weight: 300; /* Lighter separator */
+}
+
+.footer-links a:hover {
+    color: var(--secondary); /* #E63946 */
+    text-decoration: underline;
+}
+
+.footer-links a:focus {
+    outline: 2px solid var(--secondary);
+    outline-offset: 2px;
+}
+
+/* Separators for desktop and tablet */
+.footer-links a:not(:last-child)::after {
+    content: "|";
+    color: white;
+    margin-left: 1.25rem;
+    font-weight: 300;
 }
 
 /* Responsive Design for Footer */
 @media (max-width: 768px) {
     footer {
-        padding: 1.5rem 1rem; /* Reduced padding for tablets */
-        font-size: 0.85rem; /* Slightly smaller base font */
-    }
-
-    footer a {
-        font-size: 0.8rem; /* Even smaller links for tablets */
+        padding: 1.5rem 1rem;
+        font-size: 0.85rem;
     }
 
     .footer-links {
-        gap: 0.75rem; /* Reduced gap for tablets */
+        gap: 1rem;
+    }
+
+    .footer-links a {
+        font-size: 0.8rem; /* ~13px */
+        font-weight: 400;
     }
 
     .footer-links a:not(:last-child)::after {
-        margin-left: 0.75rem; /* Adjust separator spacing */
+        margin-left: 1rem;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 568px) { /* Covers most mobile devices */
     footer {
-        padding: 1rem 0.5rem; /* Minimal padding for mobile */
-        font-size: 0.8rem; /* Smallest base font */
-    }
-
-    footer a {
-        font-size: 0.75rem; /* Smallest link size for mobile */
+        padding: 1rem 0.5rem;
+        font-size: 0.8rem; /* ~12px */
     }
 
     .footer-links {
-        gap: 0.5rem; /* Tighten spacing for mobile */
-        flex-direction: column; /* Stack links vertically on very small screens */
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column; /* Vertical stacking */
+        gap: 0.75rem; /* Tighter spacing */
+    }
+
+    .footer-links a {
+        font-size: 0.75rem; /* ~12px */
+        font-weight: 400; /* Ensure non-bold */
     }
 
     .footer-links a:not(:last-child)::after {
-        display: none; /* Remove separators for vertical layout */
+        display: none; /* No separators in vertical layout */
     }
 }
 
@@ -745,8 +756,4 @@ footer a:focus {
         margin: 0.5rem 0;
     }
     
-    footer {
-        padding: 2rem 1rem;
-        font-size: 0.9rem;
-    }
 }
