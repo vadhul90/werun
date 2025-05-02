@@ -389,7 +389,6 @@ input:focus, textarea:focus {
 }
 
 /* ======= Footer ======= */
-/* ======= Footer ======= */
 footer {
     background: var(--dark); /* #1D3557 */
     color: white;
@@ -404,34 +403,27 @@ footer p {
 }
 
 .footer-links {
-    display: -webkit-box; /* Fallback for older browsers */
-    display: -webkit-flex; /* Safari */
     display: flex;
-    -webkit-justify-content: center;
     justify-content: center;
-    -webkit-align-items: center;
     align-items: center;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    gap: 1.25rem; /* Spacing between links */
+    gap: 1rem; /* Simplified spacing */
 }
 
 .footer-links a {
-    color: white;
+    color: white !important; /* Force white for all states */
     text-decoration: none;
     font-size: 0.85rem; /* ~14px */
-    font-weight: 400; /* Normal weight for readability */
-    transition: var(--transition);
-    position: relative;
-    padding: 0.5rem 0.25rem; /* Padding for tap targets */
+    font-weight: 400; /* Normal weight */
+    transition: color 0.3s ease; /* Smooth hover transition */
 }
 
 .footer-links a:visited {
-    color: white;
+    color: white !important; /* Override browser default purple */
 }
 
-.footer-links a:hover {
-    color: var(--secondary); /* #E63946 */
+.footer-links a:hover,
+.footer-links a:active {
+    color: var(--secondary); /* #E63946 for hover/tap */
     text-decoration: underline;
 }
 
@@ -440,11 +432,11 @@ footer p {
     outline-offset: 2px;
 }
 
-/* Separators for all layouts */
+/* Pipe separators */
 .footer-links a:not(:last-child)::after {
     content: "|";
     color: white;
-    margin-left: 1.25rem;
+    margin-left: 1rem;
     font-weight: 300;
 }
 
@@ -456,41 +448,36 @@ footer p {
     }
 
     .footer-links {
-        gap: 0.75rem; /* Tighter spacing for tablets */
+        gap: 0.75rem;
     }
 
     .footer-links a {
         font-size: 0.8rem; /* ~13px */
         font-weight: 400;
-        padding: 0.4rem 0.2rem; /* Slightly smaller padding */
     }
 
     .footer-links a:not(:last-child)::after {
-        margin-left: 0.75rem; /* Tighter separator spacing */
+        margin-left: 0.75rem;
     }
 }
 
-@media (max-width: 568px) { /* Covers most mobile devices */
+@media (max-width: 568px) {
     footer {
         padding: 1rem 0.5rem;
-        font-size: 0.8rem; /* ~12px */
+        font-size: 0.8rem;
     }
 
     .footer-links {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: flex;
-        gap: 0.5rem; /* Very tight spacing for mobile */
+        gap: 0.5rem; /* Tight spacing for mobile */
     }
 
     .footer-links a {
         font-size: 0.75rem; /* ~12px */
         font-weight: 400;
-        padding: 0.3rem 0.15rem; /* Minimal padding for tap targets */
     }
 
     .footer-links a:not(:last-child)::after {
-        margin-left: 0.5rem; /* Minimal separator spacing */
+        margin-left: 0.5rem;
     }
 }
 
