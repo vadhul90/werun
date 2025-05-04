@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for Suvai, an offering of WeRun Consulting.">
+    <title>Suvai - Privacy Policy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #FFF8F0 0%, #FF6F61 100%);
+            color: #333333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            background: #FFFFFF;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%238D5524" stroke-width="1" stroke-opacity="0.2"><path d="M12 3v18m-6-6l6-6 6 6"/></svg>') no-repeat center;
+            background-size: 100px;
+            opacity: 0.1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #FF6F61;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #8D5524;
+            margin: 30px 0 15px;
+        }
+
+        p, li {
+            font-size: 1rem;
+            color: #333333;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .last-updated {
+            font-size: 0.9rem;
+            color: #666666;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .contact {
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact a {
+            color: #FF6F61;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                padding: 20px;
+                border-radius: 12px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            p, li {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.1rem;
+            }
+
+            p, li {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" role="main">
+        <h1>Suvai Privacy Policy</h1>
+        <p class="last-updated">Last Updated: May 5, 2025</p>
+
+        <p>Suvai, an offering of WeRun Consulting, is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and protect your personal information when you use Suvai (the "App"), a recipe app featuring recipes, AI-powered meal planning, cookbooks, OCR scanning, and more. By using the App, you consent to the practices described in this Privacy Policy.</p>
+
+        <h2>1. Information We Collect</h2>
+        <p>We collect the following types of information to provide and improve Suvai’s services:</p>
+        <ul>
+            <li><strong>Account Information</strong>: When you create an account using an email address or Apple Sign-In, we collect your email address, username, and, if provided, your full name.</li>
+            <li><strong>User-Generated Content</strong>: Recipes, cookbooks, and meal plan preferences you create or upload, including images or documents scanned via OCR.</li>
+            <li><strong>Usage Data</strong>: Information about how you interact with the App, such as features used (e.g., AI meal planner, OCR), timestamps, and device information (e.g., OS version, device type).</li>
+            <li><strong>Analytics Data</strong>: Aggregated, anonymized data to understand usage trends, collected via analytics tools.</li>
+        </ul>
+        <p>We do not collect sensitive personal information (e.g., health data) unless voluntarily provided in meal plan preferences, and we do not use it for purposes beyond personalization.</p>
+
+        <h2>2. How We Use Your Information</h2>
+        <p>We use your information to:</p>
+        <ul>
+            <li>Provide and personalize Suvai’s features, such as generating AI meal plans, storing recipes, and processing OCR scans.</li>
+            <li>Authenticate your account and ensure security.</li>
+            <li>Improve the App through analytics, such as identifying popular features.</li>
+            <li>Communicate with you about updates, promotions, or support issues (e.g., via email).</li>
+            <li>Comply with legal obligations, such as responding to lawful requests.</li>
+        </ul>
+
+        <h2>3. Data Sharing and Disclosure</h2>
+        <p>WeRun Consulting does not sell or share your personal information with third parties, except in the following cases:</p>
+        <ul>
+            <li><strong>Service Providers</strong>: We use trusted providers (e.g., cloud storage, analytics) to process data on our behalf, under strict confidentiality agreements.</li>
+            <li><strong>Legal Requirements</strong>: We may disclose data to comply with legal obligations, such as court orders or regulatory requests.</li>
+            <li><strong>Business Transfers</strong>: If WeRun Consulting is acquired or merged, your data may be transferred to the new entity, with continued privacy protections.</li>
+        </ul>
+        <p>OCR images are processed securely and deleted after scanning unless you save the recipe. AI meal plan data is stored only to provide personalized suggestions.</p>
+
+        <h2>4. Data Security</h2>
+        <p>WeRun Consulting implements industry-standard security measures, including encryption and secure servers, to protect your data. However, no system is completely secure, and you use the App at your own risk. You are responsible for maintaining the confidentiality of your account credentials.</p>
+
+        <h2>5. Your Privacy Rights</h2>
+        <p>Depending on your jurisdiction, you may have the following rights under laws like the Australian Privacy Principles (APPs) or GDPR:</p>
+        <ul>
+            <li><strong>Access</strong>: Request a copy of your personal information.</li>
+            <li><strong>Correction</strong>: Request updates to inaccurate data.</li>
+            <li><strong>Deletion</strong>: Request deletion of your data, subject to legal retention obligations.</li>
+            <li><strong>Objection</strong>: Object to certain data processing (e.g., analytics).</li>
+            <li><strong>Portability</strong>: Request your data in a machine-readable format.</li>
+        </ul>
+        <p>To exercise these rights, contact us at <a href="mailto:suvai@werunconsulting.com">suvai@werunconsulting.com</a>. We will respond within 30 days, or as required by law.</p>
+
+        <h2>6. Data Retention</h2>
+        <p>We retain your personal information for as long as your account is active or as needed to provide services. If you delete your account, we will remove your data within 60 days, except where required for legal or audit purposes. Recipes and cookbooks can be exported before deletion.</p>
+
+        <h2>7. International Data Transfers</h2>
+        <p>Suvai is operated from Australia, and your data may be stored or processed in Australia or other countries where our service providers operate (e.g., cloud servers in the USA). We ensure appropriate safeguards, such as Standard Contractual Clauses, for international transfers to comply with GDPR and other privacy laws.</p>
+
+        <h2>8. Children’s Privacy</h2>
+        <p>Suvai is not intended for users under 13 years old. We do not knowingly collect personal information from children under 13. If we become aware of such data, we will delete it immediately. Contact us at <a href="mailto:suvai@werunconsulting.com">suvai@werunconsulting.com</a> if you believe we have collected such data.</p>
+
+        <h2>9. Changes to This Privacy Policy</h2>
+        <p>WeRun Consulting may update this Privacy Policy to reflect changes in our practices or legal requirements. We will notify you via email or in-app notifications of significant changes. Continued use of Suvai after updates constitutes acceptance of the revised Privacy Policy.</p>
+
+        <h2>10. Governing Law</h2>
+        <p>This Privacy Policy is governed by the laws of the State of New South Wales, Australia, without regard to conflict of law principles, except where prohibited by local law, in which case the laws of your jurisdiction may apply. Any disputes arising from this Privacy Policy or your use of Suvai will be resolved in the courts located in Sydney, New South Wales, Australia, unless local law requires otherwise.</p>
+
+        <h2>11. Contact Us</h2>
+        <p class="contact">For questions or concerns about this Privacy Policy, please contact WeRun Consulting at <a href="mailto:suvai@werunconsulting.com">suvai@werunconsulting.com</a>.</p>
+
+        <p class="last-updated">Thank you for choosing Suvai, an offering of WeRun Consulting, to inspire your culinary journey!</p>
+    </div>
+</body>
+</html>
