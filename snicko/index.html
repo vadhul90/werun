@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Terms of Service for Snicko, an offering of WeRun Consulting.">
-    <title>Snicko - Terms of Service</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <meta name="description" content="About Snicko - a daily cricket player-guessing game for enthusiasts and fans alike, built by WeRun Consulting.">
+    <title>Snicko - About</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -21,16 +21,17 @@
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
-            padding: 20px;
+            align-items: flex-start;
+            padding: 40px 20px;
         }
 
         .container {
             max-width: 800px;
+            width: 100%;
             background: #FFFFFF;
             border-radius: 16px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-            padding: 40px;
+            padding: 48px 40px;
             position: relative;
             overflow: hidden;
         }
@@ -52,26 +53,125 @@
             font-weight: 700;
             color: #C41230;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            text-align: center;
+            font-size: 1rem;
+            color: #555555;
+            margin-bottom: 36px;
+            font-weight: 500;
         }
 
         h2 {
-            font-size: 1.3rem;
-            font-weight: 600;
+            font-size: 1.25rem;
+            font-weight: 700;
             color: #1B5E20;
-            margin: 28px 0 12px;
+            margin: 32px 0 12px;
         }
 
-        p, li {
+        p {
             font-size: 1rem;
             color: #333333;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         ul {
-            list-style: disc;
-            padding-left: 20px;
-            margin-bottom: 15px;
+            list-style: none;
+            margin-bottom: 14px;
+            padding-left: 0;
+        }
+
+        ul li {
+            font-size: 1rem;
+            color: #333333;
+            padding: 6px 0 6px 20px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #1B5E20;
+            font-size: 0.85rem;
+            top: 7px;
+        }
+
+        .format-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .format-card {
+            background: #F5FBF5;
+            border: 1px solid #C8E6C9;
+            border-radius: 10px;
+            padding: 14px 16px;
+        }
+
+        .format-card .format-name {
+            font-weight: 700;
+            color: #1B5E20;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .format-card .format-desc {
+            font-size: 0.88rem;
+            color: #555555;
+            margin: 0;
+        }
+
+        .format-card.edge .format-name::after {
+            content: ' · EDGE';
+            font-size: 0.7rem;
+            color: #C41230;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .tile-row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
+
+        .tile {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .tile.green  { background: #1A4D22; }
+        .tile.yellow { background: #1656C0; }
+        .tile.white  { background: #5A4838; }
+
+        .tile-legend {
+            font-size: 0.85rem;
+            color: #555555;
+            margin-bottom: 14px;
+        }
+
+        .edge-box {
+            background: #F5FBF5;
+            border: 1.5px solid #1B5E20;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 14px;
+        }
+
+        .edge-box .edge-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1B5E20;
+            margin-bottom: 10px;
         }
 
         a {
@@ -84,16 +184,10 @@
             text-decoration: underline;
         }
 
-        .last-updated {
-            font-size: 0.9rem;
-            color: #666666;
-            text-align: center;
-            margin-bottom: 32px;
-        }
-
-        .contact {
-            font-size: 1rem;
-            margin-bottom: 12px;
+        .divider {
+            border: none;
+            border-top: 1px solid #E8F5E9;
+            margin: 32px 0;
         }
 
         .footer-note {
@@ -107,80 +201,103 @@
 
         @media (max-width: 768px) {
             body { padding: 15px; }
-            .container { padding: 24px; border-radius: 12px; }
+            .container { padding: 28px 20px; border-radius: 12px; }
             h1 { font-size: 2rem; }
-            h2 { font-size: 1.15rem; }
-            p, li { font-size: 0.95rem; }
+            h2 { font-size: 1.1rem; }
+            p, ul li { font-size: 0.95rem; }
+            .format-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 480px) {
             h1 { font-size: 1.75rem; }
-            h2 { font-size: 1.05rem; }
-            p, li { font-size: 0.9rem; }
         }
     </style>
 </head>
 <body>
     <div class="container" role="main">
-        <h1>Snicko Terms of Service</h1>
-        <p class="last-updated">Last Updated: August 19, 2026</p>
+        <h1>About Snicko</h1>
+        <p class="tagline">A daily cricket player-guessing game for enthusiasts and fans alike.</p>
 
-        <h2>1. Acknowledgement</h2>
-        <p>Welcome to Snicko, an offering of WeRun Consulting. These Terms of Service ("Terms") govern your use of the Snicko mobile application ("App") on iOS and Android platforms.</p>
-        <p>You and WeRun Consulting acknowledge that these Terms are concluded between you and WeRun Consulting only, and not with Apple Inc. or Google LLC ("Platform Providers"). WeRun Consulting is solely responsible for the App and its content. The Platform Providers have no obligation to provide maintenance, support, or warranty services for the App.</p>
-        <p>By downloading, installing, or using Snicko, you agree to be bound by these Terms. If you do not agree, please do not use the App.</p>
+        <h2>What is Snicko?</h2>
+        <p>Snicko is a daily cricket puzzle game available on iOS and Android. Each day, a mystery cricketer is selected across four formats. Players have up to seven guesses to identify the player, with each incorrect guess revealing attribute clues to help narrow down the answer.</p>
+        <p>Whether you follow cricket closely or just know the big names, Snicko is designed to be engaging and rewarding at every level of knowledge.</p>
 
-        <h2>2. About Snicko</h2>
-        <p>Snicko is a daily cricket player guessing game. Each day, a new mystery cricketer is selected for each of four formats: ODI, T20I, Tests, and IPL. Players receive up to seven guesses, with each guess revealing attribute clues to help narrow down the answer.</p>
-        <p>Player data used in Snicko is sourced from publicly available cricket records, including Cricsheet and community datasets. WeRun Consulting does not claim ownership of underlying statistics or biographical information. All game puzzles, design, software, and branding are the property of WeRun Consulting.</p>
+        <h2>Formats</h2>
+        <p>A new mystery player is revealed daily across all four formats. Each format has its own independent puzzle.</p>
+        <div class="format-grid">
+            <div class="format-card">
+                <div class="format-name">ODI</div>
+                <p class="format-desc">One Day Internationals. Free daily puzzle, available to all players.</p>
+            </div>
+            <div class="format-card edge">
+                <div class="format-name">T20I</div>
+                <p class="format-desc">Twenty20 Internationals. Unlocked with Snicko Edge.</p>
+            </div>
+            <div class="format-card edge">
+                <div class="format-name">Tests</div>
+                <p class="format-desc">Test cricket legends across generations. Unlocked with Snicko Edge.</p>
+            </div>
+            <div class="format-card edge">
+                <div class="format-name">IPL</div>
+                <p class="format-desc">Indian Premier League stars. Unlocked with Snicko Edge.</p>
+            </div>
+        </div>
 
-        <h2>3. Eligibility and Account Creation</h2>
-        <p>You must be at least 13 years old (or the applicable age of digital consent in your jurisdiction) to use Snicko. By creating an account, you confirm that you meet this requirement.</p>
-        <p>You may sign in using an email address, Apple Sign-In, or Google Sign-In. You are responsible for providing accurate information during registration and for maintaining the confidentiality of your account credentials.</p>
-        <p>You must notify us immediately of any unauthorised use of your account at <a href="mailto:Snicko@werunconsulting.com">Snicko@werunconsulting.com</a>. WeRun Consulting reserves the right to suspend or terminate accounts that violate these Terms.</p>
-
-        <h2>4. Subscription Plans and Payments</h2>
-        <p>Snicko offers a free tier that includes the daily ODI puzzle. Snicko Edge is a one-time in-app purchase that unlocks all four format puzzles daily, access to the Archive mode (past puzzles), and additional lifelines.</p>
-        <p>Snicko Edge subscriptions are billed through your App Store (Apple) or Google Play (Android) account and auto-renew unless cancelled at least 24 hours before the renewal date. Subscription management, including cancellation, is handled through your platform account settings.</p>
-        <p>WeRun Consulting does not process or store payment information directly. All transactions are handled by Apple or Google. No refunds are provided for unused subscription periods, except as required by applicable law or platform policy.</p>
-        <p>Pricing is subject to change. See the in-app purchase screen for current subscription pricing and terms.</p>
-
-        <h2>5. Acceptable Use</h2>
-        <p>You agree to use Snicko only for lawful, personal, and non-commercial purposes. You must not:</p>
+        <h2>How It Works</h2>
+        <p>Type any cricketer's name into the search bar. Each guess reveals seven attributes about the mystery player:</p>
         <ul>
-            <li>Attempt to reverse-engineer, decompile, or tamper with the App or its puzzle generation logic.</li>
-            <li>Use automated tools, bots, or scripts to manipulate game results or leaderboards.</li>
-            <li>Share puzzle answers or spoilers in ways designed to harm other users' experience.</li>
-            <li>Impersonate another user or create multiple accounts to manipulate leaderboard rankings.</li>
-            <li>Use the App in any way that violates applicable laws or these Terms.</li>
+            <li>Country, Role, Batting Hand, Debut Year</li>
+            <li>Career Runs, Average or Strike Rate (format-specific)</li>
+            <li>Career Wickets</li>
         </ul>
-        <p>WeRun Consulting reserves the right to remove leaderboard entries or suspend accounts where manipulation or abuse is suspected.</p>
+        <div class="tile-row">
+            <span class="tile green">CORRECT</span>
+            <span class="tile yellow">CLOSE</span>
+            <span class="tile white">WRONG</span>
+        </div>
+        <p class="tile-legend">Green means an exact match. Yellow means you are close (within range for numbers, or same region for country). White means no match. Numeric attributes show an up or down arrow to guide your next guess.</p>
+        <p>You have seven guesses. Use them wisely.</p>
 
-        <h2>6. Intellectual Property</h2>
-        <p>All content in Snicko — including but not limited to the game design, puzzle system, animations, graphics, branding, and software — is the property of WeRun Consulting and is protected by applicable intellectual property laws.</p>
-        <p>You are granted a limited, non-exclusive, non-transferable licence to use Snicko on your personal devices in accordance with these Terms. This licence does not include the right to reproduce, distribute, modify, or create derivative works from the App.</p>
-        <p>Snicko, Snicko Edge, and the WeRun Consulting name and logo are trademarks of WeRun Consulting. Unauthorised use is prohibited.</p>
+        <h2>Snicko Edge</h2>
+        <div class="edge-box">
+            <div class="edge-title">Snicko Edge</div>
+            <ul>
+                <li>Unlock all four daily format puzzles: ODI, T20I, Tests, and IPL</li>
+                <li>Access Archive mode to play past puzzles at any time</li>
+                <li>Additional lifelines to help on tough days</li>
+            </ul>
+        </div>
+        <p>Snicko Edge is a one-time in-app purchase available through the App Store and Google Play. No subscription, no recurring charges.</p>
 
-        <h2>7. Disclaimer of Warranties</h2>
-        <p>Snicko is provided "as is" and "as available" without warranties of any kind, whether express or implied. WeRun Consulting does not warrant that the App will be error-free, uninterrupted, or that player data is always complete or accurate.</p>
-        <p>Cricket statistics and player information are sourced from publicly available records and are provided for entertainment purposes only. They may not reflect the most current information.</p>
+        <h2>Lifelines</h2>
+        <p>Every player gets lifelines to use when they are stuck. Snicko Edge unlocks additional lifelines beyond the free allocation.</p>
+        <ul>
+            <li><strong>Inside Edge</strong> - reveals one correct attribute</li>
+            <li><strong>Outside Edge</strong> - eliminates one wrong option</li>
+            <li><strong>No Ball</strong> - skips a guess without penalty</li>
+        </ul>
 
-        <h2>8. Limitation of Liability</h2>
-        <p>To the maximum extent permitted by applicable law, WeRun Consulting shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of, or inability to use, Snicko.</p>
-        <p>WeRun Consulting's total liability for any claim arising from these Terms or the App shall not exceed the amount you paid for Snicko Edge, or AUD $10, whichever is greater.</p>
+        <h2>Leaderboard</h2>
+        <p>Create a free account to track your career strike rate, win streaks, and compete on the global leaderboard. Your rank is based on how efficiently you solve puzzles over time.</p>
 
-        <h2>9. Termination</h2>
-        <p>WeRun Consulting may terminate or suspend your access to Snicko at any time, with or without notice, for conduct that violates these Terms or is otherwise harmful to other users, WeRun Consulting, or third parties.</p>
-        <p>Upon termination, your licence to use the App ceases immediately. Provisions of these Terms that by their nature should survive termination will do so, including intellectual property, disclaimer of warranties, and limitation of liability.</p>
+        <h2>Player Data</h2>
+        <p>Snicko features over 845 players spanning ODI, T20I, Test, and IPL cricket - from modern stars to all-time legends. Player data is sourced from publicly available cricket records, including Cricsheet and community datasets. Statistics are provided for entertainment purposes and may not always reflect the most current information.</p>
 
-        <h2>10. Changes to These Terms</h2>
-        <p>WeRun Consulting may update these Terms periodically. We will notify you of significant changes via in-app notification or email. Continued use of Snicko after changes are posted constitutes acceptance of the revised Terms.</p>
+        <hr class="divider">
 
-        <h2>11. Governing Law</h2>
-        <p>These Terms are governed by the laws of the State of Victoria, Australia, without regard to conflict of law principles. Any disputes will be resolved in the courts located in Melbourne, Victoria, Australia, unless local law requires otherwise.</p>
+        <h2>Our Philosophy</h2>
+        <p>Snicko is intentionally ad-free and lightweight. Costs are kept minimal by design so the focus stays entirely on building something worth playing every day. We believe a great puzzle does not need ads, paywalls, or interruptions.</p>
 
-        <h2>12. Contact Us</h2>
-        <p class="contact">For questions about these Terms, please contact WeRun Consulting at <a href="mailto:Snicko@werunconsulting.com">Snicko@werunconsulting.com</a>.</p>
+        <h2>The Story</h2>
+        <p>Snicko is powered by WeRun Consulting. It started as a game for enthusiasts and casual followers alike: a daily challenge that helps you discover more about the players you love and the legends who shaped the game.</p>
+        <p>Thank you to everyone playing. A personal thank you to my family, near and far, for the patience and belief it takes to build something from scratch.</p>
+        <p>Snicko plans to grow with women's cricket statistics and new puzzle formats in the future.</p>
+
+        <hr class="divider">
+
+        <h2>Contact</h2>
+        <p>Questions, feedback, or suggestions? We would love to hear from you.</p>
+        <p><a href="mailto:Snicko@werunconsulting.com">Snicko@werunconsulting.com</a></p>
 
         <p class="footer-note">Snicko - Powered by WeRun Consulting</p>
     </div>
