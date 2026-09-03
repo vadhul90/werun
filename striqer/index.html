@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Striqer - Four daily soccer puzzles. Stats, clubs, tiles, and Draft War. Built by WeRun Consulting.">
+    <title>Striqer - About</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0B1120;
+            color: #F0F3FA;
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            background: #131C2F;
+            border-radius: 20px;
+            border: 1px solid #1E2A40;
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, rgba(0,200,83,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .wordmark {
+            font-family: 'Syne', sans-serif;
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 4px;
+            color: #00C853;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #F0F3FA;
+            margin-bottom: 8px;
+            line-height: 1.15;
+        }
+
+        .tagline {
+            font-size: 1rem;
+            color: #64748B;
+            margin-bottom: 44px;
+        }
+
+        h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #00C853;
+            margin: 40px 0 14px;
+            letter-spacing: 0.2px;
+        }
+
+        p {
+            font-size: 0.975rem;
+            color: #94A3B8;
+            margin-bottom: 12px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 16px;
+        }
+
+        ul li {
+            font-size: 0.975rem;
+            color: #94A3B8;
+            padding-left: 18px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        ul li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: #00C853;
+        }
+
+        strong {
+            color: #F0F3FA;
+            font-weight: 600;
+        }
+
+        .mode-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .mode-card {
+            border-radius: 14px;
+            padding: 18px;
+            border: 1px solid transparent;
+        }
+
+        .mode-card.stats  { background: rgba(0,200,83,0.06);  border-color: rgba(0,200,83,0.18); }
+        .mode-card.club   { background: rgba(61,90,254,0.07); border-color: rgba(61,90,254,0.20); }
+        .mode-card.reg    { background: rgba(167,139,250,0.07); border-color: rgba(167,139,250,0.18); }
+        .mode-card.draft  { background: rgba(234,88,12,0.07); border-color: rgba(234,88,12,0.18); }
+
+        .mode-label {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            margin-bottom: 6px;
+        }
+
+        .mode-card.stats  .mode-label { color: #00C853; }
+        .mode-card.club   .mode-label { color: #3D5AFE; }
+        .mode-card.reg    .mode-label { color: #A78BFA; }
+        .mode-card.draft  .mode-label { color: #EA580C; }
+
+        .mode-desc {
+            font-size: 0.875rem;
+            color: #64748B;
+            margin: 0;
+        }
+
+        .pro-box {
+            background: rgba(245,158,11,0.06);
+            border: 1px solid rgba(245,158,11,0.25);
+            border-radius: 14px;
+            padding: 22px 24px;
+            margin-bottom: 14px;
+        }
+
+        .pro-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1rem;
+            font-weight: 800;
+            color: #F59E0B;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        a {
+            color: #00C853;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #1E2A40;
+            margin: 40px 0;
+        }
+
+        .footer-note {
+            font-size: 0.85rem;
+            color: #475569;
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 20px 16px; }
+            .container { padding: 28px 24px; border-radius: 14px; }
+            h1 { font-size: 1.9rem; }
+            .mode-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.6rem; }
+            h2 { font-size: 1rem; }
+            p, ul li { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" role="main">
+        <span class="wordmark">STRIQER</span>
+        <h1>Four daily soccer puzzles.</h1>
+        <p class="tagline">Stats, clubs, tiles, and Draft War. A new challenge every day.</p>
+
+        <h2>What is Striqer?</h2>
+        <p>Striqer is a daily soccer trivia app available on iOS and Android. Each day brings a fresh puzzle across all four game modes. Whether you follow every match or just know the big names, there is something here for every level of fan.</p>
+
+        <h2>Game Modes</h2>
+        <div class="mode-grid">
+            <div class="mode-card stats">
+                <div class="mode-label">STATS MODE</div>
+                <p class="mode-desc">Study a player's career numbers and guess who it is in 7 attempts. Each correct stat narrows the field.</p>
+            </div>
+            <div class="mode-card club">
+                <div class="mode-label">CLUB TRAIL</div>
+                <p class="mode-desc">Trace a player's transfer history from club to club. How well do you know the moves?</p>
+            </div>
+            <div class="mode-card reg">
+                <div class="mode-label">REGISTA</div>
+                <p class="mode-desc">Flip tiles to reveal higher/lower stats and piece together the mystery player from the clues.</p>
+            </div>
+            <div class="mode-card draft">
+                <div class="mode-label">DRAFT WAR</div>
+                <p class="mode-desc">Pick your five-a-side squad and go head to head against the AI. Squad selection meets trivia.</p>
+            </div>
+        </div>
+
+        <h2>Lifelines</h2>
+        <p>Every player gets lifelines to use when they are stuck.</p>
+        <ul>
+            <li><strong>Throw-in</strong> &ndash; reveals a subtle stat clue</li>
+            <li><strong>Penalty</strong> &ndash; reveals a key attribute such as nationality or position</li>
+            <li><strong>VAR</strong> &ndash; adds an extra guess</li>
+        </ul>
+
+        <h2>Leaderboards</h2>
+        <p>Sign in with Google to track your streaks, win rates, and compete on the global leaderboard across all four modes.</p>
+
+        <h2>Striqer Pro</h2>
+        <div class="pro-box">
+            <div class="pro-title">⚡ STRIQER PRO</div>
+            <ul>
+                <li>All four daily puzzles, every day</li>
+                <li>Global leaderboards and personal streaks</li>
+                <li>Full lifeline access across every mode</li>
+            </ul>
+        </div>
+        <p>Available as a monthly subscription or a one-time lifetime purchase through the App Store and Google Play.</p>
+
+        <h2>Player Data</h2>
+        <p>Striqer features Premier League players and international all-time greats across Stats Mode, Club Trail, Regista, and Draft War. Player data is sourced from publicly available soccer records. Statistics are provided for entertainment purposes and may not always reflect the most current information.</p>
+
+        <hr class="divider">
+
+        <h2>Our Philosophy</h2>
+        <p>Striqer is intentionally ad-free. The focus stays entirely on building something worth playing every day. We believe a great puzzle does not need ads or interruptions.</p>
+
+        <h2>Contact</h2>
+        <p>Questions, feedback, or suggestions? We would love to hear from you.</p>
+        <p><a href="mailto:Striqer@werunconsulting.com">Striqer@werunconsulting.com</a></p>
+
+        <hr class="divider">
+
+        <p>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            &nbsp;&middot;&nbsp;
+            <a href="tos.html">Terms of Service</a>
+        </p>
+
+        <p class="footer-note">Striqer &mdash; Powered by WeRun Consulting</p>
+    </div>
+</body>
+</html>
