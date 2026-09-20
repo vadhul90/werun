@@ -361,6 +361,35 @@ input:focus, textarea:focus, select:focus { outline: none; border-color: var(--a
   .two-col{grid-template-columns:1fr !important;gap:32px !important;}
 }
 
+/* ======= Mobile fixes for newer pages (home/services/about) that use
+   raw inline grid/font-size/padding instead of a class hook. These override
+   via attribute selectors since inline styles can't be reached any other
+   way without editing every page's markup. ======= */
+@media (max-width: 760px) {
+  [style*="grid-template-columns:repeat(2"],
+  [style*="grid-template-columns:repeat(3"],
+  [style*="grid-template-columns:repeat(4"],
+  [style*="grid-template-columns:280px"],
+  [style*="grid-template-columns:0.85fr"],
+  [style*="grid-template-columns:0.9fr"],
+  [style*="grid-template-columns:1.3fr"],
+  [style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  [style*="font-size:64px"] { font-size: 34px !important; }
+  [style*="font-size:56px"] { font-size: 30px !important; }
+  [style*="font-size:52px"] { font-size: 28px !important; }
+  [style*="font-size:50px"] { font-size: 28px !important; }
+  [style*="font-size:44px"] { font-size: 26px !important; }
+  [style*="font-size:42px"] { font-size: 25px !important; }
+  [style*="font-size:40px"] { font-size: 24px !important; }
+
+  [style*="padding:150px 0 110px"] { padding: 90px 0 60px !important; }
+  [style*="padding:130px 0 90px"] { padding: 80px 0 50px !important; }
+  [style*="padding:130px 0 40px"] { padding: 80px 0 30px !important; }
+}
+
 /* ======= Blog article body content: force dark theme over each post's own
    inline <style> block (many older posts hardcode a white "paper" card
    layout with colors tuned for a light background). ======= */
