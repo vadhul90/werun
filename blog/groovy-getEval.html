@@ -174,23 +174,36 @@
     
     
     
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/logo-icon.png">
 </head>
 <body>
-    <nav class="navbar">
-        <button class="hamburger" aria-label="Toggle menu"><i class="fas fa-cube"></i></button>
-        <div class="nav-links">
-            <a href="../index.html">Home</a>
-            <a href="../index.html#services">Services</a>
-            <a href="../index.html#expertise">Expertise</a>
-            <a href="../blog/">Blog</a>
-            <a href="../index.html#contact">Contact</a>
-        </div>
-    </nav>
+        <header class="nav">
+      <div class="container">
+        <a href="../index.html" class="nav-brand">
+          <img src="../assets/logo-icon.png" alt="WeRun Consulting" width="42" height="42" style="border-radius:9px;display:block;">
+          <span class="nav-brand-text"><span class="brand-name">WeRun</span><span class="brand-sub">Consulting</span></span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-menu').classList.toggle('active')"><i class="fas fa-bars"></i></button>
+        <nav class="nav-menu">
+          <a href="../index.html" class="navlink">Home</a>
+          <a href="../services/" class="navlink">Services</a>
+          <a href="../about/" class="navlink">About</a>
+          <a href="../blog/" class="navlink active">Insights</a>
+          <a href="../contact/" class="navlink">Contact</a>
+          <a href="../contact/" class="btn btn-primary" style="padding:10px 20px;font-size:13.5px;">Start a conversation</a>
+        </nav>
+      </div>
+    </header>
+    
 
     <section class="hero" id="home">
         <h1>WeRun Consulting</h1>
         <p>In this <strong>Groovy scripting tutorial</strong>, we’ll explore how to use the <code>getEvaluatedMembers</code> function in <strong>Oracle EPM Cloud</strong> to automate calculations.</p>
-        <a href="../index.html" class="button">Back to Home</a>
+        <a href="index.html" class="button">Back to Insights</a>
     </section>
 
     <section class="blog-container">
@@ -370,7 +383,7 @@ years.each { println "Year: $it" }
             <!-- LinkedIn Share Button -->
             <div class="share-section" style="margin-top: 1.5rem; text-align: center;">
                 <p style="font-size: 1rem; color: #444; margin-bottom: 0.75rem;">Share this cheatsheet:</p>
-                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://your-blog-url.com/blog/getEvaluatedMembers-cheatsheet" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.75rem 1.5rem; background: #0077B5; color: white; text-decoration: none; border-radius: 5px; font-size: 1rem;">
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.werunconsulting.com/blog/getEvaluatedMembers-cheatsheet" target="_blank" rel="noopener noreferrer" class="btn-linkedin">
                     <i class="fab fa-linkedin" style="margin-right: 0.5rem;"></i> Share on LinkedIn
                 </a>
             </div>
@@ -390,13 +403,60 @@ years.each { println "Year: $it" }
         </article>
     </section>
 
-    <footer>
-        <p>© 2023 WeRun Consulting. All rights reserved.</p>
-    </footer>
+    
 
     <!-- Prism.js JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-groovy.min.js"></script>
+        <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div style="max-width:320px;">
+            <div class="footer-brand">
+              <img src="../assets/logo-icon.png" alt="WeRun Consulting" width="26" height="26" style="border-radius:6px;display:block;">
+              <span>WeRun Consulting</span>
+            </div>
+            <p class="muted" style="font-size:14px;margin-top:14px;line-height:1.6;">Digital, AI &amp; Cloud Transformation Consulting.<br>Melbourne, Australia.</p>
+          </div>
+          <div class="footer-cols">
+            <div class="footer-col">
+              <div class="eyebrow" style="font-size:11px;margin-bottom:6px;">Site</div>
+              <a href="../index.html">Home</a>
+              <a href="../services/">Services</a>
+              <a href="../about/">About</a>
+              <a href="../blog/">Insights</a>
+              <a href="../contact/">Contact</a>
+            </div>
+            <div class="footer-col">
+              <div class="eyebrow" style="font-size:11px;margin-bottom:6px;">Contact</div>
+              <span>info@werunconsulting.com</span>
+              <a href="https://www.linkedin.com/company/werunconsulting/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 WeRun Consulting. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="../privacy-policy.html">Privacy Policy</a>
+            <a href="../terms-of-service/">Terms of Service</a>
+            <a href="../eula/">EULA</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+<script>
+  (function(){
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+      navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        if (window.innerWidth <= 860) navMenu.classList.remove('active');
+      }));
+    }
+  })();
+</script>
 </body>
 </html>

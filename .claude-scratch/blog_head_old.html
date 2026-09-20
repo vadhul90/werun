@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeRun Blog | EPM Cloud Insights</title>
+    <meta name="description" content="Expert insights, implementation guides, and industry updates for Oracle EPM Cloud">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Search Bar Styling */
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+        .search-input {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1rem;
+            border: 2px solid var(--primary);
+            border-radius: 5px;
+            background: var(--light);
+            color: var(--dark);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        .search-input:focus {
+            border-color: var(--secondary);
+            background: white;
+            outline: none;
+        }
+        .search-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        .search-results {
+            display: none; /* Hidden by default, shown via JS */
+            margin-top: 1rem;
+        }
+        .search-results .blog-card {
+            margin-bottom: 1rem;
+        }
+        /* Show More Button Styling */
+        .show-more-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .show-more-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .show-more-btn:hover {
+            background: var(--secondary);
+        }
+        @media (max-width: 768px) {
+            .search-container {
+                margin: 1rem;
+            }
+            .search-input {
+                font-size: 0.9rem;
+            }
+            .show-more-btn {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar with Hamburger -->
+    <nav class="navbar">
+        <button class="hamburger" aria-label="Toggle menu"><i class="fas fa-cube"></i></button>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <a href="../blog/">Blog</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Search -->
+    <section class="hero">
+        <h1><i class="fas fa-blog"></i> EPM Cloud Blog</h1>
+        <p>Expert insights, implementation guides, and industry updates</p>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search blogs..." id="searchInput">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+    </section>
+
+    <!-- Blog Previews -->
+    <section class="blog-container">
+        <div class="blog-preview" id="blogPreview"></div>
+        <div class="show-more-container" id="showMoreContainer">
+            <button class="show-more-btn" id="showMoreBtn">Show More</button>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2023 WeRun Consulting. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="https://www.werunconsulting.com/privacy-policy.html">Privacy Policy</a>
+            <a href="https://www.werunconsulting.com/terms-of-service">Terms of Service</a>
+            <a href="https://www.werunconsulting.com/eula">EULA</a>
+        </div>
+    </footer>
+
+    <!-- Search, Pagination, and Hamburger JavaScript -->
+    <script>
+        const blogPosts = [
+            {
+                title: "New Features in EPM Cloud 25.04",
+                category: "update",
+                date: "March 30, 2025",
+                summary: "Explore the April 2025 updates, including planning enhancements and integration improvements...",
+                url: "epm-25.04-update.html"
+            },
+            {
+                title: "New Features in EPM Cloud 25.03",
+                category: "update",
+                date: "March 03, 2025",
+                summary: "Explore the March 2025 updates, including enhanced dashboards and analytics integration...",
+                url: "epm-25.03-update.html"
+            },
+            {
+                title: "New Features in EPM Cloud 25.02",
+                category: "update",
+                date: "February 03, 2025",
+                summary: "Overview of the February 2025 updates, featuring security and usability enhancements...",
+                url: "epm-25.02-update.html"
+            },
+            {
+                title: "New Features in EPM Cloud 25.01",
+                category: "update",
+                date: "January 03, 2025",
+                summary: "Analysis of January 2025 updates, with AI goal suggestions and workflow templates...",
+                url: "epm-25.01-update.html"
+            },
+            {
+                title: "Managing Metadata Updates with Groovy",
+                category: "epm",
+                date: "June 19, 2024",
+                summary: "A concise guide to update metadata using Groovy scripts...",
+                url: "groovy-updateMeta.html"
+            },
+            {
+                title: "Using getEvaluatedMembers in Groovy",
+                category: "epm",
+                date: "July 07, 2024",
+                summary: "A concise guide to using `getEvaluatedMembers` in Groovy scripts...",
+                url: "groovy-getEval.html"
+            },
+            {
+                title: "Using Grid Builders in Groovy",
+                category: "epm",
+                date: "November 10, 2024",
+                summary: "A concise guide to using dataGrid builders in Groovy scripts...",
+                url: "groovy-gridBuilder.html"
+            },
+            {
+                title: "Managing User-defined Attributes (UDA) in Groovy",
+                category: "epm",
+                date: "January 12, 2025",
+                summary: "A concise guide to manage UDAs in Groovy scripts...",
+                url: "groovy-udaFunctions.html"
+            }
+        ];
+
+        const searchInput = document.getElementById('searchInput');
+        const blogPreview = document.getElementById('blogPreview');
+        const searchResults = document.getElementById('searchResults');
+        const showMoreBtn = document.getElementById('showMoreBtn');
+        const showMoreContainer = document.getElementById('showMoreContainer');
+
+        const postsPerPage = 8;
+        let visiblePosts = postsPerPage;
+
+        // Function to render blog posts
+        function renderPosts(startIndex, endIndex) {
+            const postsToRender = blogPosts.slice(startIndex, endIndex);
+            postsToRender.forEach(post => {
+                const card = document.createElement('div');
+                card.className = 'blog-card';
+                card.innerHTML = `
+                    <div class="post-meta">
+                        <span class="category ${post.category}">${post.category === 'update' ? 'Cloud Update' : 'EPM Scripting'}</span>
+                        <span class="date">${post.date}</span>
+                    </div>
+                    <h3>${post.title}</h3>
+                    <p>${post.summary}</p>
+                    <a href="${post.url}" class="read-more">Read More →</a>
+                `;
+                blogPreview.appendChild(card);
+            });
+        }
+
+        // Initial render of first 8 posts
+        renderPosts(0, visiblePosts);
+
+        // Show More button logic
+        if (visiblePosts >= blogPosts.length) {
+            showMoreContainer.style.display = 'none';
+        }
+        showMoreBtn.addEventListener('click', () => {
+            const nextPosts = visiblePosts + postsPerPage;
+            renderPosts(visiblePosts, nextPosts);
+            visiblePosts = nextPosts;
+
+            if (visiblePosts >= blogPosts.length) {
+                showMoreContainer.style.display = 'none';
+            }
+        });
+
+        // Search functionality
+        searchInput.addEventListener('input', function() {
+            const query = this.value.trim().toLowerCase();
+            if (query === '') {
+                blogPreview.style.display = 'grid';
+                searchResults.style.display = 'none';
+                showMoreContainer.style.display = visiblePosts < blogPosts.length ? 'block' : 'none';
+                return;
+            }
+
+            const results = blogPosts.filter(post =>
+                post.title.toLowerCase().includes(query) ||
+                post.summary.toLowerCase().includes(query) ||
+                post.category.toLowerCase().includes(query)
+            );
+
+            blogPreview.style.display = 'none';
+            searchResults.style.display = 'block';
+            showMoreContainer.style.display = 'none'; // Hide Show More during search
+            searchResults.innerHTML = '';
+
+            if (results.length === 0) {
+                searchResults.innerHTML = '<p>No results found.</p>';
+            } else {
+                results.forEach(post => {
+                    const card = document.createElement('div');
+                    card.className = 'blog-card';
+                    card.innerHTML = `
+                        <div class="post-meta">
+                            <span class="category ${post.category}">${post.category === 'update' ? 'Cloud Update' : 'EPM Scripting'}</span>
+                            <span class="date">${post.date}</span>
+                        </div>
+                        <h3>${post.title}</h3>
+                        <p>${post.summary}</p>
+                        <a href="${post.url}" class="read-more">Read More →</a>
+                    `;
+                    searchResults.appendChild(card);
+                });
+            }
+        });
+
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navLinksAnchors = navLinks.querySelectorAll('a');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Collapse menu when a link is clicked on mobile
+        navLinksAnchors.forEach(anchor => {
+            anchor.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

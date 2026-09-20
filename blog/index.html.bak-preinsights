@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insights & Case Studies | WeRun Consulting</title>
-    <meta name="description" content="Cloud release notes, technical guides, and case studies from WeRun Consulting - across EPM, mobile, cloud and AI.">
+    <title>WeRun Blog | EPM Cloud Insights</title>
+    <meta name="description" content="Expert insights, implementation guides, and industry updates for Oracle EPM Cloud">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -63,39 +63,6 @@
         .show-more-btn:hover {
             background: var(--secondary);
         }
-
-        /* Case Studies */
-        .case-studies-section { padding: 30px 2rem 70px; background: var(--bg); }
-        .case-studies-inner { max-width: 1200px; margin: 0 auto; }
-        .case-studies-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
-        .case-studies-head h2 { font-size: 2rem; color: var(--text); font-weight: 400; margin: 14px 0 16px; }
-        .case-study-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.75rem; }
-        .case-study-card { display: flex; flex-direction: column; gap: 14px; border-radius: 4px; }
-        .case-study-card .category { align-self: flex-start; }
-        .case-study-card h3 { color: var(--text); font-size: 1.25rem; font-weight: 500; margin: 0; }
-        .case-study-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.6; margin: 0; flex-grow: 1; }
-        .case-study-card .read-more { margin-top: 0; }
-        .case-study-card .no-link-note { color: var(--muted); font-size: 0.82rem; font-style: italic; }
-
-        /* Content-type filter pills */
-        .filter-pills { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 24px 0 44px; }
-        .filter-pill {
-            padding: 8px 18px;
-            border-radius: 999px;
-            border: 1px solid var(--border);
-            background: transparent;
-            color: var(--muted);
-            font-size: 13.5px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        .filter-pill:hover { border-color: var(--accent); color: var(--text); }
-        .filter-pill.active { background: var(--accent); border-color: var(--accent); color: oklch(15% 0.02 250); }
-
-        .section-head-center { text-align: center; margin-bottom: 8px; }
-        .section-head-center h2 { font-size: 2rem; color: var(--text); font-weight: 400; margin: 14px 0 0; }
-
         @media (max-width: 768px) {
             .search-container {
                 margin: 1rem;
@@ -112,15 +79,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="../assets/favicon.png">
-<link rel="apple-touch-icon" href="../assets/logo-icon.png">
 </head>
 <body>
         <header class="nav">
       <div class="container">
         <a href="../index.html" class="nav-brand">
-          <img src="../assets/logo-icon.png" alt="WeRun Consulting" width="42" height="42" style="border-radius:9px;display:block;">
-          <span class="nav-brand-text"><span class="brand-name">WeRun</span><span class="brand-sub">Consulting</span></span>
+          <svg width="26" height="26" viewBox="0 0 28 28" fill="none"><rect x="2" y="16" width="5" height="10" fill="var(--accent)"/><rect x="11" y="10" width="5" height="16" fill="var(--accent)"/><rect x="20" y="4" width="5" height="22" fill="var(--accent)"/></svg>
+          <span>WeRun</span>
+          <span class="muted" style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;margin-left:4px;">Consulting</span>
         </a>
         <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-menu').classList.toggle('active')"><i class="fas fa-bars"></i></button>
         <nav class="nav-menu">
@@ -134,71 +100,20 @@
       </div>
     </header>
     <!-- Navbar with Hamburger -->
-
+    
 
     <!-- Hero Section with Search -->
     <section class="hero">
-        <h1><i class="fas fa-lightbulb"></i> Insights</h1>
-        <p>Cloud release notes, technical guides, and case studies from what we've actually shipped - across EPM, mobile, cloud and AI.</p>
+        <h1><i class="fas fa-blog"></i> EPM Cloud Blog</h1>
+        <p>Expert insights, implementation guides, and industry updates</p>
         <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search articles..." id="searchInput">
+            <input type="text" class="search-input" placeholder="Search blogs..." id="searchInput">
             <i class="fas fa-search search-icon"></i>
         </div>
     </section>
 
-    <!-- Case Studies -->
-    <section class="case-studies-section" id="caseStudiesSection">
-      <div class="case-studies-inner">
-        <div class="case-studies-head">
-          <div class="eyebrow">Case studies</div>
-          <h2>Built and shipped by WeRun</h2>
-          <p class="muted">Beyond EPM, we design and build our own products end to end. A look at what we've taken from idea to the App Store and Google Play.</p>
-        </div>
-        <div class="case-study-grid">
-
-          <div class="card case-study-card">
-            <span class="category service">Case Study · Mobile</span>
-            <h3>Snicko</h3>
-            <p>A daily cricket player-guessing game for iOS and Android. Each day, a mystery cricketer is selected across four formats, and players get up to seven guesses to identify them.</p>
-            <a href="../snicko/" class="read-more">View app →</a>
-          </div>
-
-          <div class="card case-study-card">
-            <span class="category service">Case Study · Mobile</span>
-            <h3>Striqer</h3>
-            <p>Four daily soccer puzzles covering stats, clubs, tiles, and Draft War - a fresh challenge every day for iOS and Android football fans.</p>
-            <a href="../striqer/" class="read-more">View app →</a>
-          </div>
-
-          <div class="card case-study-card">
-            <span class="category service">Case Study · Mobile</span>
-            <h3>Suvai</h3>
-            <p>A recipe app that helps you master your kitchen with AI-generated meal plans, over 5,000 recipes, recipe collections, and Instacart integration for grocery ordering.</p>
-            <span class="no-link-note">iOS &amp; Android</span>
-          </div>
-
-          <div class="card case-study-card">
-            <span class="category epm">Case Study · EPM</span>
-            <h3>EPM Slice</h3>
-            <p>Our own iOS companion app for EPM consulting - offline games, blog access, community Q&amp;A, and insights, built for Oracle EPM practitioners on the go.</p>
-            <a href="../epmslice/" class="read-more">View app →</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
     <!-- Blog Previews -->
     <section class="blog-container">
-        <div class="section-head-center">
-          <div class="eyebrow">Articles &amp; updates</div>
-          <h2>Cloud releases and technical guides</h2>
-        </div>
-        <div class="filter-pills">
-          <button class="filter-pill active" data-filter="all">All</button>
-          <button class="filter-pill" data-filter="update">Cloud Updates</button>
-          <button class="filter-pill" data-filter="epm">Technical Guides</button>
-        </div>
         <div class="blog-preview" id="blogPreview"></div>
         <div class="show-more-container" id="showMoreContainer">
             <button class="show-more-btn" id="showMoreBtn">Show More</button>
@@ -207,9 +122,9 @@
     </section>
 
     <!-- Footer -->
+    
 
-
-    <!-- Search, Filter, Pagination JavaScript -->
+    <!-- Search, Pagination, and Hamburger JavaScript -->
     <script>
         const blogPosts = [
             { title: "EPM April 2025 Updates", category: "update", date: "April 2025", summary: "Explore the April 2025 Oracle EPM Cloud release, including planning enhancements and integration improvements.", url: "epm-25.04-update.html" },
@@ -240,75 +155,53 @@
         const searchResults = document.getElementById('searchResults');
         const showMoreBtn = document.getElementById('showMoreBtn');
         const showMoreContainer = document.getElementById('showMoreContainer');
-        const filterButtons = document.querySelectorAll('.filter-pill');
-        const caseStudiesSection = document.getElementById('caseStudiesSection');
 
         const postsPerPage = 8;
         let visiblePosts = postsPerPage;
-        let activeFilter = 'all';
 
-        function categoryLabel(cat) {
-            return cat === 'update' ? 'Cloud Update' : 'Technical Guide';
-        }
-
-        function cardHTML(post) {
-            return `
-                <div class="post-meta">
-                    <span class="category ${post.category}">${categoryLabel(post.category)}</span>
-                    <span class="date">${post.date}</span>
-                </div>
-                <h3>${post.title}</h3>
-                <p>${post.summary}</p>
-                <a href="${post.url}" class="read-more">Read More →</a>
-            `;
-        }
-
-        function filteredPosts() {
-            return activeFilter === 'all' ? blogPosts : blogPosts.filter(p => p.category === activeFilter);
-        }
-
-        // Render the grid up to the current pagination cutoff, respecting the active filter
-        function renderGrid() {
-            const posts = filteredPosts();
-            blogPreview.innerHTML = '';
-            posts.slice(0, visiblePosts).forEach(post => {
+        // Function to render blog posts
+        function renderPosts(startIndex, endIndex) {
+            const postsToRender = blogPosts.slice(startIndex, endIndex);
+            postsToRender.forEach(post => {
                 const card = document.createElement('div');
                 card.className = 'blog-card';
-                card.innerHTML = cardHTML(post);
+                card.innerHTML = `
+                    <div class="post-meta">
+                        <span class="category ${post.category}">${post.category === 'update' ? 'Cloud Update' : 'EPM Scripting'}</span>
+                        <span class="date">${post.date}</span>
+                    </div>
+                    <h3>${post.title}</h3>
+                    <p>${post.summary}</p>
+                    <a href="${post.url}" class="read-more">Read More →</a>
+                `;
                 blogPreview.appendChild(card);
             });
-            showMoreContainer.style.display = visiblePosts < posts.length ? 'block' : 'none';
         }
 
-        renderGrid();
+        // Initial render of first 8 posts
+        renderPosts(0, visiblePosts);
 
+        // Show More button logic
+        if (visiblePosts >= blogPosts.length) {
+            showMoreContainer.style.display = 'none';
+        }
         showMoreBtn.addEventListener('click', () => {
-            visiblePosts += postsPerPage;
-            renderGrid();
+            const nextPosts = visiblePosts + postsPerPage;
+            renderPosts(visiblePosts, nextPosts);
+            visiblePosts = nextPosts;
+
+            if (visiblePosts >= blogPosts.length) {
+                showMoreContainer.style.display = 'none';
+            }
         });
 
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterButtons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                activeFilter = btn.dataset.filter;
-                visiblePosts = postsPerPage;
-                searchInput.value = '';
-                blogPreview.style.display = 'grid';
-                searchResults.style.display = 'none';
-                if (caseStudiesSection) caseStudiesSection.style.display = '';
-                renderGrid();
-            });
-        });
-
-        // Search functionality (searches all articles regardless of the active filter)
+        // Search functionality
         searchInput.addEventListener('input', function() {
             const query = this.value.trim().toLowerCase();
             if (query === '') {
                 blogPreview.style.display = 'grid';
                 searchResults.style.display = 'none';
-                if (caseStudiesSection) caseStudiesSection.style.display = '';
-                renderGrid();
+                showMoreContainer.style.display = visiblePosts < blogPosts.length ? 'block' : 'none';
                 return;
             }
 
@@ -318,7 +211,6 @@
                 post.category.toLowerCase().includes(query)
             );
 
-            if (caseStudiesSection) caseStudiesSection.style.display = 'none';
             blogPreview.style.display = 'none';
             searchResults.style.display = 'block';
             showMoreContainer.style.display = 'none'; // Hide Show More during search
@@ -330,10 +222,36 @@
                 results.forEach(post => {
                     const card = document.createElement('div');
                     card.className = 'blog-card';
-                    card.innerHTML = cardHTML(post);
+                    card.innerHTML = `
+                        <div class="post-meta">
+                            <span class="category ${post.category}">${post.category === 'update' ? 'Cloud Update' : 'EPM Scripting'}</span>
+                            <span class="date">${post.date}</span>
+                        </div>
+                        <h3>${post.title}</h3>
+                        <p>${post.summary}</p>
+                        <a href="${post.url}" class="read-more">Read More →</a>
+                    `;
                     searchResults.appendChild(card);
                 });
             }
+        });
+
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navLinksAnchors = navLinks.querySelectorAll('a');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Collapse menu when a link is clicked on mobile
+        navLinksAnchors.forEach(anchor => {
+            anchor.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                }
+            });
         });
     </script>
         <footer class="site-footer">
@@ -341,7 +259,7 @@
         <div class="footer-top">
           <div style="max-width:320px;">
             <div class="footer-brand">
-              <img src="../assets/logo-icon.png" alt="WeRun Consulting" width="26" height="26" style="border-radius:6px;display:block;">
+              <svg width="20" height="20" viewBox="0 0 28 28" fill="none"><rect x="2" y="16" width="5" height="10" fill="var(--accent)"/><rect x="11" y="10" width="5" height="16" fill="var(--accent)"/><rect x="20" y="4" width="5" height="22" fill="var(--accent)"/></svg>
               <span>WeRun Consulting</span>
             </div>
             <p class="muted" style="font-size:14px;margin-top:14px;line-height:1.6;">Digital, AI &amp; Cloud Transformation Consulting.<br>Melbourne, Australia.</p>
@@ -358,12 +276,12 @@
             <div class="footer-col">
               <div class="eyebrow" style="font-size:11px;margin-bottom:6px;">Contact</div>
               <span>info@werunconsulting.com</span>
-              <a href="https://www.linkedin.com/company/werunconsulting/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <span>[LINKEDIN URL]</span>
             </div>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2023 WeRun Consulting. All rights reserved.</p>
+          <p>&copy; 2026 WeRun Consulting. All rights reserved.</p>
           <div class="footer-legal">
             <a href="../privacy-policy.html">Privacy Policy</a>
             <a href="../terms-of-service/">Terms of Service</a>
