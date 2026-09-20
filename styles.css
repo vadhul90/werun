@@ -62,7 +62,7 @@ a { color: var(--accent); }
 .navlink{font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;white-space:nowrap;}
 .navlink:hover{color:var(--text);}
 .navlink.active{color:var(--text);}
-.nav-toggle{display:none;background:none;border:none;color:var(--text);font-size:22px;cursor:pointer;}
+.nav-toggle{display:none;background:none;border:none;color:var(--text);font-size:22px;cursor:pointer;width:44px;height:44px;align-items:center;justify-content:center;flex-shrink:0;}
 .section{padding:110px 0;}
 .hr{height:1px;background:var(--border);border:none;}
 .card{background:var(--panel);border:1px solid var(--border);padding:36px;}
@@ -88,7 +88,7 @@ a { color: var(--accent); }
     .nav-menu.active{display:flex;}
     .nav-menu .navlink{padding:14px 24px;width:100%;}
     .nav-menu .btn{margin:14px 24px;width:calc(100% - 48px);justify-content:center;}
-    .nav-toggle{display:block;}
+    .nav-toggle{display:flex;}
     .container{padding:0 24px;}
 }
 
