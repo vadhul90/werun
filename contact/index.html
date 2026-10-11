@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | WeRun Consulting</title>
 <meta name="description" content="Get in touch with WeRun Consulting about digital transformation, AI, mobile, cloud, Oracle EPM Cloud or digital marketing work.">
+<link rel="canonical" href="https://www.werunconsulting.com/contact/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WeRun Consulting">
+<meta property="og:title" content="Contact">
+<meta property="og:description" content="Get in touch with WeRun Consulting about digital transformation, AI, mobile, cloud, Oracle EPM Cloud or digital marketing work.">
+<meta property="og:url" content="https://www.werunconsulting.com/contact/">
+<meta property="og:image" content="https://www.werunconsulting.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../styles.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,6 +73,75 @@
     grid-template-columns:1fr 1fr;
     gap:20px;
   }
+
+  /* Send button: idle / sending / sent labels share one grid cell and
+     crossfade, so the button never changes size between states. */
+  #contactForm .field,
+  #contactForm .g-recaptcha{transition:opacity .35s ease;}
+  #contactForm.is-busy .field,
+  #contactForm.is-busy .g-recaptcha{opacity:.45;pointer-events:none;}
+  #contactForm .send-btn{
+    display:grid;
+    place-items:center;
+    width:100%;
+    overflow:hidden;
+    transition:background-color .3s ease,color .3s ease,transform .15s ease;
+  }
+  #contactForm .send-btn:active{transform:scale(.985);}
+  #contactForm .send-btn > span{
+    grid-area:1/1;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    opacity:0;
+    transform:translateY(10px);
+    transition:opacity .28s ease,transform .28s cubic-bezier(.2,.7,.2,1);
+  }
+  #contactForm .send-btn[data-state="idle"] .s-idle,
+  #contactForm .send-btn[data-state="sending"] .s-sending,
+  #contactForm .send-btn[data-state="sent"] .s-sent{opacity:1;transform:none;}
+  #contactForm .send-btn:not([data-state="idle"]){
+    cursor:default;
+    background:var(--accent);
+    color:oklch(15% 0.02 250);
+  }
+  #contactForm .send-btn .spinner{
+    width:16px;height:16px;
+    border:2px solid currentColor;
+    border-top-color:transparent;
+    border-radius:50%;
+    animation:send-spin .7s linear infinite;
+  }
+  #contactForm .send-btn .check{width:18px;height:18px;}
+  #contactForm .send-btn .check path{
+    stroke-dasharray:24;
+    stroke-dashoffset:24;
+  }
+  #contactForm .send-btn[data-state="sent"] .check path{
+    animation:send-check .4s .15s ease-out forwards;
+  }
+  @keyframes send-spin{to{transform:rotate(360deg);}}
+  @keyframes send-check{to{stroke-dashoffset:0;}}
+
+  #contactForm .form-status{
+    margin:0;
+    font-size:13.5px;
+    line-height:1.6;
+    color:var(--muted);
+    max-height:0;
+    opacity:0;
+    transform:translateY(-4px);
+    overflow:hidden;
+    transition:max-height .35s ease,opacity .3s ease,transform .3s ease,margin .35s ease;
+  }
+  #contactForm .form-status.show{max-height:80px;opacity:1;transform:none;margin-top:16px;}
+  #contactForm .form-status.error{color:oklch(74% 0.15 25);}
+  @media (prefers-reduced-motion:reduce){
+    #contactForm .send-btn > span,
+    #contactForm .form-status{transform:none;transition:opacity .2s ease;}
+    #contactForm .send-btn:active{transform:none;}
+    #contactForm .send-btn .check path{animation:none;stroke-dashoffset:0;}
+  }
   @media (max-width:860px){
     #contactForm .name-email{grid-template-columns:1fr;}
     .contact-grid{grid-template-columns:1fr !important;gap:56px !important;}
@@ -70,6 +149,7 @@
 </style>
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 <link rel="apple-touch-icon" href="../assets/logo-icon.png">
+<script src="../assets/analytics.js" defer></script>
 </head>
 <body>
 
@@ -135,7 +215,12 @@
         <textarea name="message" rows="5" placeholder="A little about your project or challenge" required></textarea>
       </div>
       <div class="g-recaptcha" data-sitekey="6Ldy2u4qAAAAAI_14Fp3Mmk5fAiGzfgdffP91o9H" style="margin-bottom:20px;"></div>
-      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send message</button>
+      <button type="submit" class="btn btn-primary send-btn" data-state="idle">
+        <span class="s-idle">Send message</span>
+        <span class="s-sending" aria-hidden="true"><span class="spinner"></span>Sending…</span>
+        <span class="s-sent" aria-hidden="true"><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Message sent</span>
+      </button>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
     </form>
 
     <div>
@@ -228,12 +313,29 @@
   }
 
   const contactForm = document.getElementById('contactForm');
+  const sendBtn = contactForm.querySelector('.send-btn');
+  const formStatus = document.getElementById('formStatus');
+  const MIN_SENDING_MS = 700; // keep the spinner up long enough to read as a transition
+
+  function setSendState(state) {
+    sendBtn.dataset.state = state;
+    sendBtn.disabled = state !== 'idle';
+    contactForm.classList.toggle('is-busy', state === 'sending');
+  }
+
+  function showStatus(message, isError) {
+    formStatus.textContent = message;
+    formStatus.classList.toggle('error', !!isError);
+    formStatus.classList.toggle('show', !!message);
+  }
+
   contactForm.addEventListener('submit', function(event) {
     event.preventDefault();
+    if (sendBtn.dataset.state !== 'idle') return;
 
     const recaptchaResponse = grecaptcha.getResponse();
     if (!recaptchaResponse) {
-      alert('Please complete the reCAPTCHA verification.');
+      showStatus('Please complete the reCAPTCHA verification.', true);
       return;
     }
 
@@ -246,14 +348,23 @@
       'g-recaptcha-response': recaptchaResponse
     };
 
+    showStatus('');
+    setSendState('sending');
+    const minDelay = new Promise(resolve => setTimeout(resolve, MIN_SENDING_MS));
+
     emailjs.send('service_cax0c6e', 'template_ml6p7zu', formData)
-      .then(() => {
-        alert('Message sent successfully!');
+      .then(() => minDelay.then(() => {
+        setSendState('sent');
+        if (window.gtag) gtag('event', 'generate_lead');
+        showStatus('Thanks for reaching out. We\'ll be in touch shortly.');
         contactForm.reset();
         grecaptcha.reset();
-      }, (error) => {
-        alert('Failed to send message: ' + error.text);
-      });
+        setTimeout(() => setSendState('idle'), 3200);
+      }), (error) => minDelay.then(() => {
+        setSendState('idle');
+        showStatus('Failed to send message: ' + ((error && error.text) || 'please try again.'), true);
+        grecaptcha.reset();
+      }));
   });
 </script>
 
