@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terms of Service for Fliqer, the daily movie trivia game from WeRun Consulting.">
+    <meta name="color-scheme" content="dark light">
+    <title>Fliqer - Terms of Service</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Fliqer "Premiere Night" palette - lib/theme/app_colors.dart */
+        :root {
+            --bg: #0D0B12;
+            --surface: #17141F;
+            --surface-2: #1C1824;
+            --border: #26212F;
+            --border-strong: #352E42;
+            --text: #F5F1EA;
+            --text-2: #A79FB3;
+            --text-3: #5E566B;
+            --brand: #E0313F;
+            --gold: #F5B83D;
+            --link: #F5B83D;
+            --glow: rgba(224, 49, 63, 0.14);
+            --glow-gold: rgba(245, 184, 61, 0.08);
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: #F7F4EF;
+                --surface: #FFFFFF;
+                --surface-2: #FBF8F3;
+                --border: #E7E1D6;
+                --border-strong: #D6CDBE;
+                --text: #15121C;
+                --text-2: #6B6375;
+                --text-3: #9C94A6;
+                --brand: #B8202E;
+                --gold: #C98F1C;
+                --link: #B8202E;
+                --glow: rgba(224, 49, 63, 0.07);
+                --glow-gold: rgba(245, 184, 61, 0.10);
+            }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 40px 20px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            background: var(--surface);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            padding: 0 48px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -90px;
+            right: -90px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .container::after {
+            content: '';
+            position: absolute;
+            bottom: -120px;
+            left: -120px;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, var(--glow-gold) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* Film-strip perforations along the top and bottom of the card. */
+        .strip {
+            height: 22px;
+            margin: 0 -48px;
+            background: var(--border);
+            -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='22'%3E%3Crect x='6' y='7' width='12' height='8' rx='2'/%3E%3C/svg%3E") repeat-x center;
+                    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='22'%3E%3Crect x='6' y='7' width='12' height='8' rx='2'/%3E%3C/svg%3E") repeat-x center;
+        }
+
+        .strip.bottom { margin-top: 40px; }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin: 24px 0 36px;
+        }
+
+        .wordmark {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 5px;
+            line-height: 1;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .wordmark span { color: var(--brand); }
+
+        nav { display: flex; gap: 6px; flex-wrap: wrap; }
+
+        nav a {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: var(--text-2);
+            text-decoration: none;
+            padding: 6px 12px;
+            border: 1px solid var(--border-strong);
+            border-radius: 999px;
+        }
+
+        nav a:hover { color: var(--text); text-decoration: none; }
+
+        nav a[aria-current="page"] {
+            color: #FFFFFF;
+            background: var(--brand);
+            border-color: var(--brand);
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.4rem;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            line-height: 1;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .last-updated {
+            font-size: 0.875rem;
+            color: var(--text-3);
+            margin-bottom: 32px;
+        }
+
+        .summary {
+            position: relative;
+            background: var(--surface-2);
+            border: 1px solid var(--border-strong);
+            border-left: 4px solid var(--gold);
+            border-radius: 14px;
+            padding: 20px 24px 8px;
+            margin-bottom: 8px;
+        }
+
+        .summary h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-weight: 400;
+            font-size: 1.35rem;
+            letter-spacing: 1.5px;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            letter-spacing: 1.2px;
+            line-height: 1.2;
+            color: var(--text);
+            margin: 40px 0 12px;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        h2 .num { color: var(--brand); min-width: 1.4em; }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 18px 0 6px;
+        }
+
+        p, li {
+            font-size: 0.975rem;
+            color: var(--text-2);
+            margin-bottom: 12px;
+        }
+
+        ul { list-style: none; padding-left: 0; margin-bottom: 16px; }
+
+        ul li { padding-left: 20px; position: relative; margin-bottom: 10px; }
+
+        ul li::before {
+            content: '';
+            position: absolute;
+            left: 2px;
+            top: 0.68em;
+            width: 7px;
+            height: 7px;
+            border-radius: 2px;
+            background: var(--brand);
+            transform: rotate(45deg);
+        }
+
+        a { color: var(--link); text-decoration: none; font-weight: 600; }
+        a:hover { text-decoration: underline; }
+
+        strong { color: var(--text); font-weight: 600; }
+
+        .table-wrap { overflow-x: auto; margin: 4px 0 16px; }
+
+        table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+
+        th, td {
+            text-align: left;
+            vertical-align: top;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-2);
+        }
+
+        th {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            color: var(--text-3);
+        }
+
+        td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; }
+
+        .footer-note {
+            font-size: 0.85rem;
+            color: var(--text-3);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer-note a { font-weight: 500; }
+
+        @media (max-width: 768px) {
+            body { padding: 20px 16px; }
+            .container { padding: 0 24px 28px; border-radius: 14px; }
+            .strip { margin: 0 -24px; }
+            .strip.bottom { margin-top: 32px; }
+            h1 { font-size: 2.8rem; }
+        }
+
+        @media (max-width: 480px) {
+            header { flex-direction: column; align-items: flex-start; }
+            h1 { font-size: 2.4rem; }
+            h2 { font-size: 1.4rem; }
+            p, li { font-size: 0.92rem; }
+            td:first-child { white-space: normal; }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="strip" aria-hidden="true"></div>
+
+        <header>
+            <a class="wordmark" href="tos.html">FLIQER<span>.</span></a>
+            <nav aria-label="Legal">
+                <a href="privacy-policy.html">Privacy</a>
+                <a href="tos.html" aria-current="page">Terms</a>
+            </nav>
+        </header>
+
+        <span class="eyebrow">Fliqer &middot; Daily movie trivia</span>
+        <h1>Terms of Service</h1>
+        <p class="last-updated">Last Updated: November 11, 2026</p>
+
+        <h2><span class="num">1.</span>Acknowledgement</h2>
+        <p>Welcome to Fliqer, an offering of WeRun Consulting ("we", "us"). These Terms of Service ("Terms") govern your use of the Fliqer mobile application ("App") on iOS and Android.</p>
+        <p>You and WeRun Consulting acknowledge that these Terms are between you and WeRun Consulting only, and not with Apple Inc. or Google LLC ("Platform Providers"). WeRun Consulting, not the Platform Providers, is solely responsible for the App and its content. The Platform Providers have no obligation to provide maintenance, support or warranty services for the App.</p>
+        <p>By downloading, installing or using Fliqer, you agree to these Terms and to our <a href="privacy-policy.html">Privacy Policy</a>. If you do not agree, please do not use the App.</p>
+
+        <h2><span class="num">2.</span>About Fliqer</h2>
+        <p>Fliqer is a daily movie trivia game with four game modes: Stats Mode, Movie Trail, Greenlight and Battle Mode. A new puzzle is published for each mode every day. Bonus "Special Screening" puzzles appear on selected days. Features, modes and puzzles may change over time.</p>
+        <p>Film information in Fliqer comes from publicly available sources, including Wikidata (CC0), Wikipedia (CC BY-SA 4.0) and The Movie Database (TMDB). This product uses the TMDB API but is not endorsed or certified by TMDB. WeRun Consulting does not claim ownership of the underlying facts. The puzzles, game design, software and branding are the property of WeRun Consulting.</p>
+
+        <h2><span class="num">3.</span>Eligibility and Accounts</h2>
+        <p>You must be at least 13 years old (or the minimum age of digital consent in your country) to use Fliqer. By creating an account, you confirm that you meet this requirement.</p>
+        <p>You can play as a guest, or create an account with Sign in with Apple, Google Sign-In or email and password to sync your progress and join the leaderboards. You are responsible for keeping your account secure, and you should tell us straight away at <a href="mailto:Fliqer@werunconsulting.com">Fliqer@werunconsulting.com</a> if you suspect unauthorised use.</p>
+        <p><strong>Usernames</strong> are public. They must not impersonate another person, or be offensive, hateful or misleading. We may reject, change or remove any username. Usernames can be changed at most once every 24 hours.</p>
+        <p>You can delete your account at any time from <strong>Account &rarr; Delete account</strong> in the App.</p>
+
+        <h2><span class="num">4.</span>Free Trial, Fliqer Pro and Payments</h2>
+        <p>New players get a 7-day free trial with access to every mode. After the trial, a Fliqer Pro purchase is needed to keep playing all four daily modes, replay past puzzles in the Vault, and access the leaderboards, trophies, Hall of Fame and Special Screening bonus puzzles.</p>
+        <p>Fliqer Pro is offered as a monthly subscription or a one-time lifetime purchase:</p>
+        <ul>
+            <li><strong>Monthly subscription:</strong> Billed through your App Store (Apple) or Google Play account at confirmation of purchase. It renews automatically each month unless you cancel at least 24 hours before the end of the current period. You can manage or cancel it in your App Store or Google Play account settings. Deleting the App or your Fliqer account does not cancel a subscription.</li>
+            <li><strong>Lifetime:</strong> A single payment that unlocks Fliqer Pro for as long as the App is offered, on the same store account.</li>
+        </ul>
+        <p>WeRun Consulting does not process or store payment information. All payments are handled by Apple or Google under their terms. Refunds are handled by Apple or Google under their refund policies. We do not provide refunds for unused subscription periods except where the law requires it. You can restore earlier purchases with <strong>Restore purchases</strong> in the App.</p>
+        <p>Prices are shown in the App before you buy and may change. A price change to a subscription will not apply until your next renewal, and the store will notify you where required.</p>
+
+        <h2><span class="num">5.</span>Fair Play and Acceptable Use</h2>
+        <p>Fliqer is meant to be played fairly. You agree to use it only for lawful, personal and non-commercial purposes. You must not:</p>
+        <ul>
+            <li>Reverse-engineer, decompile, modify or tamper with the App, its puzzles or its servers.</li>
+            <li>Use bots, scripts or other automated tools to play, look up answers or submit results.</li>
+            <li>Create multiple accounts or otherwise manipulate leaderboards, streaks or the Critics' Score.</li>
+            <li>Post daily answers or spoilers in ways meant to spoil the game for other players.</li>
+            <li>Interfere with, overload or try to gain unauthorised access to the App or its systems.</li>
+            <li>Use the App in any way that breaks applicable laws or these Terms.</li>
+        </ul>
+        <p>Every result is checked on our servers. We may remove leaderboard entries, reset scores or suspend accounts where we reasonably suspect cheating or abuse.</p>
+
+        <h2><span class="num">6.</span>Intellectual Property</h2>
+        <p>Everything in Fliqer, including the game design, puzzle system, animations, graphics, branding and software, belongs to WeRun Consulting or its licensors and is protected by intellectual property laws.</p>
+        <p>We grant you a limited, personal, non-exclusive, non-transferable and revocable licence to use Fliqer on devices you own or control, in line with these Terms and the App Store or Google Play usage rules. You may not copy, distribute, sell, modify or create derivative works from the App.</p>
+        <p>Fliqer, Fliqer Pro and the WeRun Consulting name and logo are trademarks of WeRun Consulting.</p>
+
+        <h2><span class="num">7.</span>Films, Names and Third-Party Marks</h2>
+        <p>Film titles, studio names, character names, and the names of actors, directors and other people belong to their respective owners. They are used in Fliqer only to identify them as trivia subjects. Fliqer is not affiliated with, sponsored by or endorsed by any film studio, distributor, awards body, performer or data provider. Greenlight "pitches" are imaginary films created for fun and do not suggest that any real person is involved in, or approves of, them.</p>
+
+        <h2><span class="num">8.</span>Disclaimer of Warranties</h2>
+        <p>Fliqer is provided "as is" and "as available", without warranties of any kind, whether express or implied, to the extent permitted by law. We do not promise that the App will be uninterrupted or error-free, or that film data is always complete, accurate or up to date. Trivia data is provided for entertainment only.</p>
+        <p>Nothing in these Terms excludes rights you have under the Australian Consumer Law or other consumer protection laws that cannot be excluded.</p>
+
+        <h2><span class="num">9.</span>Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law, WeRun Consulting is not liable for any indirect, incidental, special, consequential or punitive damages, or for any loss of data, streaks or rankings, arising from your use of, or inability to use, Fliqer.</p>
+        <p>Our total liability for any claim relating to these Terms or the App is limited to the greater of the amount you paid for Fliqer Pro in the 12 months before the claim, or AUD $10.</p>
+
+        <h2><span class="num">10.</span>Termination</h2>
+        <p>You can stop using Fliqer and delete your account at any time. We may suspend or end your access, with or without notice, if you break these Terms or act in a way that harms other players, WeRun Consulting or third parties.</p>
+        <p>When access ends, your licence to use the App ends too. Sections that by their nature should continue, including intellectual property, disclaimers and limitation of liability, survive termination.</p>
+
+        <h2><span class="num">11.</span>Apple-Specific Terms</h2>
+        <p>If you downloaded Fliqer from the Apple App Store:</p>
+        <ul>
+            <li>Your licence is limited to use on Apple-branded products you own or control, as allowed by the Usage Rules in the Apple Media Services Terms and Conditions.</li>
+            <li>If the App fails to conform to any applicable warranty, you may notify Apple and Apple will refund the purchase price (if any). To the maximum extent permitted by law, Apple has no other warranty obligation for the App.</li>
+            <li>Apple is not responsible for any claims by you or a third party relating to the App, including product liability, legal or regulatory compliance, consumer protection or intellectual property claims. WeRun Consulting is responsible for those claims.</li>
+            <li>You confirm that you are not located in a country subject to a U.S. Government embargo, and are not on any U.S. Government list of prohibited or restricted parties.</li>
+            <li>Apple and its subsidiaries are third-party beneficiaries of these Terms and may enforce them against you.</li>
+        </ul>
+
+        <h2><span class="num">12.</span>Changes to These Terms</h2>
+        <p>We may update these Terms from time to time. When we make significant changes, we will tell you in the App or by email and update the "Last Updated" date above. Continued use of Fliqer after changes are posted means you accept the revised Terms.</p>
+
+        <h2><span class="num">13.</span>Governing Law</h2>
+        <p>These Terms are governed by the laws of the State of Victoria, Australia, without regard to conflict-of-law principles. Any disputes will be resolved in the courts located in Melbourne, Victoria, Australia, unless local law requires otherwise.</p>
+
+        <h2><span class="num">14.</span>Contact Us</h2>
+        <p>For questions about these Terms, contact WeRun Consulting at <a href="mailto:Fliqer@werunconsulting.com">Fliqer@werunconsulting.com</a>.</p>
+
+        <div class="strip bottom" aria-hidden="true"></div>
+        <p class="footer-note">Fliqer &mdash; Powered by <a href="https://www.werunconsulting.com">WeRun Consulting</a> &middot; <a href="privacy-policy.html">Privacy Policy</a></p>
+    </main>
+</body>
+</html>
